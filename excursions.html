@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VIP морские экскурсии RomashkaTour в Хургаде. Райский остров, снорклинг, яхты, закаты. Полная программа, детские условия. Бронирование через WhatsApp." />
+  <meta name="keywords" content="экскурсии Хургада, VIP яхта Хургада, снорклинг Красное море, остров Хургада тур, морской тур Хургада" />
+  <meta name="author" content="RomashkaTour" />
+  <meta property="og:title" content="Экскурсии — RomashkaTour Хургада" />
+  <meta property="og:description" content="VIP морское путешествие — Райский остров, коралловые рифы, обед на борту яхты. Личный гид Бишой." />
+  <meta property="og:type" content="website" />
+  <title>Экскурсии — RomashkaTour | VIP Морские Туры Хургада</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ========== PRELOADER ========== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-wave"></div>
+    <div class="preloader-logo">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="2"/>
+        <path d="M10 38 Q20 28 30 35 Q40 42 50 32" stroke="#0ABFBC" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M10 44 Q20 34 30 41 Q40 48 50 38" stroke="#0ABFBC" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="preloader-text" data-ru="Загрузка..." data-en="Loading...">Загрузка...</p>
+  </div>
+</div>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/201234567890" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-pulse"></span>
+</a>
+
+<!-- ========== HEADER / NAV ========== -->
+<header class="header" id="header">
+  <div class="header-inner container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M5 24 Q12 16 19 21 Q26 26 33 19" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M5 29 Q12 21 19 26 Q26 31 33 24" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="19" cy="13" r="3" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Romashka<span>Tour</span></span>
+        <span class="logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+      </div>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" class="nav-link active" data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html" class="nav-link" data-ru="О нас" data-en="About">О нас</a></li>
+        <li><a href="gallery.html" class="nav-link" data-ru="Галерея" data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html" class="nav-link" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/201234567890" target="_blank" class="btn-nav-wa">
+          <i class="fab fa-whatsapp"></i>
+          <span data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="header-controls">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ru">
+          <span class="flag">🇷🇺</span> RU
+        </button>
+        <button class="lang-btn" data-lang="en">
+          <span class="flag">🇬🇧</span> EN
+        </button>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero" style="background: linear-gradient(160deg, rgba(10,22,40,0.84) 0%, rgba(10,80,110,0.68) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80') center/cover no-repeat;">
+  <div class="page-hero-content" data-aos="fade-up">
+    <div class="section-eyebrow" style="justify-content:center; margin-bottom:16px;">
+      <i class="fas fa-ship"></i>
+      <span data-ru="Наши маршруты" data-en="Our Routes">Наши маршруты</span>
+    </div>
+    <h1 data-ru="🌊 Экскурсии RomashkaTour" data-en="🌊 RomashkaTour Excursions">🌊 Экскурсии RomashkaTour</h1>
+    <p data-ru="VIP морские приключения в Хургаде с личным гидом Бишоем — выбирайте и бронируйте прямо сейчас" data-en="VIP sea adventures in Hurghada with personal guide Bishoy — choose and book right now">VIP морские приключения в Хургаде с личным гидом Бишоем — выбирайте и бронируйте прямо сейчас</p>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== ГЛАВНАЯ ЭКСКУРСИЯ — БОЛЬШАЯ КАРТОЧКА ========== -->
+<section class="main-excursion section-pad" id="paradise-island">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-crown"></i>
+        <span data-ru="Флагманский тур" data-en="Flagship Tour">Флагманский тур</span>
+      </div>
+      <h2 class="section-title" data-ru="🏝️ Райский остров Хургады" data-en="🏝️ Paradise Island of Hurghada">🏝️ Райский остров Хургады</h2>
+      <p class="section-subtitle" data-ru="VIP Морское Путешествие — самый популярный тур" data-en="VIP Sea Journey — the most popular tour">VIP Морское Путешествие — самый популярный тур</p>
+    </div>
+
+    <!-- Главная карточка тура -->
+    <div class="exc-hero-card" data-aos="fade-up">
+      <div class="exc-hero-img" style="background: linear-gradient(160deg, #0a1628, #0a4a6e);">
+        <img src="images/vip-yacht.jpg" alt="VIP яхта RomashkaTour" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onerror="this.style.display='none'">
+        <div class="exc-hero-img-placeholder" style="position:relative;z-index:1;">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" opacity="0.35">
+            <path d="M15 70 L50 22 L85 70 Z" fill="white"/>
+            <path d="M50 70 L55 32 L75 70 Z" fill="white" opacity="0.6"/>
+            <rect x="22" y="68" width="60" height="12" rx="6" fill="#C9A84C"/>
+            <path d="M5 88 Q25 82 50 86 Q75 90 95 84 L95 100 L5 100Z" fill="#0ABFBC" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="exc-hero-badge">
+          <i class="fas fa-crown"></i>
+          <span data-ru="VIP тур" data-en="VIP Tour">VIP тур</span>
+        </div>
+      </div>
+
+      <div class="exc-hero-content">
+        <p class="exc-hero-desc" data-ru="Откройте для себя удивительный мир Красного моря вместе с RomashkaTour. Вас ждёт незабываемый день, наполненный яркими эмоциями, красивыми пейзажами, морскими приключениями и настоящим отдыхом." data-en="Discover the amazing world of the Red Sea with RomashkaTour. You are in for an unforgettable day filled with vivid emotions, beautiful scenery, sea adventures and real relaxation.">
+          Откройте для себя удивительный мир Красного моря вместе с RomashkaTour. Вас ждёт незабываемый день, наполненный яркими эмоциями, красивыми пейзажами, морскими приключениями и настоящим отдыхом.
+        </p>
+
+        <h3 class="exc-includes-title" data-ru="✨ Что включено в тур:" data-en="✨ What is included:">✨ Что включено в тур:</h3>
+        <ul class="exc-includes">
+          <li><i class="fas fa-shuttle-van"></i> <span data-ru="Комфортный трансфер от отеля и обратно" data-en="Comfortable transfer from hotel and back">Комфортный трансфер от отеля и обратно</span></li>
+          <li><i class="fas fa-ship"></i> <span data-ru="Современная VIP-яхта с удобствами" data-en="Modern VIP yacht with amenities">Современная VIP-яхта с удобствами</span></li>
+          <li><i class="fas fa-fish"></i> <span data-ru="Две остановки для снорклинга среди коралловых рифов" data-en="Two snorkeling stops among coral reefs">Две остановки для снорклинга среди коралловых рифов</span></li>
+          <li><i class="fas fa-mask"></i> <span data-ru="Маски и трубки для снорклинга — бесплатно" data-en="Masks and fins for snorkeling — free">Маски и трубки для снорклинга — бесплатно</span></li>
+          <li><i class="fas fa-utensils"></i> <span data-ru="Вкусный обед на борту (рыба, говядина, курица, салаты)" data-en="Delicious lunch on board (fish, beef, chicken, salads)">Вкусный обед на борту (рыба, говядина, курица, салаты)</span></li>
+          <li><i class="fas fa-umbrella-beach"></i> <span data-ru="Отдых на райском острове с белым песком" data-en="Rest on paradise island with white sand">Отдых на райском острове с белым песком</span></li>
+          <li><i class="fas fa-swimmer"></i> <span data-ru="Катание на банане и водном матрасе" data-en="Banana boat and water mattress rides">Катание на банане и водном матрасе</span></li>
+          <li><i class="fas fa-glass-water"></i> <span data-ru="Безалкогольные напитки в течение всего дня" data-en="Non-alcoholic drinks throughout the day">Безалкогольные напитки в течение всего дня</span></li>
+          <li><i class="fas fa-life-ring"></i> <span data-ru="Спасательные жилеты и всё оборудование безопасности" data-en="Life jackets and all safety equipment">Спасательные жилеты и всё оборудование безопасности</span></li>
+          <li><i class="fas fa-user-tie"></i> <span data-ru="Личное сопровождение опытного гида Бишоя" data-en="Personal escort of experienced guide Bishoy">Личное сопровождение опытного гида Бишоя</span></li>
+        </ul>
+
+        <div class="exc-cta-inline">
+          <a href="https://wa.me/201234567890" target="_blank" class="btn-wa-big" style="font-size:0.9rem; padding:13px 22px;">
+            <i class="fab fa-whatsapp"></i>
+            <span data-ru="Забронировать в WhatsApp" data-en="Book on WhatsApp">Забронировать в WhatsApp</span>
+          </a>
+          <a href="tel:+201234567890" class="btn-call-big" style="font-size:0.9rem; padding:13px 22px;">
+            <i class="fas fa-phone-alt"></i>
+            <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПРОГРАММА -->
+    <div class="program-section" data-aos="fade-up">
+      <h3 class="program-title" data-ru="📋 Подробная программа дня" data-en="📋 Detailed Day Programme">📋 Подробная программа дня</h3>
+      <div class="program-timeline">
+        <div class="prog-step">
+          <div class="prog-num">1</div>
+          <div class="prog-icon"><i class="fas fa-hotel"></i></div>
+          <div class="prog-text">
+            <strong data-ru="Встреча у отеля" data-en="Hotel Pickup">Встреча у отеля</strong>
+            <span data-ru="Комфортный трансфер на пирс — подберём от любого отеля Хургады" data-en="Comfortable transfer to pier — we pick up from any Hurghada hotel">Комфортный трансфер на пирс — подберём от любого отеля Хургады</span>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">2</div>
+          <div class="prog-icon"><i class="fas fa-ship"></i></div>
+          <div class="prog-text">
+            <strong data-ru="Морская прогулка" data-en="Sea Cruise">Морская прогулка</strong>
+            <span data-ru="Отплытие на VIP-яхте по Красному морю, наслаждаемся пейзажами" data-en="Departure on VIP yacht across the Red Sea, enjoy the scenery">Отплытие на VIP-яхте по Красному морю, наслаждаемся пейзажами</span>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">3</div>
+          <div class="prog-icon"><i class="fas fa-fish"></i></div>
+          <div class="prog-text">
+            <strong data-ru="1-я остановка — снорклинг" data-en="1st Stop — Snorkeling">1-я остановка — снорклинг</strong>
+            <span data-ru="Погружение среди коралловых рифов, морские жители совсем рядом" data-en="Dive among coral reefs, sea creatures right beside you">Погружение среди коралловых рифов, морские жители совсем рядом</span>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">4</div>
+          <div class="prog-icon"><i class="fas fa-swimmer"></i></div>
+          <div class="prog-text">
+            <strong data-ru="2-я остановка — плавание" data-en="2nd Stop — Swimming">2-я остановка — плавание</strong>
+            <span data-ru="Ещё один живописный снорклинг-спот с другими коралловыми садами" data-en="Another scenic snorkeling spot with different coral gardens">Ещё один живописный снорклинг-спот с другими коралловыми садами</span>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">5</div>
+          <div class="prog-icon"><i class="fas fa-utensils"></i></div>
+          <div class="prog-text">
+            <strong data-ru="Обед на борту" data-en="Lunch on Board">Обед на борту</strong>
+            <span data-ru="🐠 Рыба • 🥩 Говядина • 🍗 Курица + салаты и гарниры" data-en="🐠 Fish • 🥩 Beef • 🍗 Chicken + salads and sides">🐠 Рыба • 🥩 Говядина • 🍗 Курица + салаты и гарниры</span>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">6</div>
+          <div class="prog-icon"><i class="fas fa-umbrella-beach"></i></div>
+          <div class="prog-text">
+            <strong data-ru="Райский остров" data-en="Paradise Island">Райский остров</strong>
+            <span data-ru="Отдых на белоснежном пляже, купание, фото на память" data-en="Relax on white-sand beach, swim, take memorable photos">Отдых на белоснежном пляже, купание, фото на память</span>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">7</div>
+          <div class="prog-icon"><i class="fas fa-water"></i></div>
+          <div class="prog-text">
+            <strong data-ru="Водные развлечения" data-en="Water Activities">Водные развлечения</strong>
+            <span data-ru="Катание на банане и водном матрасе — для всех желающих" data-en="Banana boat and water mattress — for all who wish">Катание на банане и водном матрасе — для всех желающих</span>
+          </div>
+        </div>
+        <div class="prog-step">
+          <div class="prog-num">8</div>
+          <div class="prog-icon"><i class="fas fa-home"></i></div>
+          <div class="prog-text">
+            <strong data-ru="Возвращение в отель" data-en="Return to Hotel">Возвращение в отель</strong>
+            <span data-ru="Трансфер обратно с воспоминаниями на всю жизнь" data-en="Transfer back with memories for a lifetime">Трансфер обратно с воспоминаниями на всю жизнь</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ДЕТСКИЕ ПРАВИЛА -->
+    <div class="children-card" data-aos="fade-up">
+      <div class="children-icon"><i class="fas fa-child"></i></div>
+      <h3 data-ru="👶 Правила для детей" data-en="👶 Children Policy">👶 Правила для детей</h3>
+      <div class="children-rules">
+        <div class="child-rule">
+          <i class="fas fa-check-circle"></i>
+          <span data-ru="Дети от 1 до 5 лет — <strong>БЕСПЛАТНО</strong>" data-en="Children 1–5 years — <strong>FREE</strong>">Дети от 1 до 5 лет — <strong>БЕСПЛАТНО</strong></span>
+        </div>
+        <div class="child-rule">
+          <i class="fas fa-percentage"></i>
+          <span data-ru="Дети от 6 до 11 лет — <strong>скидка 50%</strong>" data-en="Children 6–11 years — <strong>50% discount</strong>">Дети от 6 до 11 лет — <strong>скидка 50%</strong></span>
+        </div>
+        <div class="child-rule">
+          <i class="fas fa-life-ring"></i>
+          <span data-ru="Спасательные жилеты для всех детей — бесплатно" data-en="Life jackets for all children — free">Спасательные жилеты для всех детей — бесплатно</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ПРЕИМУЩЕСТВА ========== -->
+<section class="advantages section-pad">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-trophy"></i>
+        <span data-ru="Наши преимущества" data-en="Our Advantages">Наши преимущества</span>
+      </div>
+      <h2 class="section-title" data-ru="Почему выбирают RomashkaTour?" data-en="Why Choose RomashkaTour?">Почему выбирают RomashkaTour?</h2>
+    </div>
+
+    <div class="adv-grid">
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="adv-icon"><i class="fas fa-crown"></i></div>
+        <h3 data-ru="VIP Яхта" data-en="VIP Yacht">VIP Яхта</h3>
+        <p data-ru="Только современные яхты с просторными палубами, тентами от солнца и всем необходимым оборудованием." data-en="Only modern yachts with spacious decks, sun canopies and all necessary equipment.">Только современные яхты с просторными палубами, тентами от солнца и всем необходимым оборудованием.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="adv-icon"><i class="fas fa-language"></i></div>
+        <h3 data-ru="Русскоязычный гид" data-en="Russian-speaking Guide">Русскоязычный гид</h3>
+        <p data-ru="Бишой свободно говорит по-русски и по-английски. Никаких языковых барьеров — всё объяснит и поможет." data-en="Bishoy speaks fluent Russian and English. No language barriers — he'll explain everything and help.">Бишой свободно говорит по-русски и по-английски. Никаких языковых барьеров — всё объяснит и поможет.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="adv-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3 data-ru="Полная безопасность" data-en="Full Safety">Полная безопасность</h3>
+        <p data-ru="Все экскурсии застрахованы. На борту всегда есть спасательные жилеты, аптечка и опытная команда." data-en="All excursions are insured. Life jackets, first aid kit and experienced crew always on board.">Все экскурсии застрахованы. На борту всегда есть спасательные жилеты, аптечка и опытная команда.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="adv-icon"><i class="fas fa-wallet"></i></div>
+        <h3 data-ru="Всё включено" data-en="All Inclusive">Всё включено</h3>
+        <p data-ru="Трансфер, питание, напитки, снаряжение — никаких скрытых платежей. Оплата наличными в день экскурсии." data-en="Transfer, food, drinks, gear — no hidden charges. Cash payment on the day of the excursion.">Трансфер, питание, напитки, снаряжение — никаких скрытых платежей. Оплата наличными в день экскурсии.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="adv-icon"><i class="fas fa-clock"></i></div>
+        <h3 data-ru="Пунктуальность" data-en="Punctuality">Пунктуальность</h3>
+        <p data-ru="Всегда приезжаем точно по расписанию. Уважаем ваше время и ценим каждую минуту отдыха." data-en="We always arrive exactly on time. We respect your time and value every minute of your vacation.">Всегда приезжаем точно по расписанию. Уважаем ваше время и ценим каждую минуту отдыха.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="adv-icon"><i class="fas fa-heart"></i></div>
+        <h3 data-ru="Личный подход" data-en="Personal Approach">Личный подход</h3>
+        <p data-ru="Бишой лично сопровождает каждую группу. Ваш комфорт — его главный приоритет на протяжении всего дня." data-en="Bishoy personally accompanies every group. Your comfort is his top priority throughout the entire day.">Бишой лично сопровождает каждую группу. Ваш комфорт — его главный приоритет на протяжении всего дня.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ЧТО ВЗЯТЬ С СОБОЙ ========== -->
+<section class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-suitcase"></i>
+        <span data-ru="Полезная информация" data-en="Useful Information">Полезная информация</span>
+      </div>
+      <h2 class="section-title" data-ru="Что взять с собой?" data-en="What to Bring?">Что взять с собой?</h2>
+    </div>
+
+    <div class="tips-grid" data-aos="fade-up">
+      <div class="tip-card">
+        <div class="tip-icon"><i class="fas fa-tshirt"></i></div>
+        <div class="tip-body">
+          <h4 data-ru="Одежда" data-en="Clothing">Одежда</h4>
+          <p data-ru="Купальник или плавки, лёгкая одежда на смену, удобная обувь (шлёпанцы)." data-en="Swimsuit or trunks, light change of clothes, comfortable footwear (flip-flops).">Купальник или плавки, лёгкая одежда на смену, удобная обувь (шлёпанцы).</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><i class="fas fa-sun"></i></div>
+        <div class="tip-body">
+          <h4 data-ru="Защита от солнца" data-en="Sun Protection">Защита от солнца</h4>
+          <p data-ru="Солнцезащитный крем SPF50+, очки, головной убор — в Египте жаркое солнце круглый год." data-en="Sunscreen SPF50+, sunglasses, hat — Egypt has hot sun all year round.">Солнцезащитный крем SPF50+, очки, головной убор — в Египте жаркое солнце круглый год.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><i class="fas fa-camera"></i></div>
+        <div class="tip-body">
+          <h4 data-ru="Техника" data-en="Electronics">Техника</h4>
+          <p data-ru="Фотоаппарат или смартфон, по желанию — подводный чехол для съёмки среди кораллов." data-en="Camera or smartphone, optionally — underwater case for shooting among corals.">Фотоаппарат или смартфон, по желанию — подводный чехол для съёмки среди кораллов.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><i class="fas fa-band-aid"></i></div>
+        <div class="tip-body">
+          <h4 data-ru="Здоровье" data-en="Health">Здоровье</h4>
+          <p data-ru="Если страдаете морской болезнью — возьмите таблетки заранее. Маски для снорклинга предоставляем мы." data-en="If you suffer from seasickness — take tablets in advance. We provide snorkeling masks.">Если страдаете морской болезнью — возьмите таблетки заранее. Маски для снорклинга предоставляем мы.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><i class="fas fa-money-bill-wave"></i></div>
+        <div class="tip-body">
+          <h4 data-ru="Оплата" data-en="Payment">Оплата</h4>
+          <p data-ru="Оплата наличными: египетские фунты, доллары или рубли. Никаких предоплат и комиссий." data-en="Cash payment: Egyptian pounds, dollars or rubles. No prepayment or commissions.">Оплата наличными: египетские фунты, доллары или рубли. Никаких предоплат и комиссий.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><i class="fas fa-clock"></i></div>
+        <div class="tip-body">
+          <h4 data-ru="Время" data-en="Timing">Время</h4>
+          <p data-ru="Экскурсия длится 8–9 часов. Отправление обычно с 8:00–9:00 утра. Точное время — при бронировании." data-en="The excursion lasts 8–9 hours. Departure usually at 8:00–9:00 AM. Exact time — when booking.">Экскурсия длится 8–9 часов. Отправление обычно с 8:00–9:00 утра. Точное время — при бронировании.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BANNER ========== -->
+<section class="cta-banner">
+  <div class="cta-wave-top">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0A1628"/></svg>
+  </div>
+  <div class="cta-content container" data-aos="fade-up">
+    <div class="cta-icon"><i class="fas fa-anchor"></i></div>
+    <h2 data-ru="Готовы отплыть в приключение?" data-en="Ready to Sail Into Adventure?">Готовы отплыть в приключение?</h2>
+    <p data-ru="Напишите Бишою прямо сейчас — и уже завтра вы окажетесь на борту VIP-яхты в Красном море!" data-en="Write to Bishoy right now — and tomorrow you'll be on board a VIP yacht in the Red Sea!">Напишите Бишою прямо сейчас — и уже завтра вы окажетесь на борту VIP-яхты в Красном море!</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/201234567890" target="_blank" class="btn-wa-big">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+      </a>
+      <a href="https://t.me/romashkatour" target="_blank" class="btn-tg-big">
+        <i class="fab fa-telegram"></i>
+        <span data-ru="Telegram" data-en="Telegram">Telegram</span>
+      </a>
+      <a href="tel:+201234567890" class="btn-call-big">
+        <i class="fas fa-phone-alt"></i>
+        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+      </a>
+    </div>
+  </div>
+  <div class="cta-wave-bottom">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#0A1628"/></svg>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq section-pad">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-question-circle"></i>
+        <span data-ru="Частые вопросы" data-en="FAQ">Частые вопросы</span>
+      </div>
+      <h2 class="section-title" data-ru="Ответы на ваши вопросы" data-en="Answers to Your Questions">Ответы на ваши вопросы</h2>
+    </div>
+
+    <div class="faq-list" data-aos="fade-up">
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-ru="Нужно ли бронировать заранее?" data-en="Do I need to book in advance?">Нужно ли бронировать заранее?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          <p data-ru="Рекомендуем бронировать за 1–2 дня. Напишите нам в WhatsApp или Telegram, и мы подтвердим место для вас." data-en="We recommend booking 1–2 days in advance. Write to us on WhatsApp or Telegram and we'll confirm your spot.">Рекомендуем бронировать за 1–2 дня. Напишите нам в WhatsApp или Telegram, и мы подтвердим место для вас.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-ru="Умею ли я плавать — обязательное условие?" data-en="Is swimming ability required?">Умею ли я плавать — обязательное условие?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          <p data-ru="Нет! На яхте есть спасательные жилеты, а гид всегда рядом. Дети и нетривиальные пловцы в полной безопасности." data-en="No! The yacht has life jackets and the guide is always nearby. Children and non-swimmers are completely safe.">Нет! На яхте есть спасательные жилеты, а гид всегда рядом. Дети и нетривиальные пловцы в полной безопасности.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-ru="Откуда будет трансфер?" data-en="Where does the transfer pick up?">Откуда будет трансфер?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          <p data-ru="Трансфер забирает вас прямо от вашего отеля. Мы работаем со всеми отелями Хургады и Эль Гуны. Укажите ваш отель при бронировании." data-en="Transfer picks you up directly from your hotel. We work with all hotels in Hurghada and El Gouna. Specify your hotel when booking.">Трансфер забирает вас прямо от вашего отеля. Мы работаем со всеми отелями Хургады и Эль Гуны. Укажите ваш отель при бронировании.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-ru="Как оплатить экскурсию?" data-en="How to pay for the excursion?">Как оплатить экскурсию?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          <p data-ru="Оплата наличными в египетских фунтах, долларах или рублях прямо гиду в день экскурсии. Никаких предоплат и онлайн-платежей не требуется!" data-en="Payment in cash in Egyptian pounds, dollars or rubles directly to the guide on the day of excursion. No prepayment or online payments required!">Оплата наличными в египетских фунтах, долларах или рублях прямо гиду в день экскурсии. Никаких предоплат и онлайн-платежей не требуется!</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-ru="Что если будет плохая погода?" data-en="What if the weather is bad?">Что если будет плохая погода?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          <p data-ru="В Хургаде более 300 солнечных дней в году. Если погода не позволяет выйти в море, мы перенесём тур на другой день или вернём деньги." data-en="Hurghada has more than 300 sunny days a year. If the weather doesn't allow going to sea, we'll reschedule or give a refund.">В Хургаде более 300 солнечных дней в году. Если погода не позволяет выйти в море, мы перенесём тур на другой день или вернём деньги.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-ru="Есть ли вегетарианское питание?" data-en="Is vegetarian food available?">Есть ли вегетарианское питание?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          <p data-ru="Да, мы учитываем диетические предпочтения. Сообщите нам заранее при бронировании — повар подготовит вегетарианские блюда." data-en="Yes, we accommodate dietary preferences. Let us know when booking — the cook will prepare vegetarian dishes.">Да, мы учитываем диетические предпочтения. Сообщите нам заранее при бронировании — повар подготовит вегетарианские блюда.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#F0F9FF"/></svg>
+  </div>
+  <div class="footer-main container">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M6 28 Q14 20 22 25 Q30 30 38 22" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M6 33 Q14 25 22 30 Q30 35 38 27" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="22" cy="15" r="3.5" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+        <div>
+          <span class="footer-logo-name">Romashka<span>Tour</span></span>
+          <span class="footer-logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+        </div>
+      </a>
+      <p class="footer-desc" data-ru="Ваш надёжный партнёр для незабываемых морских приключений на Красном море." data-en="Your reliable partner for unforgettable sea adventures on the Red Sea.">Ваш надёжный партнёр для незабываемых морских приключений на Красном море.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/201234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/romashkatour" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="tel:+201234567890" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-nav-block">
+      <h4 data-ru="Навигация" data-en="Navigation">Навигация</h4>
+      <ul>
+        <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html" data-ru="О нас" data-en="About">О нас</a></li>
+        <li><a href="gallery.html" data-ru="Галерея" data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact-block">
+      <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
+      <ul class="footer-contacts">
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
+        </li>
+        <li>
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+201234567890">+20 123 456 7890</a>
+        </li>
+        <li>
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/201234567890" target="_blank">WhatsApp</a>
+        </li>
+        <li>
+          <i class="fab fa-telegram"></i>
+          <a href="https://t.me/romashkatour" target="_blank">Telegram</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-cta-block">
+      <h4 data-ru="Забронировать тур" data-en="Book a Tour">Забронировать тур</h4>
+      <p data-ru="Пишите нам в любое время — мы всегда онлайн!" data-en="Write to us anytime — we're always online!">Пишите нам в любое время — мы всегда онлайн!</p>
+      <a href="https://wa.me/201234567890" target="_blank" class="btn-footer-wa">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+      </a>
+      <a href="tel:+201234567890" class="btn-footer-call">
+        <i class="fas fa-phone-alt"></i>
+        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 RomashkaTour. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
+      <p data-ru="🏝️ Хургада, Египет — Красное море" data-en="🏝️ Hurghada, Egypt — Red Sea">🏝️ Хургада, Египет — Красное море</p>
+    </div>
+  </div>
+</footer>
+
+<!-- INLINE STYLES для уникальных блоков страницы (не трогаем style.css) -->
+<style>
+  .exc-cta-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  /* Tips / что взять */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .tip-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--off-white);
+    border: 1px solid var(--gray-2);
+    border-radius: var(--radius-lg);
+    padding: 22px 18px;
+    transition: var(--transition);
+  }
+  .tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background: white;
+  }
+  .tip-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: white;
+    flex-shrink: 0;
+  }
+  .tip-body h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .tip-body p {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 1024px) {
+    .tips-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .tips-grid { grid-template-columns: 1fr; }
+    .exc-cta-inline { flex-direction: column; }
+    .exc-cta-inline a { width: 100%; justify-content: center; }
+  }
+</style>
+
+<script src="js/script.js"></script>
+</body>
+</html>

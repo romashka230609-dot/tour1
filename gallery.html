@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Галерея RomashkaTour — фотографии VIP яхт, Красного моря, коралловых рифов, острова и туристов на экскурсиях в Хургаде." />
+  <meta name="keywords" content="галерея Хургада, фото Красное море, VIP яхта фото, снорклинг Египет, остров Хургада фото" />
+  <meta name="author" content="RomashkaTour" />
+  <meta property="og:title" content="Галерея — RomashkaTour Хургада" />
+  <meta property="og:description" content="Фотографии наших экскурсий: Красное море, VIP яхты, коралловые рифы, райский остров и счастливые туристы." />
+  <meta property="og:type" content="website" />
+  <title>Галерея — RomashkaTour | VIP Экскурсии Хургада</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ========== PRELOADER ========== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-wave"></div>
+    <div class="preloader-logo">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="2"/>
+        <path d="M10 38 Q20 28 30 35 Q40 42 50 32" stroke="#0ABFBC" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M10 44 Q20 34 30 41 Q40 48 50 38" stroke="#0ABFBC" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="preloader-text" data-ru="Загрузка..." data-en="Loading...">Загрузка...</p>
+  </div>
+</div>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/201234567890" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-pulse"></span>
+</a>
+
+<!-- ========== HEADER / NAV ========== -->
+<header class="header" id="header">
+  <div class="header-inner container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M5 24 Q12 16 19 21 Q26 26 33 19" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M5 29 Q12 21 19 26 Q26 31 33 24" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="19" cy="13" r="3" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Romashka<span>Tour</span></span>
+        <span class="logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+      </div>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" class="nav-link" data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html" class="nav-link" data-ru="О нас" data-en="About">О нас</a></li>
+        <li><a href="gallery.html" class="nav-link active" data-ru="Галерея" data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html" class="nav-link" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/201234567890" target="_blank" class="btn-nav-wa">
+          <i class="fab fa-whatsapp"></i>
+          <span data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="header-controls">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ru">
+          <span class="flag">🇷🇺</span> RU
+        </button>
+        <button class="lang-btn" data-lang="en">
+          <span class="flag">🇬🇧</span> EN
+        </button>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero" style="background: linear-gradient(160deg, rgba(10,22,40,0.82) 0%, rgba(10,80,110,0.68) 100%), url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=80') center/cover no-repeat;">
+  <div class="page-hero-content" data-aos="fade-up">
+    <div class="section-eyebrow" style="justify-content:center; margin-bottom:16px;">
+      <i class="fas fa-camera"></i>
+      <span data-ru="Наши моменты" data-en="Our Moments">Наши моменты</span>
+    </div>
+    <h1 data-ru="📸 Галерея" data-en="📸 Gallery">📸 Галерея</h1>
+    <p data-ru="Настоящие фотографии наших экскурсий — Красное море, VIP яхты, коралловые рифы и незабываемые улыбки" data-en="Real photos from our excursions — Red Sea, VIP yachts, coral reefs and unforgettable smiles">Настоящие фотографии наших экскурсий — Красное море, VIP яхты, коралловые рифы и незабываемые улыбки</p>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== GALLERY FILTER ========== -->
+<section class="section-pad" style="background:#fff; padding-bottom: 0;">
+  <div class="container">
+    <div class="gallery-filter" id="galleryFilter">
+      <button class="gf-btn active" data-filter="all" data-ru="Все фото" data-en="All Photos">Все фото</button>
+      <button class="gf-btn" data-filter="sea" data-ru="🌊 Море" data-en="🌊 Sea">🌊 Море</button>
+      <button class="gf-btn" data-filter="yacht" data-ru="⛵ Яхты" data-en="⛵ Yachts">⛵ Яхты</button>
+      <button class="gf-btn" data-filter="island" data-ru="🏝️ Остров" data-en="🏝️ Island">🏝️ Остров</button>
+      <button class="gf-btn" data-filter="coral" data-ru="🐠 Кораллы" data-en="🐠 Corals">🐠 Кораллы</button>
+      <button class="gf-btn" data-filter="tourists" data-ru="😊 Туристы" data-en="😊 Tourists">😊 Туристы</button>
+      <button class="gf-btn" data-filter="sunset" data-ru="🌅 Закат" data-en="🌅 Sunset">🌅 Закат</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY GRID ========== -->
+<section class="section-pad" style="background:#fff; padding-top: 32px;">
+  <div class="container">
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- 1: Красное море -->
+      <div class="gallery-item" data-category="sea" data-aos="fade-up" data-aos-delay="0">
+        <div class="gallery-item-inner" style="aspect-ratio:4/3; background: linear-gradient(160deg,#05486b,#0a8fa8);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.4">
+            <circle cx="40" cy="28" r="14" fill="#C9A84C"/>
+            <path d="M0 55 Q20 42 40 52 Q60 62 80 48 L80 80 L0 80 Z" fill="#0ABFBC" opacity="0.6"/>
+            <path d="M0 65 Q20 52 40 62 Q60 72 80 58 L80 80 L0 80 Z" fill="#0ABFBC"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Бирюзовые воды Красного моря" data-en="Turquoise waters of the Red Sea">Бирюзовые воды Красного моря</p>
+        </div>
+      </div>
+
+      <!-- 2: VIP яхта -->
+      <div class="gallery-item" data-category="yacht" data-aos="fade-up" data-aos-delay="60">
+        <div class="gallery-item-inner" style="aspect-ratio:4/5; background: linear-gradient(160deg,#0a1628,#123456);">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" opacity="0.4">
+            <path d="M15 60 L45 20 L75 60 Z" fill="white"/>
+            <rect x="40" y="55" width="4" height="20" fill="#C9A84C"/>
+            <ellipse cx="45" cy="78" rx="30" ry="6" fill="#0ABFBC"/>
+            <path d="M5 68 Q25 62 45 68 Q65 74 85 68" stroke="#0ABFBC" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Наша VIP-яхта в открытом море" data-en="Our VIP yacht on the open sea">Наша VIP-яхта в открытом море</p>
+        </div>
+      </div>
+
+      <!-- 3: Райский остров -->
+      <div class="gallery-item" data-category="island" data-aos="fade-up" data-aos-delay="120">
+        <div class="gallery-item-inner" style="aspect-ratio:1/1; background: linear-gradient(160deg,#0a3a1e,#0d7a3c);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.45">
+            <ellipse cx="40" cy="55" rx="28" ry="10" fill="#C9A84C"/>
+            <path d="M40 55 Q32 38 25 28 Q40 22 50 28 Q44 40 40 55Z" fill="#22a855"/>
+            <path d="M40 55 Q48 35 58 26 Q40 18 33 26 Q39 38 40 55Z" fill="#2dc96a"/>
+            <path d="M5 68 Q22 62 40 66 Q58 70 75 64 L75 80 L5 80 Z" fill="#0ABFBC" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Райский остров — наш главный маршрут" data-en="Paradise Island — our main route">Райский остров — наш главный маршрут</p>
+        </div>
+      </div>
+
+      <!-- 4: Коралловые рифы -->
+      <div class="gallery-item" data-category="coral" data-aos="fade-up" data-aos-delay="0">
+        <div class="gallery-item-inner" style="aspect-ratio:4/3; background: linear-gradient(160deg,#02243c,#063d60);">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" opacity="0.45">
+            <ellipse cx="25" cy="65" rx="6" ry="18" fill="#ff6b35"/>
+            <ellipse cx="45" cy="58" rx="8" ry="25" fill="#e84393"/>
+            <ellipse cx="65" cy="62" rx="6" ry="20" fill="#ff6b35"/>
+            <ellipse cx="35" cy="68" rx="5" ry="14" fill="#C9A84C"/>
+            <ellipse cx="55" cy="70" rx="5" ry="12" fill="#8b5cf6"/>
+            <circle cx="30" cy="44" r="4" fill="#ff6b35" opacity="0.6"/>
+            <circle cx="60" cy="40" r="3" fill="#e84393" opacity="0.6"/>
+            <path d="M60 55 Q68 48 75 52" stroke="#0ABFBC" stroke-width="2" fill="none"/>
+            <circle cx="72" cy="50" r="3" fill="#0ABFBC"/>
+            <path d="M0 78 Q45 72 90 78 L90 90 L0 90Z" fill="#0ABFBC" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Коралловые рифы — подводный сад" data-en="Coral reefs — an underwater garden">Коралловые рифы — подводный сад</p>
+        </div>
+      </div>
+
+      <!-- 5: Туристы, снорклинг -->
+      <div class="gallery-item" data-category="tourists" data-aos="fade-up" data-aos-delay="60">
+        <div class="gallery-item-inner" style="aspect-ratio:4/5; background: linear-gradient(160deg,#083a60,#0a6090);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.4">
+            <circle cx="30" cy="22" r="8" fill="white"/>
+            <circle cx="55" cy="20" r="8" fill="white"/>
+            <path d="M18 38 Q30 50 42 38" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M43 36 Q55 48 67 36" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M0 62 Q20 52 40 60 Q60 68 80 58 L80 80 L0 80Z" fill="#0ABFBC" opacity="0.5"/>
+            <circle cx="30" cy="52" r="3" fill="#C9A84C"/>
+            <circle cx="55" cy="50" r="3" fill="#C9A84C"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Снорклинг среди кораллов" data-en="Snorkeling among corals">Снорклинг среди кораллов</p>
+        </div>
+      </div>
+
+      <!-- 6: Закат -->
+      <div class="gallery-item" data-category="sunset" data-aos="fade-up" data-aos-delay="120">
+        <div class="gallery-item-inner" style="aspect-ratio:4/3; background: linear-gradient(170deg,#3a1a00,#c05010,#e88020);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.5">
+            <circle cx="40" cy="38" r="16" fill="#ffcc00"/>
+            <line x1="40" y1="8" x2="40" y2="16" stroke="#ffcc00" stroke-width="3"/>
+            <line x1="67" y1="15" x2="61" y2="21" stroke="#ffcc00" stroke-width="3"/>
+            <line x1="72" y1="38" x2="64" y2="38" stroke="#ffcc00" stroke-width="3"/>
+            <line x1="8" y1="38" x2="16" y2="38" stroke="#ffcc00" stroke-width="3"/>
+            <line x1="13" y1="15" x2="19" y2="21" stroke="#ffcc00" stroke-width="3"/>
+            <path d="M0 60 Q20 52 40 58 Q60 64 80 56 L80 80 L0 80Z" fill="#0a3a5a" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Магический закат над Красным морем" data-en="Magical sunset over the Red Sea">Магический закат над Красным морем</p>
+        </div>
+      </div>
+
+      <!-- 7: Белоснежный пляж -->
+      <div class="gallery-item" data-category="island" data-aos="fade-up" data-aos-delay="0">
+        <div class="gallery-item-inner" style="aspect-ratio:4/5; background: linear-gradient(160deg,#e8f4f8,#c8e8f0);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.5">
+            <ellipse cx="40" cy="60" rx="35" ry="8" fill="#f0d98e"/>
+            <path d="M5 62 Q20 58 35 62 Q50 66 75 62 L75 80 L5 80Z" fill="#C9A84C" opacity="0.6"/>
+            <circle cx="40" cy="22" r="12" fill="#ffcc00" opacity="0.8"/>
+            <path d="M0 50 Q20 44 40 50 Q60 56 80 50 L80 62 L0 62Z" fill="#0ABFBC" opacity="0.5"/>
+            <path d="M0 56 Q20 50 40 56 Q60 62 80 56 L80 62 L0 62Z" fill="#0ABFBC" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Белоснежный пляж острова" data-en="The island's snow-white beach">Белоснежный пляж острова</p>
+        </div>
+      </div>
+
+      <!-- 8: Подводный мир -->
+      <div class="gallery-item" data-category="coral" data-aos="fade-up" data-aos-delay="60">
+        <div class="gallery-item-inner" style="aspect-ratio:1/1; background: linear-gradient(170deg,#001830,#003860);">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" opacity="0.5">
+            <ellipse cx="32" cy="50" rx="18" ry="9" fill="#0ABFBC" opacity="0.7"/>
+            <circle cx="26" cy="48" r="4" fill="#fff"/>
+            <circle cx="27" cy="47" r="1.5" fill="#001830"/>
+            <path d="M50 48 Q60 42 68 48" stroke="#ff6b35" stroke-width="2" fill="none"/>
+            <ellipse cx="62" cy="52" rx="14" ry="7" fill="#e84393" opacity="0.6"/>
+            <circle cx="55" cy="50" r="3" fill="#fff"/>
+            <circle cx="56" cy="49" r="1" fill="#001830"/>
+            <path d="M10 70 Q30 64 50 70 Q70 76 90 70 L90 90 L10 90Z" fill="#0a3a5a" opacity="0.4"/>
+            <circle cx="20" cy="30" r="2" fill="#C9A84C"/>
+            <circle cx="70" cy="25" r="2" fill="#C9A84C"/>
+            <circle cx="45" cy="20" r="3" fill="#C9A84C" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Удивительный подводный мир" data-en="Amazing underwater world">Удивительный подводный мир</p>
+        </div>
+      </div>
+
+      <!-- 9: Гид Бишой -->
+      <div class="gallery-item" data-category="tourists" data-aos="fade-up" data-aos-delay="120">
+        <div class="gallery-item-inner" style="aspect-ratio:4/3; background: linear-gradient(160deg,#0a1628,#1a3050);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.45">
+            <circle cx="40" cy="26" r="14" fill="white" opacity="0.8"/>
+            <path d="M16 70 Q28 54 40 58 Q52 62 64 50 L68 70 Z" fill="white" opacity="0.6"/>
+            <circle cx="40" cy="26" r="6" fill="#0a1628"/>
+            <path d="M26 26 Q40 16 54 26" stroke="#C9A84C" stroke-width="2" fill="none"/>
+            <rect x="34" y="40" width="12" height="16" rx="4" fill="#0ABFBC" opacity="0.8"/>
+            <path d="M5 72 Q20 66 40 70 Q60 74 75 68 L75 80 L5 80Z" fill="#0ABFBC" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Гид Бишой с нашими гостями" data-en="Guide Bishoy with our guests">Гид Бишой с нашими гостями</p>
+        </div>
+      </div>
+
+      <!-- 10: Яхта на горизонте -->
+      <div class="gallery-item" data-category="yacht" data-aos="fade-up" data-aos-delay="0">
+        <div class="gallery-item-inner" style="aspect-ratio:4/5; background: linear-gradient(170deg,#07325a,#0a6288);">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" opacity="0.4">
+            <path d="M10 55 Q30 48 50 55 Q70 62 80 55" stroke="white" stroke-width="2" fill="none"/>
+            <path d="M30 55 L45 18 L55 55Z" fill="white" opacity="0.9"/>
+            <path d="M55 55 L60 28 L72 55Z" fill="white" opacity="0.6"/>
+            <rect x="25" y="55" width="50" height="10" rx="4" fill="#C9A84C" opacity="0.8"/>
+            <path d="M0 70 Q22 64 45 70 Q68 76 90 70 L90 90 L0 90Z" fill="#0ABFBC" opacity="0.6"/>
+            <circle cx="15" cy="38" r="3" fill="#C9A84C" opacity="0.7"/>
+            <circle cx="75" cy="32" r="3" fill="#C9A84C" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="VIP яхта в открытом Красном море" data-en="VIP yacht in the open Red Sea">VIP яхта в открытом Красном море</p>
+        </div>
+      </div>
+
+      <!-- 11: Обед на борту -->
+      <div class="gallery-item" data-category="tourists" data-aos="fade-up" data-aos-delay="60">
+        <div class="gallery-item-inner" style="aspect-ratio:4/3; background: linear-gradient(160deg,#1a0a00,#3a1a06);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.45">
+            <rect x="12" y="40" width="56" height="28" rx="6" fill="#C9A84C" opacity="0.4"/>
+            <circle cx="26" cy="35" r="10" fill="#ff6b35" opacity="0.7"/>
+            <circle cx="40" cy="33" r="10" fill="#C9A84C" opacity="0.7"/>
+            <circle cx="54" cy="35" r="10" fill="#22a855" opacity="0.7"/>
+            <rect x="18" y="44" width="44" height="4" rx="2" fill="white" opacity="0.4"/>
+            <path d="M5 72 Q20 68 40 72 Q60 76 75 72 L75 80 L5 80Z" fill="#0ABFBC" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Вкусный обед на борту яхты" data-en="Delicious lunch on board the yacht">Вкусный обед на борту яхты</p>
+        </div>
+      </div>
+
+      <!-- 12: Пляж Хургады -->
+      <div class="gallery-item" data-category="sea" data-aos="fade-up" data-aos-delay="120">
+        <div class="gallery-item-inner" style="aspect-ratio:4/5; background: linear-gradient(160deg,#0a4060,#0a8080);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.45">
+            <circle cx="40" cy="18" r="12" fill="#ffcc00" opacity="0.9"/>
+            <path d="M0 50 Q20 44 40 50 Q60 56 80 50 L80 66 L0 66Z" fill="#0ABFBC"/>
+            <path d="M0 58 Q20 52 40 58 Q60 64 80 58 L80 66 L0 66Z" fill="#0ABFBC" opacity="0.7"/>
+            <path d="M0 66 Q20 60 40 66 Q60 72 80 66 L80 80 L0 80Z" fill="#C9A84C" opacity="0.8"/>
+            <path d="M0 74 Q20 70 40 74 Q60 78 80 74 L80 80 L0 80Z" fill="#f0d98e"/>
+            <circle cx="62" cy="44" r="5" fill="white" opacity="0.4"/>
+            <circle cx="20" cy="42" r="4" fill="white" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Пляжи Хургады — лучшее место для отдыха" data-en="Hurghada beaches — the best place to relax">Пляжи Хургады — лучшее место для отдыха</p>
+        </div>
+      </div>
+
+      <!-- 13: Водные развлечения — банан -->
+      <div class="gallery-item" data-category="tourists" data-aos="fade-up" data-aos-delay="0">
+        <div class="gallery-item-inner" style="aspect-ratio:4/3; background: linear-gradient(160deg,#063a60,#0a5090);">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" opacity="0.45">
+            <path d="M10 52 Q30 40 50 45 Q70 50 80 42" stroke="#ffcc00" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <circle cx="22" cy="44" r="6" fill="white"/>
+            <circle cx="38" cy="41" r="6" fill="white"/>
+            <circle cx="54" cy="43" r="6" fill="white"/>
+            <circle cx="70" cy="40" r="6" fill="white"/>
+            <path d="M0 66 Q22 60 45 66 Q68 72 90 66 L90 90 L0 90Z" fill="#0ABFBC" opacity="0.6"/>
+            <path d="M0 74 Q22 68 45 74 Q68 80 90 74 L90 90 L0 90Z" fill="#0ABFBC"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Катание на банане — весёлые эмоции!" data-en="Banana boat — fun and thrills!">Катание на банане — весёлые эмоции!</p>
+        </div>
+      </div>
+
+      <!-- 14: Закат с яхты -->
+      <div class="gallery-item" data-category="sunset" data-aos="fade-up" data-aos-delay="60">
+        <div class="gallery-item-inner" style="aspect-ratio:1/1; background: linear-gradient(170deg,#5a1500,#c04800,#f08020);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.5">
+            <circle cx="40" cy="36" r="18" fill="#ffdd44"/>
+            <path d="M0 56 Q20 48 40 54 Q60 60 80 52 L80 80 L0 80Z" fill="#0a1628" opacity="0.85"/>
+            <path d="M22 56 L18 46 L26 46Z" fill="white" opacity="0.5"/>
+            <path d="M56 54 L52 42 L60 42Z" fill="white" opacity="0.5"/>
+            <path d="M10 64 Q25 60 40 64 Q55 68 70 64 L70 74 L10 74Z" fill="#C9A84C" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Закат с борта яхты — незабываемо" data-en="Sunset from the yacht deck — unforgettable">Закат с борта яхты — незабываемо</p>
+        </div>
+      </div>
+
+      <!-- 15: Рыбы и кораллы -->
+      <div class="gallery-item" data-category="coral" data-aos="fade-up" data-aos-delay="120">
+        <div class="gallery-item-inner" style="aspect-ratio:4/5; background: linear-gradient(160deg,#001428,#002a50);">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" opacity="0.5">
+            <ellipse cx="35" cy="40" rx="20" ry="10" fill="#0ABFBC" opacity="0.8"/>
+            <polygon points="55,40 68,33 68,47" fill="#0ABFBC" opacity="0.8"/>
+            <circle cx="30" cy="37" r="4" fill="white"/>
+            <circle cx="31" cy="36" r="2" fill="#001428"/>
+            <ellipse cx="60" cy="58" rx="15" ry="8" fill="#ff6b35" opacity="0.7"/>
+            <polygon points="75,58 85,52 85,64" fill="#ff6b35" opacity="0.7"/>
+            <circle cx="55" cy="55" r="3" fill="white"/>
+            <circle cx="56" cy="54" r="1.5" fill="#001428"/>
+            <ellipse cx="20" cy="72" rx="6" ry="14" fill="#e84393" opacity="0.6"/>
+            <ellipse cx="45" cy="76" rx="8" ry="10" fill="#8b5cf6" opacity="0.5"/>
+            <ellipse cx="70" cy="74" rx="5" ry="12" fill="#ff6b35" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Тропические рыбки и кораллы" data-en="Tropical fish and coral">Тропические рыбки и кораллы</p>
+        </div>
+      </div>
+
+      <!-- 16: Море вблизи острова -->
+      <div class="gallery-item" data-category="sea" data-aos="fade-up" data-aos-delay="0">
+        <div class="gallery-item-inner" style="aspect-ratio:4/3; background: linear-gradient(160deg,#034060,#0a8fa8,#30d5c8);">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.4">
+            <path d="M0 38 Q10 30 20 38 Q30 46 40 38 Q50 30 60 38 Q70 46 80 38" stroke="white" stroke-width="2.5" fill="none"/>
+            <path d="M0 50 Q10 42 20 50 Q30 58 40 50 Q50 42 60 50 Q70 58 80 50" stroke="white" stroke-width="2" fill="none" opacity="0.6"/>
+            <circle cx="40" cy="18" r="10" fill="#C9A84C" opacity="0.6"/>
+            <path d="M0 62 Q20 56 40 62 Q60 68 80 62 L80 80 L0 80Z" fill="white" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay">
+          <i class="gallery-zoom fas fa-expand-alt"></i>
+          <p class="gallery-caption" data-ru="Кристально чистая вода Красного моря" data-en="Crystal clear Red Sea water">Кристально чистая вода Красного моря</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Пустое состояние (если фильтр ничего не нашёл) -->
+    <div class="gallery-empty" id="galleryEmpty" style="display:none; text-align:center; padding:60px 24px;">
+      <i class="fas fa-image" style="font-size:3rem; color:var(--gray-3); margin-bottom:16px; display:block;"></i>
+      <p data-ru="Фотографии в этой категории появятся скоро" data-en="Photos in this category coming soon" style="color:var(--text-light); font-size:1rem;">Фотографии в этой категории появятся скоро</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BANNER ========== -->
+<section class="cta-banner">
+  <div class="cta-wave-top">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0A1628"/></svg>
+  </div>
+  <div class="cta-content container" data-aos="fade-up">
+    <div class="cta-icon"><i class="fas fa-camera"></i></div>
+    <h2 data-ru="Хотите оказаться в этих фотографиях?" data-en="Want to be in these photos?">Хотите оказаться в этих фотографиях?</h2>
+    <p data-ru="Напишите нам — и мы создадим для вас незабываемые воспоминания!" data-en="Write to us — and we'll create unforgettable memories for you!">Напишите нам — и мы создадим для вас незабываемые воспоминания!</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/201234567890" target="_blank" class="btn-wa-big">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+      </a>
+      <a href="https://t.me/romashkatour" target="_blank" class="btn-tg-big">
+        <i class="fab fa-telegram"></i>
+        <span data-ru="Telegram" data-en="Telegram">Telegram</span>
+      </a>
+      <a href="tel:+201234567890" class="btn-call-big">
+        <i class="fas fa-phone-alt"></i>
+        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+      </a>
+    </div>
+  </div>
+  <div class="cta-wave-bottom">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#0A1628"/></svg>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#F0F9FF"/></svg>
+  </div>
+  <div class="footer-main container">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M6 28 Q14 20 22 25 Q30 30 38 22" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M6 33 Q14 25 22 30 Q30 35 38 27" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="22" cy="15" r="3.5" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+        <div>
+          <span class="footer-logo-name">Romashka<span>Tour</span></span>
+          <span class="footer-logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+        </div>
+      </a>
+      <p class="footer-desc" data-ru="Ваш надёжный партнёр для незабываемых морских приключений на Красном море." data-en="Your reliable partner for unforgettable sea adventures on the Red Sea.">Ваш надёжный партнёр для незабываемых морских приключений на Красном море.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/201234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/romashkatour" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="tel:+201234567890" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-nav-block">
+      <h4 data-ru="Навигация" data-en="Navigation">Навигация</h4>
+      <ul>
+        <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html" data-ru="О нас" data-en="About">О нас</a></li>
+        <li><a href="gallery.html" data-ru="Галерея" data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact-block">
+      <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
+      <ul class="footer-contacts">
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
+        </li>
+        <li>
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+201234567890">+20 123 456 7890</a>
+        </li>
+        <li>
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/201234567890" target="_blank">WhatsApp</a>
+        </li>
+        <li>
+          <i class="fab fa-telegram"></i>
+          <a href="https://t.me/romashkatour" target="_blank">Telegram</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-cta-block">
+      <h4 data-ru="Забронировать тур" data-en="Book a Tour">Забронировать тур</h4>
+      <p data-ru="Пишите нам в любое время — мы всегда онлайн!" data-en="Write to us anytime — we're always online!">Пишите нам в любое время — мы всегда онлайн!</p>
+      <a href="https://wa.me/201234567890" target="_blank" class="btn-footer-wa">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+      </a>
+      <a href="tel:+201234567890" class="btn-footer-call">
+        <i class="fas fa-phone-alt"></i>
+        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 RomashkaTour. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
+      <p data-ru="🏝️ Хургада, Египет — Красное море" data-en="🏝️ Hurghada, Egypt — Red Sea">🏝️ Хургада, Египет — Красное море</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== GALLERY FILTER + STYLES (inline, not touching style.css) ========== -->
+<style>
+  .gallery-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding-bottom: 8px;
+  }
+  .gf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: var(--radius-full);
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--text-light);
+    background: var(--off-white);
+    border: 1.5px solid var(--gray-2);
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+  .gf-btn:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+    background: var(--teal-light);
+  }
+  .gf-btn.active {
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-teal);
+  }
+  .gallery-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .gallery-item.hidden {
+    display: none;
+  }
+</style>
+
+<script src="js/script.js"></script>
+
+<!-- GALLERY FILTER LOGIC -->
+<script>
+  (function() {
+    const filterBtns = document.querySelectorAll('.gf-btn');
+    const items = document.querySelectorAll('.gallery-item[data-category]');
+    const emptyMsg = document.getElementById('galleryEmpty');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter items
+        let visible = 0;
+        items.forEach(item => {
+          const cat = item.dataset.category;
+          const show = filter === 'all' || cat === filter;
+          item.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+
+        // Show/hide empty message
+        if (emptyMsg) emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+
+    // Update filter button text on lang switch
+    // (already handled by data-ru/data-en on the buttons)
+  })();
+</script>
+</body>
+</html>

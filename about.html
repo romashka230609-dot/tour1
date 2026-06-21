@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="О компании RomashkaTour — VIP морские экскурсии в Хургаде с личным гидом Бишоем. Русскоговорящий гид, трансфер от отеля, безопасные экскурсии на Красном море." />
+  <meta name="keywords" content="RomashkaTour о нас, гид Бишой Хургада, морские экскурсии Египет, русский гид Хургада" />
+  <meta name="author" content="RomashkaTour" />
+  <meta property="og:title" content="О нас — RomashkaTour Хургада" />
+  <meta property="og:description" content="Познакомьтесь с командой RomashkaTour. Личный гид Бишой, VIP яхты, Красное море." />
+  <meta property="og:type" content="website" />
+  <title>О нас — RomashkaTour | Гид Бишой, Хургада</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ─── ABOUT PAGE — уникальные стили только для этой страницы ─── */
+
+    /* Блок "Кто мы" */
+    .about-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-intro-visual {
+      position: relative;
+    }
+    .about-intro-visual-bg {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      background: linear-gradient(135deg, var(--teal-light), rgba(201,168,76,0.10));
+      border-radius: var(--radius-xl);
+      z-index: 0;
+    }
+    .about-intro-card {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(160deg, var(--dark), #0a4a6e);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-intro-card-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .aic-logo-icon {
+      width: 90px;
+      height: 90px;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(201,168,76,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .aic-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: -0.02em;
+    }
+    .aic-title span { color: var(--gold); }
+    .aic-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .aic-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      border-radius: 2px;
+    }
+    .aic-stats {
+      display: flex;
+      gap: 28px;
+    }
+    .aic-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .aic-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .aic-stat-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+      text-align: center;
+    }
+    .about-intro-float-1 {
+      position: absolute;
+      top: 24px;
+      right: -18px;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+    }
+    .about-intro-float-1 i { color: var(--gold); font-size: 1rem; }
+    .about-intro-float-1 span { font-size: 0.78rem; font-weight: 700; color: var(--dark); }
+    .about-intro-float-2 {
+      position: absolute;
+      bottom: 40px;
+      right: -18px;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+    }
+    .about-intro-float-2 i { color: var(--teal); font-size: 1rem; }
+    .about-intro-float-2 span { font-size: 0.78rem; font-weight: 700; color: var(--dark); }
+
+    /* Текст "О компании" */
+    .about-intro-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .about-intro-text p {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .about-intro-text .about-lead {
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.75;
+    }
+    .about-highlight-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .about-highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .about-highlight-item i {
+      color: var(--teal);
+      margin-top: 2px;
+      flex-shrink: 0;
+      font-size: 0.95rem;
+    }
+
+    /* ─── Блок Бишоя ─── */
+    .bishoy-section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .bishoy-photo-wrap {
+      position: relative;
+    }
+    .bishoy-photo-decor {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      right: 16px;
+      bottom: 16px;
+      background: linear-gradient(135deg, rgba(10,191,188,0.12), rgba(201,168,76,0.10));
+      border-radius: var(--radius-xl);
+      z-index: 0;
+    }
+    .bishoy-photo-main {
+      position: relative;
+      z-index: 1;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(160deg, #0a1628, #0a4a6e);
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bishoy-photo-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .bishoy-photo-placeholder {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 40px;
+      text-align: center;
+    }
+    .bpp-icon {
+      width: 96px;
+      height: 96px;
+      background: rgba(255,255,255,0.10);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .bpp-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+    }
+    .bpp-role {
+      font-size: 0.82rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .bishoy-badge-cert {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(10,22,40,0.90);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .bishoy-stat-card {
+      position: absolute;
+      z-index: 2;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+    }
+    .bishoy-stat-1 {
+      top: 28px;
+      right: -18px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .bishoy-stat-1 .bsc-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--teal), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bishoy-stat-1 .bsc-label {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .bishoy-stat-2 {
+      top: 130px;
+      right: -22px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .bishoy-stat-2 i { color: var(--gold); }
+
+    /* Текст о Бишое */
+    .bishoy-info {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .bishoy-info p {
+      font-size: 0.98rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .bishoy-quote {
+      background: white;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .bishoy-quote-icon {
+      position: absolute;
+      top: -13px;
+      left: -2px;
+      width: 26px;
+      height: 26px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.65rem;
+    }
+    .bishoy-quote p {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .bishoy-quote cite {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 700;
+      font-style: normal;
+    }
+    .bishoy-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .bishoy-skill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-2);
+      border-radius: var(--radius-md);
+      padding: 11px 14px;
+      font-size: 0.83rem;
+      color: var(--text);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .bishoy-skill-item:hover {
+      background: var(--teal-light);
+      border-color: rgba(10,191,188,0.25);
+    }
+    .bishoy-skill-item i {
+      color: var(--teal);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .bishoy-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ─── Шаги бронирования ─── */
+    .booking-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .booking-steps::before {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: calc(12.5% + 12px);
+      right: calc(12.5% + 12px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      z-index: 0;
+    }
+    .booking-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .bs-num-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--gray-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: var(--transition);
+    }
+    .bs-num-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--gold));
+      z-index: -1;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .booking-step:hover .bs-num-wrap::after { opacity: 1; }
+    .booking-step:hover .bs-num-wrap { border-color: transparent; }
+    .bs-icon {
+      font-size: 1.3rem;
+      color: var(--teal);
+      transition: var(--transition);
+    }
+    .booking-step:hover .bs-icon { color: white; }
+    .bs-num {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--dark);
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bs-title {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .bs-desc {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ─── Финальный CTA внутри страницы (не cta-banner) ─── */
+    .about-final-cta {
+      background: linear-gradient(160deg, var(--dark), #0a3a5a);
+      border-radius: var(--radius-xl);
+      padding: 60px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-final-cta::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(10,191,188,0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .about-final-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .afc-icon {
+      width: 68px;
+      height: 68px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin: 0 auto 20px;
+    }
+    .afc-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+    }
+    .afc-desc {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .afc-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .about-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-intro-visual { max-width: 460px; margin: 0 auto; width: 100%; }
+      .bishoy-section-grid { grid-template-columns: 1fr; gap: 40px; }
+      .bishoy-photo-wrap { max-width: 420px; margin: 0 auto; width: 100%; }
+      .booking-steps { grid-template-columns: repeat(2, 1fr); }
+      .booking-steps::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .about-intro-float-1 { right: 8px; top: 12px; }
+      .about-intro-float-2 { right: 8px; bottom: 20px; }
+      .bishoy-stat-1 { right: 4px; top: 16px; }
+      .bishoy-stat-2 { right: 0; top: 110px; }
+      .bishoy-skills-grid { grid-template-columns: 1fr; }
+      .booking-steps { grid-template-columns: 1fr; }
+      .about-final-cta { padding: 40px 24px; }
+      .afc-btns { flex-direction: column; align-items: center; }
+      .afc-btns a { width: 100%; max-width: 300px; justify-content: center; }
+      .bishoy-actions { flex-direction: column; }
+      .bishoy-actions a { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== PRELOADER ========== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-wave"></div>
+    <div class="preloader-logo">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="2"/>
+        <path d="M10 38 Q20 28 30 35 Q40 42 50 32" stroke="#0ABFBC" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M10 44 Q20 34 30 41 Q40 48 50 38" stroke="#0ABFBC" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="preloader-text" data-ru="Загрузка..." data-en="Loading...">Загрузка...</p>
+  </div>
+</div>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/201234567890" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-pulse"></span>
+</a>
+
+<!-- ========== HEADER / NAV ========== -->
+<header class="header" id="header">
+  <div class="header-inner container">
+
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M5 24 Q12 16 19 21 Q26 26 33 19" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M5 29 Q12 21 19 26 Q26 31 33 24" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="19" cy="13" r="3" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Romashka<span>Tour</span></span>
+        <span class="logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+      </div>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="index.html"      class="nav-link"        data-ru="Главная"   data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" class="nav-link"        data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html"      class="nav-link active" data-ru="О нас"     data-en="About">О нас</a></li>
+        <li><a href="gallery.html"    class="nav-link"        data-ru="Галерея"   data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html"    class="nav-link"        data-ru="Отзывы"    data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html"   class="nav-link"        data-ru="Контакты"  data-en="Contacts">Контакты</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/201234567890" target="_blank" class="btn-nav-wa">
+          <i class="fab fa-whatsapp"></i>
+          <span data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="header-controls">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ru"><span class="flag">🇷🇺</span> RU</button>
+        <button class="lang-btn"        data-lang="en"><span class="flag">🇬🇧</span> EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero"
+  style="background: linear-gradient(160deg, rgba(10,22,40,0.86) 0%, rgba(10,70,100,0.70) 100%),
+         url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80') center/cover no-repeat;">
+  <div class="page-hero-content" data-aos="fade-up">
+    <div class="section-eyebrow" style="justify-content:center; margin-bottom:16px;">
+      <i class="fas fa-anchor"></i>
+      <span data-ru="Наша история" data-en="Our Story">Наша история</span>
+    </div>
+    <h1 data-ru="🌊 О нас" data-en="🌊 About Us">🌊 О нас</h1>
+    <p data-ru="Мы — команда профессионалов, которая делает ваш отдых в Хургаде незабываемым. Личный гид, VIP яхты и искренняя забота о каждом госте." data-en="We are a team of professionals who make your holiday in Hurghada unforgettable. Personal guide, VIP yachts and genuine care for every guest.">
+      Мы — команда профессионалов, которая делает ваш отдых в Хургаде незабываемым. Личный гид, VIP яхты и искренняя забота о каждом госте.
+    </p>
+    <div class="hero-trust" style="margin-top:28px; justify-content:center;">
+      <div class="trust-item">
+        <i class="fas fa-star"></i>
+        <span data-ru="Рейтинг 4.9 / 5.0" data-en="Rating 4.9 / 5.0">Рейтинг 4.9 / 5.0</span>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-users"></i>
+        <span data-ru="1000+ туристов" data-en="1000+ tourists">1000+ туристов</span>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== СТАТИСТИКА ========== -->
+<section class="stats section-pad" style="padding-bottom:0;">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-num" data-count="1000">0</div>
+        <div class="stat-label" data-ru="Довольных туристов" data-en="Happy Tourists">Довольных туристов</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-icon"><i class="fas fa-ship"></i></div>
+        <div class="stat-num" data-count="5">0</div>
+        <div class="stat-label" data-ru="Лет на Красном море" data-en="Years on the Red Sea">Лет на Красном море</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <div class="stat-num" data-count="12">0</div>
+        <div class="stat-label" data-ru="Маршрутов" data-en="Routes">Маршрутов</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-icon"><i class="fas fa-star"></i></div>
+        <div class="stat-num" data-count="4.9" data-decimal="true">0</div>
+        <div class="stat-label" data-ru="Средний рейтинг" data-en="Average Rating">Средний рейтинг</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== О КОМПАНИИ ========== -->
+<section class="section-pad" style="background:#fff; padding-top:72px;">
+  <div class="container">
+    <div class="about-intro-grid">
+
+      <!-- Визуальная карточка -->
+      <div class="about-intro-visual" data-aos="fade-right">
+        <div class="about-intro-visual-bg"></div>
+        <div class="about-intro-card">
+          <div class="about-intro-card-inner">
+            <div class="aic-logo-icon">
+              <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <circle cx="25" cy="25" r="23" stroke="#C9A84C" stroke-width="1.5"/>
+                <path d="M8 32 Q16 22 25 28 Q34 34 42 24" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M8 38 Q16 28 25 34 Q34 40 42 30" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+                <circle cx="25" cy="17" r="4" fill="#C9A84C" opacity="0.9"/>
+              </svg>
+            </div>
+            <div class="aic-title">Romashka<span>Tour</span></div>
+            <div class="aic-subtitle" data-ru="Хургада • Красное море" data-en="Hurghada • Red Sea">Хургада • Красное море</div>
+            <div class="aic-divider"></div>
+            <div class="aic-stats">
+              <div class="aic-stat">
+                <div class="aic-stat-num">1000+</div>
+                <div class="aic-stat-label" data-ru="туристов" data-en="tourists">туристов</div>
+              </div>
+              <div class="aic-stat">
+                <div class="aic-stat-num">5</div>
+                <div class="aic-stat-label" data-ru="лет опыта" data-en="years exp.">лет опыта</div>
+              </div>
+              <div class="aic-stat">
+                <div class="aic-stat-num">4.9</div>
+                <div class="aic-stat-label" data-ru="рейтинг" data-en="rating">рейтинг</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Плавающие карточки -->
+        <div class="about-intro-float-1">
+          <i class="fas fa-trophy"></i>
+          <span data-ru="Лучший гид 2025" data-en="Best Guide 2025">Лучший гид 2025</span>
+        </div>
+        <div class="about-intro-float-2">
+          <i class="fas fa-shield-alt"></i>
+          <span data-ru="Лицензированный тур" data-en="Licensed Tour">Лицензированный тур</span>
+        </div>
+      </div>
+
+      <!-- Текст -->
+      <div class="about-intro-text" data-aos="fade-left">
+        <div class="section-eyebrow">
+          <i class="fas fa-info-circle"></i>
+          <span data-ru="Кто мы" data-en="Who We Are">Кто мы</span>
+        </div>
+        <h2 class="section-title" style="text-align:left;">
+          <span data-ru="RomashkaTour — ваш проводник в мире Красного моря" data-en="RomashkaTour — your gateway to the Red Sea world">RomashkaTour — ваш проводник в мире Красного моря</span>
+        </h2>
+        <p class="about-lead" data-ru="Мы специализируемся на VIP морских экскурсиях в Хургаде. Наша главная цель — подарить каждому гостю незабываемые эмоции, полную безопасность и максимальный комфорт." data-en="We specialize in VIP sea excursions in Hurghada. Our main goal is to give every guest unforgettable emotions, complete safety and maximum comfort.">
+          Мы специализируемся на VIP морских экскурсиях в Хургаде. Наша главная цель — подарить каждому гостю незабываемые эмоции, полную безопасность и максимальный комфорт.
+        </p>
+        <p data-ru="За пять лет работы мы провели более тысячи туристов по лучшим маршрутам Красного моря: от коралловых рифов и райских островов до встреч с дельфинами и романтических закатных прогулок на яхте." data-en="Over five years we have taken more than a thousand tourists along the best routes of the Red Sea: from coral reefs and paradise islands to dolphin encounters and romantic sunset yacht cruises.">
+          За пять лет работы мы провели более тысячи туристов по лучшим маршрутам Красного моря: от коралловых рифов и райских островов до встреч с дельфинами и романтических закатных прогулок на яхте.
+        </p>
+        <div class="about-highlight-row">
+          <div class="about-highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-ru="Работаем только в Хургаде — знаем каждый риф и каждый маршрут." data-en="We operate only in Hurghada — we know every reef and every route.">Работаем только в Хургаде — знаем каждый риф и каждый маршрут.</span>
+          </div>
+          <div class="about-highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-ru="Русскоязычное сопровождение на протяжении всей экскурсии." data-en="Russian-language accompaniment throughout the entire excursion.">Русскоязычное сопровождение на протяжении всей экскурсии.</span>
+          </div>
+          <div class="about-highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-ru="Трансфер от любого отеля Хургады и Эль Гуны — бесплатно." data-en="Transfer from any hotel in Hurghada and El Gouna — free of charge.">Трансфер от любого отеля Хургады и Эль Гуны — бесплатно.</span>
+          </div>
+          <div class="about-highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-ru="Все экскурсии включают питание, снаряжение и напитки." data-en="All excursions include food, equipment and drinks.">Все экскурсии включают питание, снаряжение и напитки.</span>
+          </div>
+          <div class="about-highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-ru="Оплата наличными в день экскурсии — никаких предоплат." data-en="Cash payment on the day of the excursion — no prepayment.">Оплата наличными в день экскурсии — никаких предоплат.</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;">
+          <a href="excursions.html" class="btn-primary">
+            <i class="fas fa-ship"></i>
+            <span data-ru="Наши экскурсии" data-en="Our Excursions">Наши экскурсии</span>
+          </a>
+          <a href="https://wa.me/201234567890" target="_blank" class="btn-outline">
+            <i class="fab fa-whatsapp"></i>
+            <span data-ru="Написать нам" data-en="Write to Us">Написать нам</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== БЛОК ГИДА БИШОЯ ========== -->
+<section class="section-pad" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-user-tie"></i>
+        <span data-ru="Ваш личный гид" data-en="Your Personal Guide">Ваш личный гид</span>
+      </div>
+      <h2 class="section-title" data-ru="👨‍✈️ Познакомьтесь с Бишоем" data-en="👨‍✈️ Meet Bishoy">👨‍✈️ Познакомьтесь с Бишоем</h2>
+      <p class="section-subtitle" data-ru="Профессионал, который сделает ваш день незабываемым" data-en="A professional who will make your day unforgettable">Профессионал, который сделает ваш день незабываемым</p>
+    </div>
+
+    <div class="bishoy-section-grid">
+
+      <!-- Фото -->
+      <div class="bishoy-photo-wrap" data-aos="fade-right">
+        <div class="bishoy-photo-decor"></div>
+        <div class="bishoy-photo-main">
+          <img src="images/boss.jpg" alt="Гид Бишой — RomashkaTour Хургада"
+               onerror="this.style.display='none'; document.getElementById('bAboutPlaceholder').style.display='flex';">
+          <div class="bishoy-photo-placeholder" id="bAboutPlaceholder" style="display:none;">
+            <div class="bpp-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="bpp-name">Bishoy</div>
+            <div class="bpp-role" data-ru="Личный гид • Хургада" data-en="Personal Guide • Hurghada">Личный гид • Хургада</div>
+          </div>
+          <div class="bishoy-badge-cert">
+            <i class="fas fa-certificate"></i>
+            <span data-ru="Официальный гид Хургады" data-en="Official Hurghada Guide">Официальный гид Хургады</span>
+          </div>
+        </div>
+        <!-- Плавающие стат-карточки -->
+        <div class="bishoy-stat-card bishoy-stat-1">
+          <div class="bsc-num">5</div>
+          <div class="bsc-label" data-ru="лет опыта" data-en="years exp.">лет опыта</div>
+        </div>
+        <div class="bishoy-stat-card bishoy-stat-2">
+          <i class="fas fa-star"></i>
+          <span>4.9 / 5.0</span>
+        </div>
+      </div>
+
+      <!-- Информация -->
+      <div class="bishoy-info" data-aos="fade-left">
+        <p data-ru="Бишой — сердце и душа RomashkaTour. Он лично встречает каждого гостя, сопровождает на протяжении всей экскурсии и делает всё возможное, чтобы вы вернулись домой с самыми яркими воспоминаниями." data-en="Bishoy is the heart and soul of RomashkaTour. He personally meets every guest, accompanies them throughout the entire excursion and does everything possible to ensure you return home with the brightest memories.">
+          Бишой — сердце и душа RomashkaTour. Он лично встречает каждого гостя, сопровождает на протяжении всей экскурсии и делает всё возможное, чтобы вы вернулись домой с самыми яркими воспоминаниями.
+        </p>
+        <p data-ru="Свободно говорит по-русски и по-английски. Знает все лучшие коралловые рифы Хургады, маршруты к островам и заповедные места Красного моря. С Бишоем вы увидите то, что не покажут в обычных групповых турах." data-en="Speaks fluent Russian and English. Knows all the best coral reefs in Hurghada, the island routes and protected spots of the Red Sea. With Bishoy you will see things that standard group tours never show.">
+          Свободно говорит по-русски и по-английски. Знает все лучшие коралловые рифы Хургады, маршруты к островам и заповедные места Красного моря. С Бишоем вы увидите то, что не покажут в обычных групповых турах.
+        </p>
+
+        <div class="bishoy-quote">
+          <div class="bishoy-quote-icon"><i class="fas fa-heart"></i></div>
+          <p data-ru="Я лично сопровождаю каждого гостя на протяжении всей поездки и горжусь тем, что люди возвращаются снова и приводят своих друзей. Для меня каждая экскурсия — это не работа, а возможность показать красоту Красного моря." data-en="I personally accompany every guest throughout the entire trip and am proud that people come back again and bring their friends. For me, every excursion is not work — it is an opportunity to show the beauty of the Red Sea.">
+            Я лично сопровождаю каждого гостя на протяжении всей поездки и горжусь тем, что люди возвращаются снова и приводят своих друзей. Для меня каждая экскурсия — это не работа, а возможность показать красоту Красного моря.
+          </p>
+          <cite>— Bishoy, RomashkaTour</cite>
+        </div>
+
+        <!-- Навыки -->
+        <div class="bishoy-skills-grid">
+          <div class="bishoy-skill-item">
+            <i class="fas fa-language"></i>
+            <span data-ru="Русский и английский" data-en="Russian and English">Русский и английский</span>
+          </div>
+          <div class="bishoy-skill-item">
+            <i class="fas fa-mask"></i>
+            <span data-ru="Сертифицированный дайвмастер" data-en="Certified Dive Master">Сертифицированный дайвмастер</span>
+          </div>
+          <div class="bishoy-skill-item">
+            <i class="fas fa-map-marked-alt"></i>
+            <span data-ru="Знает все рифы Хургады" data-en="Knows all Hurghada reefs">Знает все рифы Хургады</span>
+          </div>
+          <div class="bishoy-skill-item">
+            <i class="fas fa-first-aid"></i>
+            <span data-ru="Первая медицинская помощь" data-en="First Aid certified">Первая медицинская помощь</span>
+          </div>
+          <div class="bishoy-skill-item">
+            <i class="fas fa-child"></i>
+            <span data-ru="Работа с детьми" data-en="Experience with children">Работа с детьми</span>
+          </div>
+          <div class="bishoy-skill-item">
+            <i class="fas fa-clock"></i>
+            <span data-ru="Всегда пунктуален" data-en="Always punctual">Всегда пунктуален</span>
+          </div>
+        </div>
+
+        <div class="bishoy-actions">
+          <a href="https://wa.me/201234567890" target="_blank" class="btn-primary">
+            <i class="fab fa-whatsapp"></i>
+            <span data-ru="Написать Бишою" data-en="Message Bishoy">Написать Бишою</span>
+          </a>
+          <a href="https://t.me/BESO_adel" target="_blank" class="btn-outline">
+            <i class="fab fa-telegram"></i>
+            <span data-ru="Telegram" data-en="Telegram">Telegram</span>
+          </a>
+          <a href="tel:+201234567890" class="btn-outline">
+            <i class="fas fa-phone-alt"></i>
+            <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== БЛОК ПРЕИМУЩЕСТВ ========== -->
+<section class="advantages section-pad">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-trophy"></i>
+        <span data-ru="Наши преимущества" data-en="Our Advantages">Наши преимущества</span>
+      </div>
+      <h2 class="section-title" data-ru="Почему туристы выбирают нас?" data-en="Why Do Tourists Choose Us?">Почему туристы выбирают нас?</h2>
+      <p class="section-subtitle" data-ru="Пять причин, которые делают RomashkaTour лучшим выбором в Хургаде" data-en="Five reasons that make RomashkaTour the best choice in Hurghada">Пять причин, которые делают RomashkaTour лучшим выбором в Хургаде</p>
+    </div>
+
+    <div class="adv-grid">
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="adv-icon"><i class="fas fa-language"></i></div>
+        <h3 data-ru="Русскоговорящий гид" data-en="Russian-speaking Guide">Русскоговорящий гид</h3>
+        <p data-ru="Бишой свободно говорит по-русски и по-английски. Никакого языкового барьера — всё будет понятно, комфортно и приятно с первой до последней минуты." data-en="Bishoy speaks fluent Russian and English. No language barrier — everything will be clear, comfortable and enjoyable from the first to the last minute.">Бишой свободно говорит по-русски и по-английски. Никакого языкового барьера — всё будет понятно, комфортно и приятно с первой до последней минуты.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="adv-icon"><i class="fas fa-shuttle-van"></i></div>
+        <h3 data-ru="Трансфер от отеля" data-en="Hotel Transfer">Трансфер от отеля</h3>
+        <p data-ru="Мы забираем вас прямо у дверей отеля. Работаем со всеми отелями Хургады и Эль Гуны. Трансфер включён в стоимость — никаких дополнительных расходов." data-en="We pick you up right at your hotel door. We work with all hotels in Hurghada and El Gouna. Transfer is included in the price — no extra costs.">Мы забираем вас прямо у дверей отеля. Работаем со всеми отелями Хургады и Эль Гуны. Трансфер включён в стоимость — никаких дополнительных расходов.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="adv-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3 data-ru="Безопасные экскурсии" data-en="Safe Excursions">Безопасные экскурсии</h3>
+        <p data-ru="Все экскурсии проводятся с соблюдением норм безопасности. На борту всегда есть спасательные жилеты, аптечка и опытный гид, который следит за каждым участником." data-en="All excursions are conducted in compliance with safety standards. Life jackets, first aid kit and an experienced guide who watches over every participant are always on board.">Все экскурсии проводятся с соблюдением норм безопасности. На борту всегда есть спасательные жилеты, аптечка и опытный гид, который следит за каждым участником.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="adv-icon"><i class="fab fa-whatsapp"></i></div>
+        <h3 data-ru="Поддержка в WhatsApp" data-en="WhatsApp Support">Поддержка в WhatsApp</h3>
+        <p data-ru="Бишой всегда на связи в WhatsApp и Telegram. Ответим на любой вопрос в течение нескольких минут — до, во время и после экскурсии." data-en="Bishoy is always available on WhatsApp and Telegram. We reply to any question within minutes — before, during and after the excursion.">Бишой всегда на связи в WhatsApp и Telegram. Ответим на любой вопрос в течение нескольких минут — до, во время и после экскурсии.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="adv-icon"><i class="fas fa-gem"></i></div>
+        <h3 data-ru="Индивидуальный подход" data-en="Individual Approach">Индивидуальный подход</h3>
+        <p data-ru="Вы не просто «группа туристов» — вы наши гости. Учитываем предпочтения в питании, особые пожелания и интересы каждого члена вашей компании." data-en="You are not just 'a group of tourists' — you are our guests. We accommodate food preferences, special requests and the interests of every member of your party.">Вы не просто «группа туристов» — вы наши гости. Учитываем предпочтения в питании, особые пожелания и интересы каждого члена вашей компании.</p>
+      </div>
+      <div class="adv-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="adv-icon"><i class="fas fa-wallet"></i></div>
+        <h3 data-ru="Честные цены" data-en="Fair Prices">Честные цены</h3>
+        <p data-ru="Никаких скрытых платежей. Всё включено: трансфер, питание, напитки, снаряжение. Оплата наличными в день экскурсии — без предоплат и онлайн-транзакций." data-en="No hidden fees. Everything included: transfer, food, drinks, equipment. Cash payment on the day of the excursion — no prepayments or online transactions.">Никаких скрытых платежей. Всё включено: трансфер, питание, напитки, снаряжение. Оплата наличными в день экскурсии — без предоплат и онлайн-транзакций.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== КАК ЗАБРОНИРОВАТЬ ========== -->
+<section class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-calendar-check"></i>
+        <span data-ru="Бронирование" data-en="Booking">Бронирование</span>
+      </div>
+      <h2 class="section-title" data-ru="Как забронировать экскурсию?" data-en="How to Book an Excursion?">Как забронировать экскурсию?</h2>
+      <p class="section-subtitle" data-ru="Всего 4 простых шага — и вы уже на борту VIP-яхты" data-en="Just 4 simple steps — and you're already on board the VIP yacht">Всего 4 простых шага — и вы уже на борту VIP-яхты</p>
+    </div>
+
+    <div class="booking-steps" data-aos="fade-up">
+
+      <div class="booking-step">
+        <div class="bs-num-wrap">
+          <i class="bs-icon fab fa-whatsapp"></i>
+          <div class="bs-num">1</div>
+        </div>
+        <div class="bs-title" data-ru="Напишите в WhatsApp" data-en="Write on WhatsApp">Напишите в WhatsApp</div>
+        <div class="bs-desc" data-ru="Свяжитесь с Бишоем в WhatsApp или Telegram — ответим в течение нескольких минут." data-en="Contact Bishoy on WhatsApp or Telegram — we reply within minutes.">Свяжитесь с Бишоем в WhatsApp или Telegram — ответим в течение нескольких минут.</div>
+      </div>
+
+      <div class="booking-step">
+        <div class="bs-num-wrap">
+          <i class="bs-icon fas fa-ship"></i>
+          <div class="bs-num">2</div>
+        </div>
+        <div class="bs-title" data-ru="Выберите экскурсию" data-en="Choose an Excursion">Выберите экскурсию</div>
+        <div class="bs-desc" data-ru="Расскажите о своих пожеланиях — Бишой подберёт идеальный вариант для вас и вашей семьи." data-en="Tell us your preferences — Bishoy will find the perfect option for you and your family.">Расскажите о своих пожеланиях — Бишой подберёт идеальный вариант для вас и вашей семьи.</div>
+      </div>
+
+      <div class="booking-step">
+        <div class="bs-num-wrap">
+          <i class="bs-icon fas fa-calendar-check"></i>
+          <div class="bs-num">3</div>
+        </div>
+        <div class="bs-title" data-ru="Подтвердите дату" data-en="Confirm the Date">Подтвердите дату</div>
+        <div class="bs-desc" data-ru="Сообщите название отеля и удобный день — мы подтвердим время трансфера и все детали." data-en="Share your hotel name and preferred day — we will confirm the transfer time and all details.">Сообщите название отеля и удобный день — мы подтвердим время трансфера и все детали.</div>
+      </div>
+
+      <div class="booking-step">
+        <div class="bs-num-wrap">
+          <i class="bs-icon fas fa-umbrella-beach"></i>
+          <div class="bs-num">4</div>
+        </div>
+        <div class="bs-title" data-ru="Наслаждайтесь отдыхом!" data-en="Enjoy Your Holiday!">Наслаждайтесь отдыхом!</div>
+        <div class="bs-desc" data-ru="Бишой встречает вас у отеля. Остальное — коралловые рифы, остров и море — сделает всё само." data-en="Bishoy meets you at the hotel. The rest — coral reefs, island and the sea — takes care of itself.">Бишой встречает вас у отеля. Остальное — коралловые рифы, остров и море — сделает всё само.</div>
+      </div>
+
+    </div>
+
+    <!-- Подсказка об оплате -->
+    <div style="
+      background: linear-gradient(135deg, var(--teal-light), rgba(201,168,76,0.07));
+      border: 1px solid rgba(10,191,188,0.2);
+      border-radius: var(--radius-lg);
+      padding: 18px 28px;
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    " data-aos="fade-up">
+      <i class="fas fa-info-circle" style="font-size:1.3rem; color:var(--teal); flex-shrink:0;"></i>
+      <p style="margin:0; font-size:0.88rem; color:var(--text); line-height:1.65; flex:1; min-width:200px;">
+        <span data-ru="Все цены и детали экскурсий уточняются лично у Бишоя через WhatsApp или Telegram. Оплата наличными в день экскурсии — никаких предоплат." data-en="All prices and excursion details are confirmed personally with Bishoy via WhatsApp or Telegram. Cash payment on the day of the excursion — no prepayment required.">Все цены и детали экскурсий уточняются лично у Бишоя через WhatsApp или Telegram. Оплата наличными в день экскурсии — никаких предоплат.</span>
+      </p>
+      <a href="https://wa.me/201234567890" target="_blank" style="
+        display:inline-flex; align-items:center; gap:7px;
+        background:linear-gradient(135deg,#25d366,#128c7e);
+        color:white; padding:10px 20px;
+        border-radius:var(--radius-full);
+        font-size:0.82rem; font-weight:700;
+        text-decoration:none; transition:var(--transition); flex-shrink:0;
+        white-space:nowrap;
+      ">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Узнать цену" data-en="Ask Price">Узнать цену</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== МИНИ-ОТЗЫВЫ ========== -->
+<section class="mini-reviews section-pad" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-star"></i>
+        <span data-ru="Говорят наши гости" data-en="Our Guests Say">Говорят наши гости</span>
+      </div>
+      <h2 class="section-title" data-ru="Реальные отзывы туристов" data-en="Real Tourist Reviews">Реальные отзывы туристов</h2>
+    </div>
+
+    <div class="review-ticker" data-aos="fade-up">
+      <div class="review-ticker-inner" id="reviewTicker">
+        <div class="r-card">
+          <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p data-ru="Лучшая экскурсия в Хургаде! Бишой — профессионал, говорит по-русски идеально. Остров просто фантастика!" data-en="Best excursion in Hurghada! Bishoy is a true professional, speaks perfect Russian. The island is just fantastic!">Лучшая экскурсия в Хургаде! Бишой — профессионал, говорит по-русски идеально. Остров просто фантастика!</p>
+          <div class="r-author"><div class="r-avatar">А</div><span>Анна М., Москва</span></div>
+        </div>
+        <div class="r-card">
+          <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p data-ru="Снорклинг среди кораллов — нечто невероятное. Бишой знает лучшие места. Рекомендую всем!" data-en="Snorkeling among corals — something incredible. Bishoy knows the best spots. Recommend to everyone!">Снорклинг среди кораллов — нечто невероятное. Бишой знает лучшие места. Рекомендую всем!</p>
+          <div class="r-author"><div class="r-avatar">С</div><span>Сергей К., СПб</span></div>
+        </div>
+        <div class="r-card">
+          <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p data-ru="Поехали с тремя детьми — всё идеально. Трансфер вовремя, яхта удобная, дети счастливы!" data-en="Went with three kids — everything was perfect. Transfer on time, comfortable yacht, children happy!">Поехали с тремя детьми — всё идеально. Трансфер вовремя, яхта удобная, дети счастливы!</p>
+          <div class="r-author"><div class="r-avatar">Е</div><span>Елена В., Казань</span></div>
+        </div>
+        <div class="r-card">
+          <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p data-ru="Bishoy speaks excellent English. VIP yacht, pristine reefs, beautiful island. Best day in Egypt!" data-en="Bishoy speaks excellent English. VIP yacht, pristine reefs, beautiful island. Best day in Egypt!">Bishoy speaks excellent English. VIP yacht, pristine reefs, beautiful island. Best day in Egypt!</p>
+          <div class="r-author"><div class="r-avatar">D</div><span>David L., London</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-cta" data-aos="fade-up">
+      <a href="reviews.html" class="btn-outline">
+        <i class="fas fa-comments"></i>
+        <span data-ru="Читать все отзывы" data-en="Read All Reviews">Читать все отзывы</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ФИНАЛЬНЫЙ БЛОК С КНОПКАМИ ========== -->
+<section class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="about-final-cta" data-aos="fade-up">
+      <div class="afc-icon"><i class="fas fa-anchor"></i></div>
+      <h2 class="afc-title" data-ru="Готовы к приключению?" data-en="Ready for an Adventure?">Готовы к приключению?</h2>
+      <p class="afc-desc" data-ru="Напишите Бишою прямо сейчас — и уже завтра вы окажетесь на борту VIP-яхты, среди коралловых рифов Красного моря!" data-en="Write to Bishoy right now — and tomorrow you'll be on board a VIP yacht, among the coral reefs of the Red Sea!">
+        Напишите Бишою прямо сейчас — и уже завтра вы окажетесь на борту VIP-яхты, среди коралловых рифов Красного моря!
+      </p>
+      <div class="afc-btns">
+        <a href="https://wa.me/201234567890" target="_blank" class="btn-wa-big">
+          <i class="fab fa-whatsapp"></i>
+          <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+        </a>
+        <a href="https://t.me/BESO_adel" target="_blank" class="btn-tg-big">
+          <i class="fab fa-telegram"></i>
+          <span data-ru="Telegram @BESO_adel" data-en="Telegram @BESO_adel">Telegram @BESO_adel</span>
+        </a>
+        <a href="tel:+201234567890" class="btn-call-big">
+          <i class="fas fa-phone-alt"></i>
+          <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#F0F9FF"/></svg>
+  </div>
+
+  <div class="footer-main container">
+
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M6 28 Q14 20 22 25 Q30 30 38 22" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M6 33 Q14 25 22 30 Q30 35 38 27" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="22" cy="15" r="3.5" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+        <div>
+          <span class="footer-logo-name">Romashka<span>Tour</span></span>
+          <span class="footer-logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+        </div>
+      </a>
+      <p class="footer-desc" data-ru="Ваш надёжный партнёр для незабываемых морских приключений на Красном море." data-en="Your reliable partner for unforgettable sea adventures on the Red Sea.">Ваш надёжный партнёр для незабываемых морских приключений на Красном море.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/201234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/BESO_adel"     target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="tel:+201234567890"          aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-nav-block">
+      <h4 data-ru="Навигация" data-en="Navigation">Навигация</h4>
+      <ul>
+        <li><a href="index.html"      data-ru="Главная"   data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html"      data-ru="О нас"     data-en="About">О нас</a></li>
+        <li><a href="gallery.html"    data-ru="Галерея"   data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html"    data-ru="Отзывы"    data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html"   data-ru="Контакты"  data-en="Contacts">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact-block">
+      <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
+      <ul class="footer-contacts">
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
+        </li>
+        <li>
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+201234567890">+20 123 456 7890</a>
+        </li>
+        <li>
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/201234567890" target="_blank">WhatsApp</a>
+        </li>
+        <li>
+          <i class="fab fa-telegram"></i>
+          <a href="https://t.me/BESO_adel" target="_blank">@BESO_adel</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-cta-block">
+      <h4 data-ru="Забронировать тур" data-en="Book a Tour">Забронировать тур</h4>
+      <p data-ru="Пишите нам в любое время — мы всегда онлайн!" data-en="Write to us anytime — we're always online!">Пишите нам в любое время — мы всегда онлайн!</p>
+      <a href="https://wa.me/201234567890" target="_blank" class="btn-footer-wa">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+      </a>
+      <a href="tel:+201234567890" class="btn-footer-call">
+        <i class="fas fa-phone-alt"></i>
+        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 RomashkaTour. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
+      <p data-ru="🏝️ Хургада, Египет — Красное море" data-en="🏝️ Hurghada, Egypt — Red Sea">🏝️ Хургада, Египет — Красное море</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

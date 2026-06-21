@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Отзывы туристов о RomashkaTour — более 1000 довольных гостей. Реальные отзывы о VIP экскурсиях в Хургаде с гидом Бишоем. Рейтинг 4.9/5." />
+  <meta name="keywords" content="отзывы RomashkaTour, отзывы экскурсии Хургада, гид Бишой отзывы, VIP яхта Хургада отзывы" />
+  <meta name="author" content="RomashkaTour" />
+  <meta property="og:title" content="Отзывы — RomashkaTour Хургада" />
+  <meta property="og:description" content="Более 1000 довольных туристов. Реальные отзывы о VIP экскурсиях на Красном море с гидом Бишоем." />
+  <meta property="og:type" content="website" />
+  <title>Отзывы туристов — RomashkaTour | VIP Экскурсии Хургада</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ─── REVIEWS PAGE — только уникальные стили этой страницы ─── */
+
+    /* Общий рейтинг-блок */
+    .rating-summary {
+      background: white;
+      border: 1px solid var(--gray-2);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 48px;
+      align-items: center;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .rating-summary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+    }
+
+    /* Левая часть — большая цифра */
+    .rs-score {
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .rs-big-num {
+      font-family: var(--font-display);
+      font-size: 5.5rem;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--teal), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .rs-stars-row {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      margin: 8px 0 6px;
+    }
+    .rs-stars-row i {
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+    .rs-count {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* Средняя часть — полоски */
+    .rs-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rs-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .rs-bar-label {
+      width: 16px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .rs-bar-star {
+      color: var(--gold);
+      font-size: 0.72rem;
+      flex-shrink: 0;
+    }
+    .rs-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--gray-2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .rs-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      border-radius: 4px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .rs-bar-fill.animated {
+      transform: scaleX(1);
+    }
+    .rs-bar-pct {
+      width: 36px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    /* Правая часть — источники */
+    .rs-sources {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .rs-source-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .rs-source-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .rs-source-icon.wa  { background: rgba(37,211,102,0.12); color: #25d366; }
+    .rs-source-icon.tg  { background: rgba(42,171,238,0.12); color: #2AABEE; }
+    .rs-source-icon.ggl { background: rgba(66,133,244,0.12); color: #4285f4; }
+    .rs-source-meta strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .rs-source-meta span {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* ─── КАРТОЧКИ ОТЗЫВОВ ─── */
+    /* Используем существующий .reviews-grid + .review-card из style.css */
+    /* Дополнительные микростили */
+    .review-card .rc-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    .review-card .rc-verified i {
+      font-size: 0.75rem;
+    }
+    .review-card .rc-helpful {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--gray-2);
+    }
+    .rc-helpful-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 500;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: var(--radius-md);
+      background: var(--off-white);
+      border: 1px solid var(--gray-2);
+      transition: var(--transition-fast);
+    }
+    .rc-helpful-btn:hover,
+    .rc-helpful-btn.liked {
+      background: var(--teal-light);
+      color: var(--teal);
+      border-color: rgba(10,191,188,0.3);
+    }
+    .rc-helpful-btn i { font-size: 0.8rem; }
+
+    /* Карточка-featured (большой отзыв) */
+    .review-card.rc-featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--off-white), white);
+      border: 1px solid rgba(10,191,188,0.2);
+    }
+    .review-card.rc-featured .rc-text {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* ─── СТАТИСТИКА ─── */
+    /* Используем существующий .stats-grid + .stat-card */
+
+    /* ─── БЛОК ПРИЗЫВА ─── */
+    /* Используем существующий .cta-banner */
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .rating-summary {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 24px;
+      }
+      .rs-score { order: 1; }
+      .rs-bars  { order: 2; }
+      .rs-sources { order: 3; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      .review-card.rc-featured { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== PRELOADER ========== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-wave"></div>
+    <div class="preloader-logo">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="2"/>
+        <path d="M10 38 Q20 28 30 35 Q40 42 50 32" stroke="#0ABFBC" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M10 44 Q20 34 30 41 Q40 48 50 38" stroke="#0ABFBC" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="preloader-text" data-ru="Загрузка..." data-en="Loading...">Загрузка...</p>
+  </div>
+</div>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/201234567890" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-pulse"></span>
+</a>
+
+<!-- ========== HEADER / NAV ========== -->
+<header class="header" id="header">
+  <div class="header-inner container">
+
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M5 24 Q12 16 19 21 Q26 26 33 19" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M5 29 Q12 21 19 26 Q26 31 33 24" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="19" cy="13" r="3" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Romashka<span>Tour</span></span>
+        <span class="logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+      </div>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="index.html"      class="nav-link"        data-ru="Главная"   data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" class="nav-link"        data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html"      class="nav-link"        data-ru="О нас"     data-en="About">О нас</a></li>
+        <li><a href="gallery.html"    class="nav-link"        data-ru="Галерея"   data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html"    class="nav-link active" data-ru="Отзывы"    data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html"   class="nav-link"        data-ru="Контакты"  data-en="Contacts">Контакты</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/201234567890" target="_blank" class="btn-nav-wa">
+          <i class="fab fa-whatsapp"></i>
+          <span data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="header-controls">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ru"><span class="flag">🇷🇺</span> RU</button>
+        <button class="lang-btn"        data-lang="en"><span class="flag">🇬🇧</span> EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero"
+  style="background: linear-gradient(160deg, rgba(10,22,40,0.86) 0%, rgba(10,70,100,0.70) 100%),
+         url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=80') center/cover no-repeat;">
+  <div class="page-hero-content" data-aos="fade-up">
+    <div class="section-eyebrow" style="justify-content:center; margin-bottom:16px;">
+      <i class="fas fa-star"></i>
+      <span data-ru="Голоса наших гостей" data-en="Voices of Our Guests">Голоса наших гостей</span>
+    </div>
+    <h1 data-ru="⭐ Отзывы туристов" data-en="⭐ Tourist Reviews">⭐ Отзывы туристов</h1>
+    <p data-ru="Более 1000 реальных историй о незабываемых приключениях на Красном море с гидом Бишоем" data-en="Over 1000 real stories about unforgettable adventures on the Red Sea with guide Bishoy">
+      Более 1000 реальных историй о незабываемых приключениях на Красном море с гидом Бишоем
+    </p>
+    <!-- Hero-trust badges -->
+    <div class="hero-trust" style="margin-top:28px; justify-content:center;">
+      <div class="trust-item">
+        <i class="fas fa-star"></i>
+        <span data-ru="Рейтинг 4.9 / 5.0" data-en="Rating 4.9 / 5.0">Рейтинг 4.9 / 5.0</span>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-users"></i>
+        <span data-ru="1000+ отзывов" data-en="1000+ reviews">1000+ отзывов</span>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-check-circle"></i>
+        <span data-ru="Реальные туристы" data-en="Real tourists">Реальные туристы</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== СТАТИСТИКА ========== -->
+<section class="stats section-pad" style="padding-bottom:0;">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-num" data-count="1000">0</div>
+        <div class="stat-label" data-ru="Довольных туристов" data-en="Happy Tourists">Довольных туристов</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-icon"><i class="fas fa-star"></i></div>
+        <div class="stat-num" data-count="4.9" data-decimal="true">0</div>
+        <div class="stat-label" data-ru="Средний рейтинг" data-en="Average Rating">Средний рейтинг</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-icon"><i class="fas fa-redo-alt"></i></div>
+        <div class="stat-num" data-count="96">0</div>
+        <div class="stat-label" data-ru="% рекомендуют нас" data-en="% Recommend Us">% рекомендуют нас</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-icon"><i class="fas fa-flag"></i></div>
+        <div class="stat-num" data-count="28">0</div>
+        <div class="stat-label" data-ru="Стран-гостей" data-en="Guest Countries">Стран-гостей</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== СВОДНЫЙ РЕЙТИНГ ========== -->
+<section class="section-pad" style="background:#fff; padding-top:48px;">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-eyebrow">
+        <i class="fas fa-chart-bar"></i>
+        <span data-ru="Общий рейтинг" data-en="Overall Rating">Общий рейтинг</span>
+      </div>
+      <h2 class="section-title" data-ru="Нам доверяют туристы со всего мира" data-en="Tourists from Around the World Trust Us">Нам доверяют туристы со всего мира</h2>
+    </div>
+
+    <div class="rating-summary" data-aos="fade-up" id="ratingSummary">
+
+      <!-- Большая оценка -->
+      <div class="rs-score">
+        <div class="rs-big-num">4.9</div>
+        <div class="rs-stars-row">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="rs-count" data-ru="из 5.0 — 1000+ отзывов" data-en="out of 5.0 — 1000+ reviews">из 5.0 — 1000+ отзывов</div>
+      </div>
+
+      <!-- Полосы рейтинга -->
+      <div class="rs-bars">
+        <div class="rs-bar-row">
+          <span class="rs-bar-label">5</span>
+          <i class="fas fa-star rs-bar-star"></i>
+          <div class="rs-bar-track">
+            <div class="rs-bar-fill" style="width:87%;"></div>
+          </div>
+          <span class="rs-bar-pct">87%</span>
+        </div>
+        <div class="rs-bar-row">
+          <span class="rs-bar-label">4</span>
+          <i class="fas fa-star rs-bar-star"></i>
+          <div class="rs-bar-track">
+            <div class="rs-bar-fill" style="width:10%;"></div>
+          </div>
+          <span class="rs-bar-pct">10%</span>
+        </div>
+        <div class="rs-bar-row">
+          <span class="rs-bar-label">3</span>
+          <i class="fas fa-star rs-bar-star"></i>
+          <div class="rs-bar-track">
+            <div class="rs-bar-fill" style="width:2%;"></div>
+          </div>
+          <span class="rs-bar-pct">2%</span>
+        </div>
+        <div class="rs-bar-row">
+          <span class="rs-bar-label">2</span>
+          <i class="fas fa-star rs-bar-star"></i>
+          <div class="rs-bar-track">
+            <div class="rs-bar-fill" style="width:1%;"></div>
+          </div>
+          <span class="rs-bar-pct">1%</span>
+        </div>
+        <div class="rs-bar-row">
+          <span class="rs-bar-label">1</span>
+          <i class="fas fa-star rs-bar-star"></i>
+          <div class="rs-bar-track">
+            <div class="rs-bar-fill" style="width:0%;"></div>
+          </div>
+          <span class="rs-bar-pct">0%</span>
+        </div>
+      </div>
+
+      <!-- Источники -->
+      <div class="rs-sources">
+        <div class="rs-source-item">
+          <div class="rs-source-icon wa"><i class="fab fa-whatsapp"></i></div>
+          <div class="rs-source-meta">
+            <strong data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</strong>
+            <span data-ru="600+ отзывов" data-en="600+ reviews">600+ отзывов</span>
+          </div>
+        </div>
+        <div class="rs-source-item">
+          <div class="rs-source-icon tg"><i class="fab fa-telegram"></i></div>
+          <div class="rs-source-meta">
+            <strong data-ru="Telegram" data-en="Telegram">Telegram</strong>
+            <span data-ru="250+ отзывов" data-en="250+ reviews">250+ отзывов</span>
+          </div>
+        </div>
+        <div class="rs-source-item">
+          <div class="rs-source-icon ggl"><i class="fab fa-google"></i></div>
+          <div class="rs-source-meta">
+            <strong data-ru="Google" data-en="Google">Google</strong>
+            <span data-ru="150+ отзывов" data-en="150+ reviews">150+ отзывов</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.rating-summary -->
+
+    <!-- ─── 8+ ОТЗЫВОВ ─── -->
+    <div class="reviews-grid" id="reviewsGrid">
+
+      <!-- Отзыв 1 — Большой featured -->
+      <div class="review-card rc-featured" data-aos="fade-up" data-aos-delay="0">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#e74c3c,#c0392b); font-size:1.3rem;">А</div>
+          <div class="rc-meta">
+            <div class="rc-name" data-ru="Анна Михайлова" data-en="Anna Mikhailova">Анна Михайлова</div>
+            <div class="rc-origin" data-ru="🇷🇺 Москва, Россия" data-en="🇷🇺 Moscow, Russia">🇷🇺 Москва, Россия</div>
+          </div>
+          <div class="rc-date" data-ru="Март 2026" data-en="March 2026">Март 2026</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Это была лучшая экскурсия за всё время отдыха в Хургаде! Мы ездили с семьёй — двое взрослых и двое детей 4 и 8 лет. Бишой встретил нас у отеля точно по расписанию, всё прошло организованно и спокойно. Яхта оказалась просто великолепной — чистая, просторная, с удобными местами. Снорклинг среди коралловых рифов превзошёл все ожидания: рыбы буквально плавали вокруг нас! Дети были в полном восторге. Обед на борту — рыба, курица, салаты — всё свежее и очень вкусное. Остров — это что-то нереальное: белоснежный песок, прозрачная вода. Отдельное спасибо Бишою за его внимание, заботу и безупречный русский язык. Однозначно рекомендуем всем без исключения!" data-en="This was the best excursion during our entire stay in Hurghada! We went with family — two adults and two children aged 4 and 8. Bishoy met us at the hotel exactly on schedule, everything went smoothly and calmly. The yacht was simply magnificent — clean, spacious, with comfortable seating. Snorkeling among the coral reefs exceeded all expectations: fish were literally swimming around us! The children were absolutely thrilled. Lunch on board — fish, chicken, salads — all fresh and very tasty. The island is something unreal: white sand, crystal clear water. Special thanks to Bishoy for his attention, care and impeccable Russian. We definitely recommend this to everyone without exception!">
+          Это была лучшая экскурсия за всё время отдыха в Хургаде! Мы ездили с семьёй — двое взрослых и двое детей 4 и 8 лет. Бишой встретил нас у отеля точно по расписанию, всё прошло организованно и спокойно. Яхта оказалась просто великолепной — чистая, просторная, с удобными местами. Снорклинг среди коралловых рифов превзошёл все ожидания: рыбы буквально плавали вокруг нас! Дети были в полном восторге. Обед на борту — рыба, курица, салаты — всё свежее и очень вкусное. Остров — это что-то нереальное: белоснежный песок, прозрачная вода. Отдельное спасибо Бишою за его внимание, заботу и безупречный русский язык. Однозначно рекомендуем всем без исключения!
+        </p>
+        <div class="rc-excursion"><i class="fas fa-ship"></i> <span data-ru="Райский остров — VIP тур" data-en="Paradise Island — VIP Tour">Райский остров — VIP тур</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Проверенный отзыв</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Полезно</span>
+            <span class="like-count">42</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 2 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#2980b9,#1a5276);">С</div>
+          <div class="rc-meta">
+            <div class="rc-name" data-ru="Сергей Козлов" data-en="Sergey Kozlov">Сергей Козлов</div>
+            <div class="rc-origin" data-ru="🇷🇺 Санкт-Петербург" data-en="🇷🇺 Saint Petersburg">🇷🇺 Санкт-Петербург</div>
+          </div>
+          <div class="rc-date" data-ru="Февраль 2026" data-en="February 2026">Февраль 2026</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Потрясающее Красное море! Коралловые рифы просто фантастика — такого разнообразия рыб и кораллов я не ожидал увидеть. Бишой — профессионал до мозга костей: знает все места, говорит по-русски, создаёт хорошее настроение. Яхта комфортная, обед вкусный. Остров порадовал белоснежным пляжем. Особенно понравилось катание на банане — весело и задорно! Однозначно рекомендую всем, кто хочет увидеть настоящее Красное море." data-en="Amazing Red Sea! The coral reefs are just fantastic — I didn't expect to see such a variety of fish and corals. Bishoy is a true professional: knows all the spots, speaks Russian, creates a great atmosphere. Comfortable yacht, tasty lunch. The island delighted with its snow-white beach. The banana boat ride was especially fun! I definitely recommend this to everyone who wants to see the real Red Sea.">
+          Потрясающее Красное море! Коралловые рифы просто фантастика — такого разнообразия рыб и кораллов я не ожидал увидеть. Бишой — профессионал до мозга костей: знает все места, говорит по-русски, создаёт хорошее настроение. Яхта комфортная, обед вкусный. Остров порадовал белоснежным пляжем. Особенно понравилось катание на банане — весело и задорно! Однозначно рекомендую всем, кто хочет увидеть настоящее Красное море.
+        </p>
+        <div class="rc-excursion"><i class="fas fa-fish"></i> <span data-ru="Снорклинг — коралловые рифы" data-en="Snorkeling — coral reefs">Снорклинг — коралловые рифы</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Проверенный отзыв</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Полезно</span>
+            <span class="like-count">31</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 3 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#8e44ad,#6c3483);">Е</div>
+          <div class="rc-meta">
+            <div class="rc-name" data-ru="Елена Воронова" data-en="Elena Voronova">Елена Воронова</div>
+            <div class="rc-origin" data-ru="🇷🇺 Казань, Россия" data-en="🇷🇺 Kazan, Russia">🇷🇺 Казань, Россия</div>
+          </div>
+          <div class="rc-date" data-ru="Январь 2026" data-en="January 2026">Январь 2026</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Поехали с мужем и тремя детьми — все остались в абсолютном восторге! Организация на высшем уровне: трансфер вовремя, Бишой встретил с улыбкой. Младший ребёнок (3 года) плыл бесплатно, как и обещали. На яхте очень удобно — есть тень, места для всех. Дети весь день были счастливы. Еда вкусная и разнообразная. Остров — просто рай на земле. Банан — восторг детей! Спасибо огромное RomashkaTour и лично Бишою." data-en="We went with my husband and three children — everyone was absolutely thrilled! Top-level organization: transfer on time, Bishoy met us with a smile. The youngest child (3 years) sailed for free, just as promised. Very comfortable on the yacht — there's shade, seats for everyone. The children were happy all day. The food was tasty and varied. The island is simply paradise on earth. The banana boat was a hit with the kids! Huge thanks to RomashkaTour and Bishoy personally.">
+          Поехали с мужем и тремя детьми — все остались в абсолютном восторге! Организация на высшем уровне: трансфер вовремя, Бишой встретил с улыбкой. Младший ребёнок (3 года) плыл бесплатно, как и обещали. На яхте очень удобно — есть тень, места для всех. Дети весь день были счастливы. Еда вкусная и разнообразная. Остров — просто рай на земле. Банан — восторг детей! Спасибо огромное RomashkaTour и лично Бишою.
+        </p>
+        <div class="rc-excursion"><i class="fas fa-child"></i> <span data-ru="Семейный день на море" data-en="Family Day at Sea">Семейный день на море</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Проверенный отзыв</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Полезно</span>
+            <span class="like-count">28</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 4 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#27ae60,#1e8449);">D</div>
+          <div class="rc-meta">
+            <div class="rc-name">David Lawson</div>
+            <div class="rc-origin">🇬🇧 London, UK</div>
+          </div>
+          <div class="rc-date" data-ru="Декабрь 2025" data-en="December 2025">Декабрь 2025</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Выдающийся опыт! Бишой говорит по-английски так же хорошо, как по-русски. VIP-яхта превзошла ожидания — просторная и чистая. Два места для снорклинга были невероятными — коралловые рифы совершенно нетронуты. Обед был обильным и вкусным. Пляж острова просто поразительный. Я уже порекомендовал RomashkaTour всем своим знакомым, которые едут в Хургаду. Это обязательная экскурсия!" data-en="Outstanding experience! Bishoy speaks English just as well as Russian. The VIP yacht exceeded expectations — spacious and clean. The two snorkeling spots were incredible — the coral reefs are completely pristine. Lunch was generous and delicious. The island beach is simply stunning. I have already recommended RomashkaTour to everyone I know who is going to Hurghada. This is a must-do excursion!">
+          Outstanding experience! Bishoy speaks English just as well as Russian. The VIP yacht exceeded expectations — spacious and clean. The two snorkeling spots were incredible — the coral reefs are completely pristine. Lunch was generous and delicious. The island beach is simply stunning. I have already recommended RomashkaTour to everyone I know who is going to Hurghada. This is a must-do excursion!
+        </p>
+        <div class="rc-excursion"><i class="fas fa-crown"></i> <span data-ru="Райский остров — VIP тур" data-en="Paradise Island — VIP Tour">Paradise Island — VIP Tour</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Verified Review</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Helpful</span>
+            <span class="like-count">24</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 5 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#f39c12,#d68910);">Н</div>
+          <div class="rc-meta">
+            <div class="rc-name" data-ru="Наталья Петрова" data-en="Natalia Petrova">Наталья Петрова</div>
+            <div class="rc-origin" data-ru="🇷🇺 Екатеринбург" data-en="🇷🇺 Yekaterinburg">🇷🇺 Екатеринбург</div>
+          </div>
+          <div class="rc-date" data-ru="Ноябрь 2025" data-en="November 2025">Ноябрь 2025</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Брала экскурсию на закат — это было нечто волшебное! Плыли на яхте, солнце садилось прямо в море, небо стало оранжево-розовым. Бишой рассказывал об истории Хургады, угощал напитками. Романтика высшего уровня. Приехали с мужем по случаю годовщины — лучшего подарка не придумать. Обязательно вернёмся и снова обратимся к Бишою!" data-en="I booked the sunset cruise — it was something magical! We sailed on the yacht, the sun was setting right into the sea, the sky turned orange-pink. Bishoy talked about the history of Hurghada, offered drinks. The romance was top-level. We came with my husband for our anniversary — couldn't think of a better gift. We will definitely come back and contact Bishoy again!">
+          Брала экскурсию на закат — это было нечто волшебное! Плыли на яхте, солнце садилось прямо в море, небо стало оранжево-розовым. Бишой рассказывал об истории Хургады, угощал напитками. Романтика высшего уровня. Приехали с мужем по случаю годовщины — лучшего подарка не придумать. Обязательно вернёмся и снова обратимся к Бишою!
+        </p>
+        <div class="rc-excursion"><i class="fas fa-sun"></i> <span data-ru="Закатная прогулка на яхте" data-en="Sunset Yacht Cruise">Закатная прогулка на яхте</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Проверенный отзыв</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Полезно</span>
+            <span class="like-count">19</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 6 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#1abc9c,#148f77);">M</div>
+          <div class="rc-meta">
+            <div class="rc-name">Maria Schmidt</div>
+            <div class="rc-origin">🇩🇪 Berlin, Germany</div>
+          </div>
+          <div class="rc-date" data-ru="Октябрь 2025" data-en="October 2025">Октябрь 2025</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Великолепная организация и невероятная красота Красного моря! Бишой — очень добрый и знающий гид. Говорит по-английски отлично. Яхта красивая, всё включено. Мы видели черепаху во время снорклинга — это было невероятно! Остров с белым песком и лазурной водой — как на открытке. Рекомендую всем туристам в Хургаде." data-en="Excellent organization and incredible beauty of the Red Sea! Bishoy is a very kind and knowledgeable guide. His English is excellent. Beautiful yacht, everything included. We saw a turtle during snorkeling — it was incredible! The island with white sand and azure water is like a postcard. I recommend it to all tourists in Hurghada.">
+          Excellent organization and incredible beauty of the Red Sea! Bishoy is a very kind and knowledgeable guide. His English is excellent. Beautiful yacht, everything included. We saw a turtle during snorkeling — it was incredible! The island with white sand and azure water is like a postcard. I recommend it to all tourists in Hurghada.
+        </p>
+        <div class="rc-excursion"><i class="fas fa-water"></i> <span data-ru="Снорклинг — коралловые рифы" data-en="Snorkeling — coral reefs">Snorkeling — coral reefs</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Verified Review</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Helpful</span>
+            <span class="like-count">17</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 7 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#e67e22,#ca6f1e);">В</div>
+          <div class="rc-meta">
+            <div class="rc-name" data-ru="Владимир Орлов" data-en="Vladimir Orlov">Владимир Орлов</div>
+            <div class="rc-origin" data-ru="🇷🇺 Новосибирск" data-en="🇷🇺 Novosibirsk">🇷🇺 Новосибирск</div>
+          </div>
+          <div class="rc-date" data-ru="Сентябрь 2025" data-en="September 2025">Сентябрь 2025</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Взял приватную VIP-яхту на компанию из 6 человек — это был незабываемый день! Только наша группа, никаких посторонних. Бишой составил маршрут специально под нас — три разных снорклинг-места. Видели дельфинов! Обед был приготовлен свежайшей рыбой прямо на борту. Закат с яхты — это просто что-то непередаваемое. Стоимость оправдала себя на все 100%. Спасибо!" data-en="I booked a private VIP yacht for a group of 6 people — it was an unforgettable day! Just our group, no strangers. Bishoy designed the route specifically for us — three different snorkeling spots. We saw dolphins! Lunch was cooked with the freshest fish right on board. The sunset from the yacht was simply indescribable. The cost was 100% worth it. Thank you!">
+          Взял приватную VIP-яхту на компанию из 6 человек — это был незабываемый день! Только наша группа, никаких посторонних. Бишой составил маршрут специально под нас — три разных снорклинг-места. Видели дельфинов! Обед был приготовлен свежайшей рыбой прямо на борту. Закат с яхты — это просто что-то непередаваемое. Стоимость оправдала себя на все 100%. Спасибо!
+        </p>
+        <div class="rc-excursion"><i class="fas fa-gem"></i> <span data-ru="Приватная VIP-яхта" data-en="Private VIP Yacht">Приватная VIP-яхта</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Проверенный отзыв</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Полезно</span>
+            <span class="like-count">22</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 8 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#c0392b,#96281b);">О</div>
+          <div class="rc-meta">
+            <div class="rc-name" data-ru="Ольга Смирнова" data-en="Olga Smirnova">Ольга Смирнова</div>
+            <div class="rc-origin" data-ru="🇷🇺 Ростов-на-Дону" data-en="🇷🇺 Rostov-on-Don">🇷🇺 Ростов-на-Дону</div>
+          </div>
+          <div class="rc-date" data-ru="Август 2025" data-en="August 2025">Август 2025</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Уже второй раз в Хургаде и второй раз с RomashkaTour — потому что лучше просто не найти! Бишой помнит постоянных клиентов, встретил как старых друзей. В этот раз взяли экскурсию с дельфинами — удалось поплавать прямо рядом с ними! Такого я не ожидала. Яхта, пунктуальность, еда, обслуживание — всё на высшем уровне. Буду возвращаться каждый год и всегда только к Бишою!" data-en="Already my second time in Hurghada and second time with RomashkaTour — because you simply can't find better! Bishoy remembers regular clients and greeted us like old friends. This time we took the dolphin excursion — we got to swim right next to them! I didn't expect that. The yacht, punctuality, food, service — everything at the highest level. I will come back every year and always only to Bishoy!">
+          Уже второй раз в Хургаде и второй раз с RomashkaTour — потому что лучше просто не найти! Бишой помнит постоянных клиентов, встретил как старых друзей. В этот раз взяли экскурсию с дельфинами — удалось поплавать прямо рядом с ними! Такого я не ожидала. Яхта, пунктуальность, еда, обслуживание — всё на высшем уровне. Буду возвращаться каждый год и всегда только к Бишою!
+        </p>
+        <div class="rc-excursion"><i class="fas fa-water"></i> <span data-ru="Дельфины Хургады" data-en="Hurghada Dolphins">Дельфины Хургады</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Проверенный отзыв</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Полезно</span>
+            <span class="like-count">35</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 9 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#2c3e50,#1a252f);">И</div>
+          <div class="rc-meta">
+            <div class="rc-name" data-ru="Игорь Захаров" data-en="Igor Zakharov">Игорь Захаров</div>
+            <div class="rc-origin" data-ru="🇷🇺 Краснодар" data-en="🇷🇺 Krasnodar">🇷🇺 Краснодар</div>
+          </div>
+          <div class="rc-date" data-ru="Июль 2025" data-en="July 2025">Июль 2025</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Нашёл RomashkaTour через рекомендацию друзей и ни разу не пожалел. Связался с Бишоем в WhatsApp вечером, утром уже были на борту. Коммуникация идеальная — всё чётко, без лишних слов. Экскурсия на райский остров — программа насыщенная: снорклинг дважды, остров, обед, банан. Уставший, но счастливый вернулся в отель. Детей не было, но говорят для семей тоже отлично. Всем рекомендую — Бишой лучший!" data-en="I found RomashkaTour through a friend's recommendation and have never regretted it. I contacted Bishoy on WhatsApp in the evening, and we were already on board in the morning. Communication is perfect — clear, no fuss. The Paradise Island excursion has a packed program: snorkeling twice, island, lunch, banana boat. I returned to the hotel tired but happy. No kids with us, but they say it's great for families too. I recommend everyone — Bishoy is the best!">
+          Нашёл RomashkaTour через рекомендацию друзей и ни разу не пожалел. Связался с Бишоем в WhatsApp вечером, утром уже были на борту. Коммуникация идеальная — всё чётко, без лишних слов. Экскурсия на райский остров — программа насыщенная: снорклинг дважды, остров, обед, банан. Уставший, но счастливый вернулся в отель. Детей не было, но говорят для семей тоже отлично. Всем рекомендую — Бишой лучший!
+        </p>
+        <div class="rc-excursion"><i class="fas fa-ship"></i> <span data-ru="Райский остров — VIP тур" data-en="Paradise Island — VIP Tour">Райский остров — VIP тур</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Проверенный отзыв</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Полезно</span>
+            <span class="like-count">14</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Отзыв 10 -->
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="rc-header">
+          <div class="rc-avatar" style="background: linear-gradient(135deg,#16a085,#0e6655);">T</div>
+          <div class="rc-meta">
+            <div class="rc-name">Thomas Müller</div>
+            <div class="rc-origin">🇦🇹 Vienna, Austria</div>
+          </div>
+          <div class="rc-date" data-ru="Июнь 2025" data-en="June 2025">Июнь 2025</div>
+        </div>
+        <div class="rc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="rc-text" data-ru="Лучшая туристическая услуга, которую я когда-либо получал в Египте! Бишой — невероятно внимательный и профессиональный гид. Его английский великолепен. Яхта была чистой и просторной, еда — свежей и вкусной. Два места для снорклинга были потрясающими — рыбы, кораллы, чистейшая вода. Остров был просто сказочным. Очень благодарен за этот незабываемый день!" data-en="The best tourist service I have ever received in Egypt! Bishoy is an incredibly attentive and professional guide. His English is excellent. The yacht was clean and spacious, the food was fresh and delicious. The two snorkeling spots were breathtaking — fish, corals, crystal clear water. The island was simply magical. Very grateful for this unforgettable day!">
+          The best tourist service I have ever received in Egypt! Bishoy is an incredibly attentive and professional guide. His English is excellent. The yacht was clean and spacious, the food was fresh and delicious. The two snorkeling spots were breathtaking — fish, corals, crystal clear water. The island was simply magical. Very grateful for this unforgettable day!
+        </p>
+        <div class="rc-excursion"><i class="fas fa-crown"></i> <span data-ru="Райский остров — VIP тур" data-en="Paradise Island — VIP Tour">Paradise Island — VIP Tour</span></div>
+        <span class="rc-verified"><i class="fas fa-check-circle"></i> <span data-ru="Проверенный отзыв" data-en="Verified Review">Verified Review</span></span>
+        <div class="rc-helpful">
+          <button class="rc-helpful-btn" onclick="likeReview(this)">
+            <i class="fas fa-thumbs-up"></i>
+            <span data-ru="Полезно" data-en="Helpful">Helpful</span>
+            <span class="like-count">11</span>
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /.reviews-grid -->
+
+  </div>
+</section>
+
+<!-- ========== БЛОК ПРИЗЫВА ========== -->
+<section class="cta-banner">
+  <div class="cta-wave-top">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0A1628"/></svg>
+  </div>
+  <div class="cta-content container" data-aos="fade-up">
+    <div class="cta-icon"><i class="fas fa-heart"></i></div>
+    <h2 data-ru="Станьте частью наших историй!" data-en="Become Part of Our Stories!">Станьте частью наших историй!</h2>
+    <p data-ru="Присоединяйтесь к тысячам счастливых туристов — напишите Бишою прямо сейчас и забронируйте лучшую экскурсию в Хургаде!" data-en="Join thousands of happy tourists — write to Bishoy right now and book the best excursion in Hurghada!">Присоединяйтесь к тысячам счастливых туристов — напишите Бишою прямо сейчас и забронируйте лучшую экскурсию в Хургаде!</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/201234567890" target="_blank" class="btn-wa-big">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+      </a>
+      <a href="https://t.me/romashkatour" target="_blank" class="btn-tg-big">
+        <i class="fab fa-telegram"></i>
+        <span data-ru="Telegram" data-en="Telegram">Telegram</span>
+      </a>
+      <a href="tel:+201234567890" class="btn-call-big">
+        <i class="fas fa-phone-alt"></i>
+        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+      </a>
+    </div>
+  </div>
+  <div class="cta-wave-bottom">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#0A1628"/></svg>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#F0F9FF"/></svg>
+  </div>
+
+  <div class="footer-main container">
+
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M6 28 Q14 20 22 25 Q30 30 38 22" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M6 33 Q14 25 22 30 Q30 35 38 27" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="22" cy="15" r="3.5" fill="#C9A84C" opacity="0.9"/>
+        </svg>
+        <div>
+          <span class="footer-logo-name">Romashka<span>Tour</span></span>
+          <span class="footer-logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+        </div>
+      </a>
+      <p class="footer-desc" data-ru="Ваш надёжный партнёр для незабываемых морских приключений на Красном море." data-en="Your reliable partner for unforgettable sea adventures on the Red Sea.">Ваш надёжный партнёр для незабываемых морских приключений на Красном море.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/201234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/romashkatour"  target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="tel:+201234567890"          aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-nav-block">
+      <h4 data-ru="Навигация" data-en="Navigation">Навигация</h4>
+      <ul>
+        <li><a href="index.html"      data-ru="Главная"   data-en="Home">Главная</a></li>
+        <li><a href="excursions.html" data-ru="Экскурсии" data-en="Excursions">Экскурсии</a></li>
+        <li><a href="about.html"      data-ru="О нас"     data-en="About">О нас</a></li>
+        <li><a href="gallery.html"    data-ru="Галерея"   data-en="Gallery">Галерея</a></li>
+        <li><a href="reviews.html"    data-ru="Отзывы"    data-en="Reviews">Отзывы</a></li>
+        <li><a href="contacts.html"   data-ru="Контакты"  data-en="Contacts">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact-block">
+      <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
+      <ul class="footer-contacts">
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
+        </li>
+        <li>
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+201234567890">+20 123 456 7890</a>
+        </li>
+        <li>
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/201234567890" target="_blank">WhatsApp</a>
+        </li>
+        <li>
+          <i class="fab fa-telegram"></i>
+          <a href="https://t.me/romashkatour" target="_blank">Telegram</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-cta-block">
+      <h4 data-ru="Забронировать тур" data-en="Book a Tour">Забронировать тур</h4>
+      <p data-ru="Пишите нам в любое время — мы всегда онлайн!" data-en="Write to us anytime — we're always online!">Пишите нам в любое время — мы всегда онлайн!</p>
+      <a href="https://wa.me/201234567890" target="_blank" class="btn-footer-wa">
+        <i class="fab fa-whatsapp"></i>
+        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+      </a>
+      <a href="tel:+201234567890" class="btn-footer-call">
+        <i class="fas fa-phone-alt"></i>
+        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 RomashkaTour. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
+      <p data-ru="🏝️ Хургада, Египет — Красное море" data-en="🏝️ Hurghada, Egypt — Red Sea">🏝️ Хургада, Египет — Красное море</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JS ========== -->
+<script src="js/script.js"></script>
+
+<script>
+  /* ─── Анимация полосок рейтинга при появлении ─── */
+  (function () {
+    'use strict';
+
+    var barObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var fills = entry.target.querySelectorAll('.rs-bar-fill');
+          fills.forEach(function (fill) {
+            fill.classList.add('animated');
+          });
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var summary = document.getElementById('ratingSummary');
+      if (summary) barObserver.observe(summary);
+    });
+  })();
+
+  /* ─── Лайк-кнопка на отзывах ─── */
+  function likeReview(btn) {
+    if (btn.classList.contains('liked')) return;
+    btn.classList.add('liked');
+    var countEl = btn.querySelector('.like-count');
+    if (countEl) {
+      countEl.textContent = parseInt(countEl.textContent, 10) + 1;
+    }
+    btn.querySelector('i').className = 'fas fa-thumbs-up';
+  }
+</script>
+
+</body>
+</html>
