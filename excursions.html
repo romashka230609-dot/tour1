@@ -1,1209 +1,1358 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Каталог экскурсий RomashkaTour в Хургаде — морские прогулки, сафари, дайвинг, VIP-туры, Луксор, Каир. Цены у гида Бешо в WhatsApp." />
-  <meta name="keywords" content="экскурсии Хургада каталог, Orange Bay, Paradise Island, дайвинг Хургада, сафари Египет, Луксор, Каир тур" />
-  <meta name="author" content="RomashkaTour" />
-  <meta property="og:title" content="Каталог экскурсий — RomashkaTour Хургада" />
-  <meta property="og:description" content="19 экскурсий в Хургаде. Все цены — лично у гида Бешо в WhatsApp." />
-  <meta property="og:type" content="website" />
-  <title>Каталог экскурсий — RomashkaTour | Хургада 2026</title>
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Каталог из 21 экскурсии RomashkaTour в Хургаде — морские прогулки, сафари, дайвинг, катание на верблюдах, спа и массаж, VIP-туры, Луксор, Каир. Цены у гида Бешо в WhatsApp." />
+<meta name="keywords" content="экскурсии Хургада каталог, Orange Bay, Paradise Island, дайвинг Хургада, сафари Египет, катание на верблюдах Хургада, спа массаж Хургада, Camel Riding Hurghada, Spa Hurghada, Луксор, Каир тур" />
+<meta name="author" content="RomashkaTour" />
+<meta property="og:title" content="Каталог экскурсий — RomashkaTour Хургада" />
+<meta property="og:description" content="21 экскурсия в Хургаде: море, сафари, дайвинг, верблюды, спа и VIP-туры. Все цены — лично у гида Бешо в WhatsApp." />
+<meta property="og:type" content="website" />
+<title>Каталог экскурсий — RomashkaTour | Хургада 2026</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
 
-  <!-- Минимальные стили только для блоков, которых нет в style.css -->
-  <style>
-    /* Фильтр — нет аналога в style.css */
-    .cat-filter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-    .cat-filter-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 18px;
-      border-radius: var(--radius-full);
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-light);
-      background: var(--off-white);
-      border: 1.5px solid var(--gray-2);
-      cursor: pointer;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .cat-filter-btn:hover { color: var(--teal); border-color: var(--teal); background: var(--teal-light); }
-    .cat-filter-btn.active {
-      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-      color: white;
-      border-color: transparent;
-      box-shadow: var(--shadow-teal);
-    }
+<!-- Минимальные стили только для блоков, которых нет в style.css -->
+<style>
+/* Фильтр — нет аналога в style.css */
+.cat-filter {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+justify-content: center;
+margin-bottom: 40px;
+}
+.cat-filter-btn {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 8px 18px;
+border-radius: var(--radius-full);
+font-family: var(--font-body);
+font-size: 0.82rem;
+font-weight: 600;
+color: var(--text-light);
+background: var(--off-white);
+border: 1.5px solid var(--gray-2);
+cursor: pointer;
+transition: var(--transition);
+white-space: nowrap;
+}
+.cat-filter-btn:hover { color: var(--teal); border-color: var(--teal); background: var(--teal-light); }
+.cat-filter-btn.active {
+background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+color: white;
+border-color: transparent;
+box-shadow: var(--shadow-teal);
+}
 
-    /* Скрытая карточка при фильтрации */
-    .exc-card.is-hidden { display: none; }
+/* Скрытая карточка при фильтрации */
+.exc-card.is-hidden { display: none; }
 
-    /* Блок основной информации — расширение .exc-card-meta */
-    .exc-info-table {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .exc-info-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      line-height: 1.5;
-    }
-    .exc-info-row i {
-      color: var(--teal);
-      font-size: 0.78rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-      width: 14px;
-      text-align: center;
-    }
-    .exc-info-row span { color: var(--text); }
-    .exc-info-row strong { color: var(--dark); font-weight: 600; }
+/* Блок основной информации — расширение .exc-card-meta */
+.exc-info-table {
+display: flex;
+flex-direction: column;
+gap: 6px;
+margin-bottom: 16px;
+}
+.exc-info-row {
+display: flex;
+align-items: flex-start;
+gap: 8px;
+font-size: 0.8rem;
+color: var(--text-light);
+line-height: 1.5;
+}
+.exc-info-row i {
+color: var(--teal);
+font-size: 0.78rem;
+margin-top: 2px;
+flex-shrink: 0;
+width: 14px;
+text-align: center;
+}
+.exc-info-row span { color: var(--text); }
+.exc-info-row strong { color: var(--dark); font-weight: 600; }
 
-    /* Блок цены — красивая рамка */
-    .exc-price-block {
-      background: linear-gradient(135deg, var(--off-white), rgba(201,168,76,0.05));
-      border: 1.5px dashed rgba(201,168,76,0.5);
-      border-radius: var(--radius-md);
-      padding: 14px 16px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .exc-price-left { display: flex; flex-direction: column; gap: 2px; }
-    .exc-price-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .exc-price-value {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--dark);
-    }
-    .exc-price-note {
-      font-size: 0.68rem;
-      color: var(--text-light);
-      font-style: italic;
-    }
-    .exc-price-icon {
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--dark);
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
+/* Блок цены — красивая рамка */
+.exc-price-block {
+background: linear-gradient(135deg, var(--off-white), rgba(201,168,76,0.05));
+border: 1.5px dashed rgba(201,168,76,0.5);
+border-radius: var(--radius-md);
+padding: 14px 16px;
+margin-bottom: 16px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+}
+.exc-price-left { display: flex; flex-direction: column; gap: 2px; }
+.exc-price-label {
+font-size: 0.68rem;
+font-weight: 700;
+color: var(--text-light);
+text-transform: uppercase;
+letter-spacing: 0.1em;
+}
+.exc-price-value {
+font-family: var(--font-display);
+font-size: 1rem;
+font-weight: 700;
+color: var(--dark);
+}
+.exc-price-note {
+font-size: 0.68rem;
+color: var(--text-light);
+font-style: italic;
+}
+.exc-price-icon {
+width: 36px;
+height: 36px;
+background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+border-radius: var(--radius-sm);
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--dark);
+font-size: 0.9rem;
+flex-shrink: 0;
+}
 
-    /* Кнопка WhatsApp для карточки */
-    .exc-card-btn-wa {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      width: 100%;
-      justify-content: center;
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      color: white;
-      padding: 12px;
-      border-radius: var(--radius-md);
-      font-size: 0.85rem;
-      font-weight: 700;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-    .exc-card-btn-wa:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
-    }
-    .exc-card-btn-wa .wa-sub {
-      font-size: 0.7rem;
-      font-weight: 400;
-      opacity: 0.85;
-      display: block;
-      text-align: center;
-      line-height: 1;
-    }
-    .exc-card-btn-wa-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
+/* Кнопка WhatsApp для карточки */
+.exc-card-btn-wa {
+display: flex;
+align-items: center;
+gap: 8px;
+width: 100%;
+justify-content: center;
+background: linear-gradient(135deg, #25d366, #128c7e);
+color: white;
+padding: 12px;
+border-radius: var(--radius-md);
+font-size: 0.85rem;
+font-weight: 700;
+transition: var(--transition);
+text-decoration: none;
+}
+.exc-card-btn-wa:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+}
+.exc-card-btn-wa .wa-sub {
+font-size: 0.7rem;
+font-weight: 400;
+opacity: 0.85;
+display: block;
+text-align: center;
+line-height: 1;
+}
+.exc-card-btn-wa-inner {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2px;
+}
 
-    /* Цветовые фоны для фото карточек — уникальные для каждой экскурсии */
-    .bg-sea-teal    { background: linear-gradient(145deg, #054a7a 0%, #0a82a0 60%, #12b5c8 100%); }
-    .bg-sea-blue    { background: linear-gradient(145deg, #083a70 0%, #0a6090 60%, rgba(10,191,188,.35) 100%); }
-    .bg-sea-cyan    { background: linear-gradient(145deg, #063a60 0%, #0a7890 70%, #20c8d0 100%); }
-    .bg-sea-deep    { background: linear-gradient(145deg, #041828 0%, #073050 60%, #0a5070 100%); }
-    .bg-sea-night   { background: linear-gradient(145deg, #020e20 0%, #041830 60%, #063a60 100%); }
-    .bg-sea-glass   { background: linear-gradient(145deg, #07305a 0%, #0a5888 60%, #0a90a8 100%); }
-    .bg-sky-blue    { background: linear-gradient(145deg, #1a3a70 0%, #2868c0 60%, #40a0e0 100%); }
-    .bg-desert-red  { background: linear-gradient(145deg, #3a1800 0%, #782800 60%, #c04010 100%); }
-    .bg-desert-warm { background: linear-gradient(145deg, #2a1400 0%, #603000 60%, #a05820 100%); }
-    .bg-purple      { background: linear-gradient(145deg, #1a0a30 0%, #3a1860 60%, #6a3898 100%); }
-    .bg-aqua-dark   { background: linear-gradient(145deg, #031420 0%, #052038 60%, #0a4060 100%); }
-    .bg-ocean-mid   { background: linear-gradient(145deg, #083060 0%, #0a5090 60%, #0a80b0 100%); }
-    .bg-amber       { background: linear-gradient(145deg, #1a0800 0%, #3a1400 60%, #6a2800 100%); }
-    .bg-amber-warm  { background: linear-gradient(145deg, #1a0a04 0%, #3a1808 60%, #7a3010 100%); }
-    .bg-sand        { background: linear-gradient(145deg, #101800 0%, #282e00 60%, #504800 100%); }
-    .bg-earth       { background: linear-gradient(145deg, #180a00 0%, #382000 60%, #703a00 100%); }
-    .bg-violet      { background: linear-gradient(145deg, #200630 0%, #401060 60%, #701898 100%); }
-    .bg-slate       { background: linear-gradient(145deg, #0a1628 0%, #112240 60%, #1a3050 100%); }
+/* Цветовые фоны для фото карточек — уникальные для каждой экскурсии */
+.bg-sea-teal { background: linear-gradient(145deg, #054a7a 0%, #0a82a0 60%, #12b5c8 100%); }
+.bg-sea-blue { background: linear-gradient(145deg, #083a70 0%, #0a6090 60%, rgba(10,191,188,.35) 100%); }
+.bg-sea-cyan { background: linear-gradient(145deg, #063a60 0%, #0a7890 70%, #20c8d0 100%); }
+.bg-sea-deep { background: linear-gradient(145deg, #041828 0%, #073050 60%, #0a5070 100%); }
+.bg-sea-night { background: linear-gradient(145deg, #020e20 0%, #041830 60%, #063a60 100%); }
+.bg-sea-glass { background: linear-gradient(145deg, #07305a 0%, #0a5888 60%, #0a90a8 100%); }
+.bg-sky-blue { background: linear-gradient(145deg, #1a3a70 0%, #2868c0 60%, #40a0e0 100%); }
+.bg-desert-red { background: linear-gradient(145deg, #3a1800 0%, #782800 60%, #c04010 100%); }
+.bg-desert-warm { background: linear-gradient(145deg, #2a1400 0%, #603000 60%, #a05820 100%); }
+.bg-purple { background: linear-gradient(145deg, #1a0a30 0%, #3a1860 60%, #6a3898 100%); }
+.bg-aqua-dark { background: linear-gradient(145deg, #031420 0%, #052038 60%, #0a4060 100%); }
+.bg-ocean-mid { background: linear-gradient(145deg, #083060 0%, #0a5090 60%, #0a80b0 100%); }
+.bg-amber { background: linear-gradient(145deg, #1a0800 0%, #3a1400 60%, #6a2800 100%); }
+.bg-amber-warm { background: linear-gradient(145deg, #1a0a04 0%, #3a1808 60%, #7a3010 100%); }
+.bg-sand { background: linear-gradient(145deg, #101800 0%, #282e00 60%, #504800 100%); }
+.bg-earth { background: linear-gradient(145deg, #180a00 0%, #382000 60%, #703a00 100%); }
+.bg-violet { background: linear-gradient(145deg, #200630 0%, #401060 60%, #701898 100%); }
+.bg-slate { background: linear-gradient(145deg, #0a1628 0%, #112240 60%, #1a3050 100%); }
+/* ── НОВЫЕ ФОНЫ ──────────────────────────────── */
+/* Camel Riding — тёплые песочно-закатные оттенки пустыни */
+.bg-camel-sand { background: linear-gradient(145deg, #2e1a06 0%, #8a5a20 55%, #e0a347 100%); }
+/* Luxury Spa — премиальная атмосфера, золотые акценты, ощущение wellness */
+.bg-spa-gold { background: linear-gradient(145deg, #150f06 0%, #4a3618 55%, #c9a84c 100%); }
 
-    /* Количество найденных */
-    .cat-count {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      text-align: center;
-      margin-bottom: 24px;
-    }
-    .cat-count strong { color: var(--teal); font-weight: 700; }
+/* Количество найденных */
+.cat-count {
+font-size: 0.82rem;
+color: var(--text-light);
+text-align: center;
+margin-bottom: 24px;
+}
+.cat-count strong { color: var(--teal); font-weight: 700; }
 
-    @media (max-width: 480px) {
-      .exc-price-block { flex-direction: column; align-items: flex-start; gap: 8px; }
-    }
-  </style>
+@media (max-width: 480px) {
+.exc-price-block { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+</style>
+
+<!-- ═══ SEO: Schema.org для новых экскурсий ═══ -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "TouristTrip",
+"name": "Camel Riding in Hurghada",
+"alternateName": "Катание на верблюдах в Хургаде",
+"description": "Authentic Arabian desert adventure with a camel ride through breathtaking landscapes near Hurghada, photo stops and panoramic desert views. Hotel transfer included.",
+"image": "https://romashkatour.example/img/camel-riding.jpg",
+"touristType": ["Families", "Couples", "Groups"],
+"itinerary": {
+"@type": "ItemList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Hotel transfer" },
+{ "@type": "ListItem", "position": 2, "name": "Camel riding experience" },
+{ "@type": "ListItem", "position": 3, "name": "Photo stops" },
+{ "@type": "ListItem", "position": 4, "name": "Panoramic desert views" }
+]
+},
+"provider": {
+"@type": "TravelAgency",
+"name": "RomashkaTour",
+"areaServed": "Hurghada, Egypt",
+"url": "https://wa.me/201234567890"
+},
+"offers": {
+"@type": "Offer",
+"availability": "https://schema.org/InStock",
+"priceCurrency": "USD",
+"url": "https://wa.me/201234567890",
+"description": "Цена уточняется у гида Бешо в WhatsApp / Price on request via WhatsApp"
+}
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "TouristTrip",
+"name": "Luxury Massage & Spa Program",
+"alternateName": "Роскошная массажная программа",
+"description": "Two hours of complete relaxation at one of Hurghada's premium spa centers: sauna, steam bath, jacuzzi and a 60-minute full-body aroma oil massage. Hotel transfer included.",
+"image": "https://romashkatour.example/img/luxury-spa.jpg",
+"touristType": ["Couples", "Wellness travellers", "Individual guests"],
+"itinerary": {
+"@type": "ItemList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Sauna – 20 min" },
+{ "@type": "ListItem", "position": 2, "name": "Steam bath – 20 min" },
+{ "@type": "ListItem", "position": 3, "name": "Jacuzzi – 20 min" },
+{ "@type": "ListItem", "position": 4, "name": "Full body aroma oil massage – 60 min" }
+]
+},
+"provider": {
+"@type": "TravelAgency",
+"name": "RomashkaTour",
+"areaServed": "Hurghada, Egypt",
+"url": "https://wa.me/201234567890"
+},
+"offers": {
+"@type": "Offer",
+"availability": "https://schema.org/InStock",
+"priceCurrency": "USD",
+"url": "https://wa.me/201234567890",
+"description": "Цена уточняется у гида Бешо в WhatsApp / Price on request via WhatsApp"
+}
+}
+</script>
 </head>
 <body>
 
 <!-- PRELOADER -->
 <div class="preloader" id="preloader">
-  <div class="preloader-inner">
-    <div class="preloader-wave"></div>
-    <div class="preloader-logo">
-      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="2"/>
-        <path d="M10 38 Q20 28 30 35 Q40 42 50 32" stroke="#0ABFBC" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M10 44 Q20 34 30 41 Q40 48 50 38" stroke="#0ABFBC" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
-      </svg>
-    </div>
-    <p class="preloader-text" data-ru="Загрузка..." data-en="Loading...">Загрузка...</p>
-  </div>
+<div class="preloader-inner">
+<div class="preloader-wave"></div>
+<div class="preloader-logo">
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+<circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="2"/>
+<path d="M10 38 Q20 28 30 35 Q40 42 50 32" stroke="#0ABFBC" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M10 44 Q20 34 30 41 Q40 48 50 38" stroke="#0ABFBC" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+</svg>
+</div>
+<p class="preloader-text" data-ru="Загрузка..." data-en="Loading...">Загрузка...</p>
+</div>
 </div>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/201234567890" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-  <span class="whatsapp-pulse"></span>
+<i class="fab fa-whatsapp"></i>
+<span class="whatsapp-pulse"></span>
 </a>
 
 <!-- HEADER -->
 <header class="header" id="header">
-  <div class="header-inner container">
-    <a href="index.html" class="logo">
-      <div class="logo-icon">
-        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-          <circle cx="19" cy="19" r="18" stroke="#C9A84C" stroke-width="1.5"/>
-          <path d="M5 24 Q12 16 19 21 Q26 26 33 19" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M5 29 Q12 21 19 26 Q26 31 33 24" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-          <circle cx="19" cy="13" r="3" fill="#C9A84C" opacity="0.9"/>
-        </svg>
-      </div>
-      <div class="logo-text">
-        <span class="logo-name">Romashka<span>Tour</span></span>
-        <span class="logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
-      </div>
-    </a>
+<div class="header-inner container">
+<a href="index.html" class="logo">
+<div class="logo-icon">
+<svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+<circle cx="19" cy="19" r="18" stroke="#C9A84C" stroke-width="1.5"/>
+<path d="M5 24 Q12 16 19 21 Q26 26 33 19" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M5 29 Q12 21 19 26 Q26 31 33 24" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+<circle cx="19" cy="13" r="3" fill="#C9A84C" opacity="0.9"/>
+</svg>
+</div>
+<div class="logo-text">
+<span class="logo-name">Romashka<span>Tour</span></span>
+<span class="logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+</div>
+</a>
 
-    <nav class="nav" id="nav">
-      <ul class="nav-list">
-        <li><a href="index.html"       class="nav-link"        data-ru="Главная"            data-en="Home">Главная</a></li>
-        <li><a href="excursions.html"  class="nav-link active" data-ru="Каталог экскурсий"  data-en="Excursions">Каталог экскурсий</a></li>
-        <li><a href="about.html"       class="nav-link"        data-ru="О нас"              data-en="About">О нас</a></li>
-        <li><a href="gallery.html"     class="nav-link"        data-ru="Галерея"            data-en="Gallery">Галерея</a></li>
-        <li><a href="reviews.html"     class="nav-link"        data-ru="Отзывы"             data-en="Reviews">Отзывы</a></li>
-        <li><a href="contacts.html"    class="nav-link"        data-ru="Контакты"           data-en="Contacts">Контакты</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="https://wa.me/201234567890" target="_blank" class="btn-nav-wa">
-          <i class="fab fa-whatsapp"></i>
-          <span data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</span>
-        </a>
-      </div>
-    </nav>
+<nav class="nav" id="nav">
+<ul class="nav-list">
+<li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
+<li><a href="excursions.html" class="nav-link active" data-ru="Каталог экскурсий" data-en="Excursions">Каталог экскурсий</a></li>
+<li><a href="about.html" class="nav-link" data-ru="О нас" data-en="About">О нас</a></li>
+<li><a href="gallery.html" class="nav-link" data-ru="Галерея" data-en="Gallery">Галерея</a></li>
+<li><a href="reviews.html" class="nav-link" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+<li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+</ul>
+<div class="nav-cta">
+<a href="https://wa.me/201234567890" target="_blank" class="btn-nav-wa">
+<i class="fab fa-whatsapp"></i>
+<span data-ru="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+</a>
+</div>
+</nav>
 
-    <div class="header-controls">
-      <div class="lang-switcher" id="langSwitcher">
-        <button class="lang-btn active" data-lang="ru"><span class="flag">🇷🇺</span> RU</button>
-        <button class="lang-btn"        data-lang="en"><span class="flag">🇬🇧</span> EN</button>
-      </div>
-      <button class="burger" id="burger" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
+<div class="header-controls">
+<div class="lang-switcher" id="langSwitcher">
+<button class="lang-btn active" data-lang="ru"><span class="flag">🇷🇺</span> RU</button>
+<button class="lang-btn" data-lang="en"><span class="flag">🇬🇧</span> EN</button>
+</div>
+<button class="burger" id="burger" aria-label="Меню">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
 </header>
 
 <!-- PAGE HERO (существующий класс .page-hero из style.css) -->
 <section class="page-hero">
-  <div class="page-hero-content" data-aos="fade-up">
-    <div class="section-eyebrow" style="justify-content:center; margin-bottom:14px;">
-      <i class="fas fa-map-marked-alt"></i>
-      <span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
-    </div>
-    <h1 data-ru="Каталог экскурсий" data-en="Excursion Catalogue">Каталог экскурсий</h1>
-    <p data-ru="Морские прогулки, сафари, дайвинг, VIP-туры и исторические путешествия — выберите идеальный тур и уточните цену у Бешо в WhatsApp" data-en="Sea trips, safari, diving, VIP tours and historical journeys — choose your perfect tour and ask Besho for the price on WhatsApp">
-      Морские прогулки, сафари, дайвинг, VIP-туры и исторические путешествия — выберите идеальный тур и уточните цену у Бешо в WhatsApp
-    </p>
-    <!-- Trust badges из hero-trust -->
-    <div class="hero-trust" style="margin-top:20px; justify-content:center;">
-      <div class="trust-item"><i class="fas fa-list-ul"></i><span data-ru="19 экскурсий" data-en="19 excursions">19 экскурсий</span></div>
-      <div class="trust-item"><i class="fas fa-language"></i><span data-ru="Русский гид Бешо" data-en="Russian guide Besho">Русский гид Бешо</span></div>
-      <div class="trust-item"><i class="fab fa-whatsapp"></i><span data-ru="Цены в WhatsApp" data-en="Prices on WhatsApp">Цены в WhatsApp</span></div>
-    </div>
-  </div>
-  <div class="page-hero-wave">
-    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/></svg>
-  </div>
+<div class="page-hero-content" data-aos="fade-up">
+<div class="section-eyebrow" style="justify-content:center; margin-bottom:14px;">
+<i class="fas fa-map-marked-alt"></i>
+<span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
+</div>
+<h1 data-ru="Каталог экскурсий" data-en="Excursion Catalogue">Каталог экскурсий</h1>
+<p data-ru="Морские прогулки, сафари, дайвинг, катание на верблюдах, спа-программы, VIP-туры и исторические путешествия — выберите идеальный тур и уточните цену у Бешо в WhatsApp" data-en="Sea trips, safari, diving, camel riding, spa programs, VIP tours and historical journeys — choose your perfect tour and ask Besho for the price on WhatsApp">
+Морские прогулки, сафари, дайвинг, катание на верблюдах, спа-программы, VIP-туры и исторические путешествия — выберите идеальный тур и уточните цену у Бешо в WhatsApp
+</p>
+<!-- Trust badges из hero-trust -->
+<div class="hero-trust" style="margin-top:20px; justify-content:center;">
+<div class="trust-item"><i class="fas fa-list-ul"></i><span data-ru="21 экскурсия" data-en="21 excursions">21 экскурсия</span></div>
+<div class="trust-item"><i class="fas fa-language"></i><span data-ru="Русский гид Бешо" data-en="Russian guide Besho">Русский гид Бешо</span></div>
+<div class="trust-item"><i class="fab fa-whatsapp"></i><span data-ru="Цены в WhatsApp" data-en="Prices on WhatsApp">Цены в WhatsApp</span></div>
+</div>
+</div>
+<div class="page-hero-wave">
+<svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/></svg>
+</div>
 </section>
 
 <!-- КАТАЛОГ -->
 <section class="section-pad" style="background: var(--white);">
-  <div class="container">
+<div class="container">
 
-    <!-- ФИЛЬТР -->
-    <div class="cat-filter" id="catFilter" data-aos="fade-up">
-      <button class="cat-filter-btn active" data-filter="all">
-        <i class="fas fa-border-all"></i>
-        <span data-ru="Все (19)" data-en="All (19)">Все (19)</span>
-      </button>
-      <button class="cat-filter-btn" data-filter="sea">
-        <i class="fas fa-water"></i>
-        <span data-ru="🌊 Морские" data-en="🌊 Sea">🌊 Морские</span>
-      </button>
-      <button class="cat-filter-btn" data-filter="vip">
-        <i class="fas fa-crown"></i>
-        <span data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
-      </button>
-      <button class="cat-filter-btn" data-filter="safari">
-        <i class="fas fa-mountain"></i>
-        <span data-ru="🏜 Сафари" data-en="🏜 Safari">🏜 Сафари</span>
-      </button>
-      <button class="cat-filter-btn" data-filter="history">
-        <i class="fas fa-landmark"></i>
-        <span data-ru="🏛 История" data-en="🏛 History">🏛 История</span>
-      </button>
-      <button class="cat-filter-btn" data-filter="fun">
-        <i class="fas fa-star"></i>
-        <span data-ru="🎉 Развлечения" data-en="🎉 Fun">🎉 Развлечения</span>
-      </button>
-    </div>
+<!-- ФИЛЬТР -->
+<div class="cat-filter" id="catFilter" data-aos="fade-up">
+<button class="cat-filter-btn active" data-filter="all">
+<i class="fas fa-border-all"></i>
+<span data-ru="Все (21)" data-en="All (21)">Все (21)</span>
+</button>
+<button class="cat-filter-btn" data-filter="sea">
+<i class="fas fa-water"></i>
+<span data-ru="🌊 Морские" data-en="🌊 Sea">🌊 Морские</span>
+</button>
+<button class="cat-filter-btn" data-filter="vip">
+<i class="fas fa-crown"></i>
+<span data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
+</button>
+<button class="cat-filter-btn" data-filter="safari">
+<i class="fas fa-mountain"></i>
+<span data-ru="🏜 Сафари" data-en="🏜 Safari">🏜 Сафари</span>
+</button>
+<button class="cat-filter-btn" data-filter="history">
+<i class="fas fa-landmark"></i>
+<span data-ru="🏛 История" data-en="🏛 History">🏛 История</span>
+</button>
+<button class="cat-filter-btn" data-filter="fun">
+<i class="fas fa-star"></i>
+<span data-ru="🎉 Развлечения" data-en="🎉 Fun">🎉 Развлечения</span>
+</button>
+</div>
 
-    <p class="cat-count" id="catCount">
-      <span data-ru="Показано:" data-en="Showing:">Показано:</span>
-      <strong id="catNum">19</strong>
-      <span data-ru="из 19 экскурсий" data-en="of 19 excursions">из 19 экскурсий</span>
-    </p>
+<p class="cat-count" id="catCount">
+<span data-ru="Показано:" data-en="Showing:">Показано:</span>
+<strong id="catNum">21</strong>
+<span data-ru="из 21 экскурсии" data-en="of 21 excursions">из 21 экскурсии</span>
+</p>
 
-    <!-- СЕТКА (класс .exc-grid из style.css) -->
-    <div class="exc-grid" id="excGrid">
+<!-- СЕТКА (класс .exc-grid из style.css) -->
+<div class="exc-grid" id="excGrid">
 
-      <!-- ═══ 1. PARADISE ISLAND ═══ -->
-      <div class="exc-card" data-category="sea vip" data-aos="fade-up" data-aos-delay="0">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sea-blue">
-            <i class="fas fa-umbrella-beach"></i>
-          </div>
-          <span class="exc-tag" data-ru="⭐ Хит" data-en="⭐ Top">⭐ Хит</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Paradise Island" data-en="Paradise Island">Paradise Island</h3>
-          <p data-ru="VIP-яхта, снорклинг среди кораллов, обед на борту и отдых на белоснежном острове." data-en="VIP yacht, snorkeling among corals, lunch on board and relaxation on a white-sand island.">
-            VIP-яхта, снорклинг среди кораллов, обед на борту и отдых на белоснежном острове.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="8–9 часов" data-en="8–9 hours">8–9 часов</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи, пары, компании" data-en="Families, couples, groups">Семьи, пары, компании</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Paradise%20Island" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 1. PARADISE ISLAND ═══ -->
+<div class="exc-card" data-category="sea vip" data-aos="fade-up" data-aos-delay="0">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sea-blue">
+<i class="fas fa-umbrella-beach"></i>
+</div>
+<span class="exc-tag" data-ru="⭐ Хит" data-en="⭐ Top">⭐ Хит</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Paradise Island" data-en="Paradise Island">Paradise Island</h3>
+<p data-ru="VIP-яхта, снорклинг среди кораллов, обед на борту и отдых на белоснежном острове." data-en="VIP yacht, snorkeling among corals, lunch on board and relaxation on a white-sand island.">
+VIP-яхта, снорклинг среди кораллов, обед на борту и отдых на белоснежном острове.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="8–9 часов" data-en="8–9 hours">8–9 часов</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи, пары, компании" data-en="Families, couples, groups">Семьи, пары, компании</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Paradise%20Island" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 2. ORANGE BAY ═══ -->
-      <div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="60">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sea-teal">
-            <i class="fas fa-water"></i>
-          </div>
-          <span class="exc-tag" data-ru="🌊 Море" data-en="🌊 Sea">🌊 Море</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Orange Bay" data-en="Orange Bay">Orange Bay</h3>
-          <p data-ru="Лазурный залив с белым песком, снорклинг среди кораллов и водные развлечения." data-en="Azure bay with white sand, coral snorkeling and water activities.">
-            Лазурный залив с белым песком, снорклинг среди кораллов и водные развлечения.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="8–9 часов" data-en="8–9 hours">8–9 часов</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все возрасты" data-en="All ages">Все возрасты</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Orange%20Bay" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 2. ORANGE BAY ═══ -->
+<div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="60">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sea-teal">
+<i class="fas fa-water"></i>
+</div>
+<span class="exc-tag" data-ru="🌊 Море" data-en="🌊 Sea">🌊 Море</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Orange Bay" data-en="Orange Bay">Orange Bay</h3>
+<p data-ru="Лазурный залив с белым песком, снорклинг среди кораллов и водные развлечения." data-en="Azure bay with white sand, coral snorkeling and water activities.">
+Лазурный залив с белым песком, снорклинг среди кораллов и водные развлечения.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="8–9 часов" data-en="8–9 hours">8–9 часов</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все возрасты" data-en="All ages">Все возрасты</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Orange%20Bay" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 3. HULA HULA ISLAND ═══ -->
-      <div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="120">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sea-cyan">
-            <i class="fas fa-fish"></i>
-          </div>
-          <span class="exc-tag" data-ru="🎉 Вечеринка" data-en="🎉 Party">🎉 Вечеринка</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Hula Hula Island" data-en="Hula Hula Island">Hula Hula Island</h3>
-          <p data-ru="Яркий остров с музыкой и весельем, снорклинг, водные развлечения и обед." data-en="Vibrant island with music and fun, snorkeling, water activities and lunch.">
-            Яркий остров с музыкой и весельем, снорклинг, водные развлечения и обед.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="7–8 часов" data-en="7–8 hours">7–8 часов</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Компании, молодёжь" data-en="Groups, youth">Компании, молодёжь</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Hula%20Hula%20Island" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 3. HULA HULA ISLAND ═══ -->
+<div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="120">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sea-cyan">
+<i class="fas fa-fish"></i>
+</div>
+<span class="exc-tag" data-ru="🎉 Вечеринка" data-en="🎉 Party">🎉 Вечеринка</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Hula Hula Island" data-en="Hula Hula Island">Hula Hula Island</h3>
+<p data-ru="Яркий остров с музыкой и весельем, снорклинг, водные развлечения и обед." data-en="Vibrant island with music and fun, snorkeling, water activities and lunch.">
+Яркий остров с музыкой и весельем, снорклинг, водные развлечения и обед.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="7–8 часов" data-en="7–8 hours">7–8 часов</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Компании, молодёжь" data-en="Groups, youth">Компании, молодёжь</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Hula%20Hula%20Island" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 4. VIP DOLPHINS & ISLAND ═══ -->
-      <div class="exc-card" data-category="sea vip" data-aos="fade-up" data-aos-delay="0">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sea-deep">
-            <i class="fas fa-water"></i>
-          </div>
-          <span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="VIP Dolphins &amp; Island" data-en="VIP Dolphins &amp; Island">VIP Dolphins &amp; Island</h3>
-          <p data-ru="Встреча с дельфинами в открытом море на приватной VIP-яхте с персональным гидом." data-en="Encounter with dolphins in the open sea on a private VIP yacht with a personal guide.">
-            Встреча с дельфинами в открытом море на приватной VIP-яхте с персональным гидом.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Пары, семьи, VIP-гости" data-en="Couples, families, VIP guests">Пары, семьи, VIP-гости</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20VIP%20Dolphins%20%26%20Island" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 4. VIP DOLPHINS & ISLAND ═══ -->
+<div class="exc-card" data-category="sea vip" data-aos="fade-up" data-aos-delay="0">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sea-deep">
+<i class="fas fa-water"></i>
+</div>
+<span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="VIP Dolphins &amp; Island" data-en="VIP Dolphins &amp; Island">VIP Dolphins &amp; Island</h3>
+<p data-ru="Встреча с дельфинами в открытом море на приватной VIP-яхте с персональным гидом." data-en="Encounter with dolphins in the open sea on a private VIP yacht with a personal guide.">
+Встреча с дельфинами в открытом море на приватной VIP-яхте с персональным гидом.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Пары, семьи, VIP-гости" data-en="Couples, families, VIP guests">Пары, семьи, VIP-гости</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед на борту — включён" data-en="Lunch on board — included">Обед на борту — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20VIP%20Dolphins%20%26%20Island" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 5. DIVING ═══ -->
-      <div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="60">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sea-night">
-            <i class="fas fa-mask"></i>
-          </div>
-          <span class="exc-tag" data-ru="🤿 Дайвинг" data-en="🤿 Diving">🤿 Дайвинг</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Diving" data-en="Diving">Diving</h3>
-          <p data-ru="Погружение с инструктором среди кораллов Красного моря. Для новичков и опытных." data-en="Dive with an instructor among Red Sea corals. For beginners and experienced divers.">
-            Погружение с инструктором среди кораллов Красного моря. Для новичков и опытных.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Рифы Хургады" data-en="Hurghada reefs">Рифы Хургады</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="5–6 часов" data-en="5–6 hours">5–6 часов</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="С инструктором, для всех" data-en="With instructor, for all">С инструктором, для всех</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Снаряжение — включено" data-en="Equipment — included">Снаряжение — включено</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Diving" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 5. DIVING ═══ -->
+<div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="60">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sea-night">
+<i class="fas fa-mask"></i>
+</div>
+<span class="exc-tag" data-ru="🤿 Дайвинг" data-en="🤿 Diving">🤿 Дайвинг</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Diving" data-en="Diving">Diving</h3>
+<p data-ru="Погружение с инструктором среди кораллов Красного моря. Для новичков и опытных." data-en="Dive with an instructor among Red Sea corals. For beginners and experienced divers.">
+Погружение с инструктором среди кораллов Красного моря. Для новичков и опытных.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Рифы Хургады" data-en="Hurghada reefs">Рифы Хургады</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="5–6 часов" data-en="5–6 hours">5–6 часов</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="С инструктором, для всех" data-en="With instructor, for all">С инструктором, для всех</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Снаряжение — включено" data-en="Equipment — included">Снаряжение — включено</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Diving" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 6. C-ScOPE ═══ -->
-      <div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="120">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sea-glass">
-            <i class="fas fa-robot"></i>
-          </div>
-          <span class="exc-tag" data-ru="🔬 Новинка" data-en="🔬 New">🔬 Новинка</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="C-ScOPE" data-en="C-ScOPE">C-ScOPE</h3>
-          <p data-ru="Исследуй подводный мир на управляемом скутере без дайвинга — для всей семьи." data-en="Explore the underwater world on a guided scooter without diving — for the whole family.">
-            Исследуй подводный мир на управляемом скутере без дайвинга — для всей семьи.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада" data-en="Hurghada">Хургада</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="3–4 часа" data-en="3–4 hours">3–4 часа</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Для всех, без опыта" data-en="For all, no experience needed">Для всех, без опыта</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Оборудование — включено" data-en="Equipment — included">Оборудование — включено</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20C-ScOPE" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 6. C-ScOPE ═══ -->
+<div class="exc-card" data-category="sea" data-aos="fade-up" data-aos-delay="120">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sea-glass">
+<i class="fas fa-robot"></i>
+</div>
+<span class="exc-tag" data-ru="🔬 Новинка" data-en="🔬 New">🔬 Новинка</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="C-ScOPE" data-en="C-ScOPE">C-ScOPE</h3>
+<p data-ru="Исследуй подводный мир на управляемом скутере без дайвинга — для всей семьи." data-en="Explore the underwater world on a guided scooter without diving — for the whole family.">
+Исследуй подводный мир на управляемом скутере без дайвинга — для всей семьи.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада" data-en="Hurghada">Хургада</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="3–4 часа" data-en="3–4 hours">3–4 часа</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Для всех, без опыта" data-en="For all, no experience needed">Для всех, без опыта</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Оборудование — включено" data-en="Equipment — included">Оборудование — включено</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20C-ScOPE" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 7. GLASS BOAT VIP ═══ -->
-      <div class="exc-card" data-category="sea vip" data-aos="fade-up" data-aos-delay="0">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sea-glass" style="filter:hue-rotate(20deg);">
-            <i class="fas fa-ship"></i>
-          </div>
-          <span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Glass Boat VIP" data-en="Glass Boat VIP">Glass Boat VIP</h3>
-          <p data-ru="Прогулка на лодке со стеклянным дном — любуйся кораллами и рыбами не замочив ног." data-en="A glass-bottom boat ride — admire corals and fish without getting wet.">
-            Прогулка на лодке со стеклянным дном — любуйся кораллами и рыбами не замочив ног.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="3–4 часа" data-en="3–4 hours">3–4 часа</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи, пожилые гости" data-en="Families, elderly guests">Семьи, пожилые гости</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Напитки на борту" data-en="Drinks on board">Напитки на борту</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Glass%20Boat%20VIP" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 7. GLASS BOAT VIP ═══ -->
+<div class="exc-card" data-category="sea vip" data-aos="fade-up" data-aos-delay="0">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sea-glass" style="filter:hue-rotate(20deg);">
+<i class="fas fa-ship"></i>
+</div>
+<span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Glass Boat VIP" data-en="Glass Boat VIP">Glass Boat VIP</h3>
+<p data-ru="Прогулка на лодке со стеклянным дном — любуйся кораллами и рыбами не замочив ног." data-en="A glass-bottom boat ride — admire corals and fish without getting wet.">
+Прогулка на лодке со стеклянным дном — любуйся кораллами и рыбами не замочив ног.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Красное море, Хургада" data-en="Red Sea, Hurghada">Красное море, Хургада</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="3–4 часа" data-en="3–4 hours">3–4 часа</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи, пожилые гости" data-en="Families, elderly guests">Семьи, пожилые гости</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Напитки на борту" data-en="Drinks on board">Напитки на борту</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Glass%20Boat%20VIP" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 8. PARASAILING ═══ -->
-      <div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="60">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sky-blue">
-            <i class="fas fa-parachute-box"></i>
-          </div>
-          <span class="exc-tag" data-ru="⚡ Экстрим" data-en="⚡ Extreme">⚡ Экстрим</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Parasailing" data-en="Parasailing">Parasailing</h3>
-          <p data-ru="Полёт над Красным морем на парашюте. Незабываемые виды с высоты птичьего полёта." data-en="Fly above the Red Sea on a parachute. Unforgettable bird's-eye views.">
-            Полёт над Красным морем на парашюте. Незабываемые виды с высоты птичьего полёта.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, побережье" data-en="Hurghada, seafront">Хургада, побережье</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="20–30 минут" data-en="20–30 minutes">20–30 минут</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Любители адреналина" data-en="Adrenaline seekers">Любители адреналина</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер по запросу" data-en="Transfer on request">Трансфер по запросу</span></div>
-            <div class="exc-info-row"><i class="fas fa-shield-alt"></i><span data-ru="Страховка включена" data-en="Insurance included">Страховка включена</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Parasailing" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 8. PARASAILING ═══ -->
+<div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="60">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sky-blue">
+<i class="fas fa-parachute-box"></i>
+</div>
+<span class="exc-tag" data-ru="⚡ Экстрим" data-en="⚡ Extreme">⚡ Экстрим</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Parasailing" data-en="Parasailing">Parasailing</h3>
+<p data-ru="Полёт над Красным морем на парашюте. Незабываемые виды с высоты птичьего полёта." data-en="Fly above the Red Sea on a parachute. Unforgettable bird's-eye views.">
+Полёт над Красным морем на парашюте. Незабываемые виды с высоты птичьего полёта.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, побережье" data-en="Hurghada, seafront">Хургада, побережье</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="20–30 минут" data-en="20–30 minutes">20–30 минут</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Любители адреналина" data-en="Adrenaline seekers">Любители адреналина</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер по запросу" data-en="Transfer on request">Трансфер по запросу</span></div>
+<div class="exc-info-row"><i class="fas fa-shield-alt"></i><span data-ru="Страховка включена" data-en="Insurance included">Страховка включена</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Parasailing" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 9. SUPER SAFARI ═══ -->
-      <div class="exc-card" data-category="safari" data-aos="fade-up" data-aos-delay="120">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-desert-red">
-            <i class="fas fa-mountain"></i>
-          </div>
-          <span class="exc-tag" data-ru="🔥 Хит" data-en="🔥 Hit">🔥 Хит</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Super Safari" data-en="Super Safari">Super Safari</h3>
-          <p data-ru="Квадроциклы, джипы, бедуинская деревня, закат в пустыне и традиционный ужин." data-en="Quad bikes, jeeps, Bedouin village, desert sunset and a traditional dinner.">
-            Квадроциклы, джипы, бедуинская деревня, закат в пустыне и традиционный ужин.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Пустыня, окрестности Хургады" data-en="Desert, Hurghada outskirts">Пустыня, окрестности Хургады</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Компании, семьи" data-en="Groups, families">Компании, семьи</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Ужин в бедуинском лагере" data-en="Dinner in Bedouin camp">Ужин в бедуинском лагере</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Super%20Safari" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 9. SUPER SAFARI ═══ -->
+<div class="exc-card" data-category="safari" data-aos="fade-up" data-aos-delay="120">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-desert-red">
+<i class="fas fa-mountain"></i>
+</div>
+<span class="exc-tag" data-ru="🔥 Хит" data-en="🔥 Hit">🔥 Хит</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Super Safari" data-en="Super Safari">Super Safari</h3>
+<p data-ru="Квадроциклы, джипы, бедуинская деревня, закат в пустыне и традиционный ужин." data-en="Quad bikes, jeeps, Bedouin village, desert sunset and a traditional dinner.">
+Квадроциклы, джипы, бедуинская деревня, закат в пустыне и традиционный ужин.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Пустыня, окрестности Хургады" data-en="Desert, Hurghada outskirts">Пустыня, окрестности Хургады</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Компании, семьи" data-en="Groups, families">Компании, семьи</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Ужин в бедуинском лагере" data-en="Dinner in Bedouin camp">Ужин в бедуинском лагере</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Super%20Safari" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 10. MINI SAFARI ═══ -->
-      <div class="exc-card" data-category="safari" data-aos="fade-up" data-aos-delay="0">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-desert-warm">
-            <i class="fas fa-truck-monster"></i>
-          </div>
-          <span class="exc-tag" data-ru="🏜 Сафари" data-en="🏜 Safari">🏜 Сафари</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Mini Safari" data-en="Mini Safari">Mini Safari</h3>
-          <p data-ru="Компактный тур в пустыню: квадроциклы и бедуинский лагерь — за полдня." data-en="Compact desert tour: quad bikes and a Bedouin camp — in half a day.">
-            Компактный тур в пустыню: квадроциклы и бедуинский лагерь — за полдня.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Пустыня, окрестности Хургады" data-en="Desert, Hurghada outskirts">Пустыня, окрестности Хургады</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="4–5 часов" data-en="4–5 hours">4–5 часов</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все возрасты" data-en="All ages">Все возрасты</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Чай в бедуинском лагере" data-en="Tea in Bedouin camp">Чай в бедуинском лагере</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Mini%20Safari" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 10. MINI SAFARI ═══ -->
+<div class="exc-card" data-category="safari" data-aos="fade-up" data-aos-delay="0">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-desert-warm">
+<i class="fas fa-truck-monster"></i>
+</div>
+<span class="exc-tag" data-ru="🏜 Сафари" data-en="🏜 Safari">🏜 Сафари</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Mini Safari" data-en="Mini Safari">Mini Safari</h3>
+<p data-ru="Компактный тур в пустыню: квадроциклы и бедуинский лагерь — за полдня." data-en="Compact desert tour: quad bikes and a Bedouin camp — in half a day.">
+Компактный тур в пустыню: квадроциклы и бедуинский лагерь — за полдня.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Пустыня, окрестности Хургады" data-en="Desert, Hurghada outskirts">Пустыня, окрестности Хургады</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="4–5 часов" data-en="4–5 hours">4–5 часов</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все возрасты" data-en="All ages">Все возрасты</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Чай в бедуинском лагере" data-en="Tea in Bedouin camp">Чай в бедуинском лагере</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Mini%20Safari" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 11. HORSE RIDING VIP ═══ -->
-      <div class="exc-card" data-category="vip fun" data-aos="fade-up" data-aos-delay="60">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-purple">
-            <i class="fas fa-horse"></i>
-          </div>
-          <span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Horse Riding VIP" data-en="Horse Riding VIP">Horse Riding VIP</h3>
-          <p data-ru="Верховая езда по берегу Красного моря — романтика и свобода на закате." data-en="Horseback riding along the Red Sea shore — romance and freedom at sunset.">
-            Верховая езда по берегу Красного моря — романтика и свобода на закате.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Пляж Хургады" data-en="Hurghada beach">Пляж Хургады</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="2–3 часа" data-en="2–3 hours">2–3 часа</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Пары, романтика" data-en="Couples, romance">Пары, романтика</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-user-shield"></i><span data-ru="Инструктор включён" data-en="Instructor included">Инструктор включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Horse%20Riding%20VIP" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 11. HORSE RIDING VIP ═══ -->
+<div class="exc-card" data-category="vip fun" data-aos="fade-up" data-aos-delay="60">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-purple">
+<i class="fas fa-horse"></i>
+</div>
+<span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Horse Riding VIP" data-en="Horse Riding VIP">Horse Riding VIP</h3>
+<p data-ru="Верховая езда по берегу Красного моря — романтика и свобода на закате." data-en="Horseback riding along the Red Sea shore — romance and freedom at sunset.">
+Верховая езда по берегу Красного моря — романтика и свобода на закате.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Пляж Хургады" data-en="Hurghada beach">Пляж Хургады</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="2–3 часа" data-en="2–3 hours">2–3 часа</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Пары, романтика" data-en="Couples, romance">Пары, романтика</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-user-shield"></i><span data-ru="Инструктор включён" data-en="Instructor included">Инструктор включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Horse%20Riding%20VIP" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 12. HURGHADA GRAND AQUARIUM ═══ -->
-      <div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="120">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-aqua-dark">
-            <i class="fas fa-fish"></i>
-          </div>
-          <span class="exc-tag" data-ru="🐠 Аквариум" data-en="🐠 Aquarium">🐠 Аквариум</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Hurghada Grand Aquarium" data-en="Hurghada Grand Aquarium">Hurghada Grand Aquarium</h3>
-          <p data-ru="Подводный аквариум с акулами, тропическими рыбами и редкими морскими обитателями." data-en="Underwater aquarium with sharks, tropical fish and rare marine creatures.">
-            Подводный аквариум с акулами, тропическими рыбами и редкими морскими обитателями.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, центр" data-en="Hurghada, city center">Хургада, центр</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="2–3 часа" data-en="2–3 hours">2–3 часа</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи с детьми" data-en="Families with children">Семьи с детьми</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-ticket-alt"></i><span data-ru="Входной билет — включён" data-en="Entry ticket — included">Входной билет — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Hurghada%20Grand%20Aquarium" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 12. HURGHADA GRAND AQUARIUM ═══ -->
+<div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="120">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-aqua-dark">
+<i class="fas fa-fish"></i>
+</div>
+<span class="exc-tag" data-ru="🐠 Аквариум" data-en="🐠 Aquarium">🐠 Аквариум</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Hurghada Grand Aquarium" data-en="Hurghada Grand Aquarium">Hurghada Grand Aquarium</h3>
+<p data-ru="Подводный аквариум с акулами, тропическими рыбами и редкими морскими обитателями." data-en="Underwater aquarium with sharks, tropical fish and rare marine creatures.">
+Подводный аквариум с акулами, тропическими рыбами и редкими морскими обитателями.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, центр" data-en="Hurghada, city center">Хургада, центр</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="2–3 часа" data-en="2–3 hours">2–3 часа</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи с детьми" data-en="Families with children">Семьи с детьми</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-ticket-alt"></i><span data-ru="Входной билет — включён" data-en="Entry ticket — included">Входной билет — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Hurghada%20Grand%20Aquarium" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 13. DOLPHIN SHOW ═══ -->
-      <div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="0">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-ocean-mid">
-            <i class="fas fa-water"></i>
-          </div>
-          <span class="exc-tag" data-ru="🐬 Шоу" data-en="🐬 Show">🐬 Шоу</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Dolphin Show" data-en="Dolphin Show">Dolphin Show</h3>
-          <p data-ru="Захватывающее шоу дельфинов — прыжки, трюки и возможность пообщаться с ними." data-en="Exciting dolphin show — jumps, tricks and an opportunity to interact with them.">
-            Захватывающее шоу дельфинов — прыжки, трюки и возможность пообщаться с ними.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада" data-en="Hurghada">Хургада</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="~2 часа" data-en="~2 hours">~2 часа</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи с детьми" data-en="Families with children">Семьи с детьми</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-ticket-alt"></i><span data-ru="Входной билет — включён" data-en="Entry ticket — included">Входной билет — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Dolphin%20Show" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 13. DOLPHIN SHOW ═══ -->
+<div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="0">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-ocean-mid">
+<i class="fas fa-water"></i>
+</div>
+<span class="exc-tag" data-ru="🐬 Шоу" data-en="🐬 Show">🐬 Шоу</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Dolphin Show" data-en="Dolphin Show">Dolphin Show</h3>
+<p data-ru="Захватывающее шоу дельфинов — прыжки, трюки и возможность пообщаться с ними." data-en="Exciting dolphin show — jumps, tricks and an opportunity to interact with them.">
+Захватывающее шоу дельфинов — прыжки, трюки и возможность пообщаться с ними.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада" data-en="Hurghada">Хургада</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="~2 часа" data-en="~2 hours">~2 часа</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи с детьми" data-en="Families with children">Семьи с детьми</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-ticket-alt"></i><span data-ru="Входной билет — включён" data-en="Entry ticket — included">Входной билет — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Dolphin%20Show" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 14. LUXOR VIP ═══ -->
-      <div class="exc-card" data-category="history vip" data-aos="fade-up" data-aos-delay="60">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-amber">
-            <i class="fas fa-monument"></i>
-          </div>
-          <span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Luxor VIP" data-en="Luxor VIP">Luxor VIP</h3>
-          <p data-ru="Луксор на самолёте: Карнак, Долина Царей, Луксорский храм — с VIP-гидом и обедом." data-en="Luxor by plane: Karnak, Valley of Kings, Luxor Temple — with VIP guide and lunch.">
-            Луксор на самолёте: Карнак, Долина Царей, Луксорский храм — с VIP-гидом и обедом.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Луксор, Египет" data-en="Luxor, Egypt">Луксор, Египет</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Ценители истории" data-en="History lovers">Ценители истории</span></div>
-            <div class="exc-info-row"><i class="fas fa-plane"></i><span data-ru="Перелёт самолётом — включён" data-en="Flight — included">Перелёт самолётом — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед в ресторане — включён" data-en="Lunch at restaurant — included">Обед в ресторане — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Luxor%20VIP" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 14. LUXOR VIP ═══ -->
+<div class="exc-card" data-category="history vip" data-aos="fade-up" data-aos-delay="60">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-amber">
+<i class="fas fa-monument"></i>
+</div>
+<span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Luxor VIP" data-en="Luxor VIP">Luxor VIP</h3>
+<p data-ru="Луксор на самолёте: Карнак, Долина Царей, Луксорский храм — с VIP-гидом и обедом." data-en="Luxor by plane: Karnak, Valley of Kings, Luxor Temple — with VIP guide and lunch.">
+Луксор на самолёте: Карнак, Долина Царей, Луксорский храм — с VIP-гидом и обедом.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Луксор, Египет" data-en="Luxor, Egypt">Луксор, Египет</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Ценители истории" data-en="History lovers">Ценители истории</span></div>
+<div class="exc-info-row"><i class="fas fa-plane"></i><span data-ru="Перелёт самолётом — включён" data-en="Flight — included">Перелёт самолётом — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед в ресторане — включён" data-en="Lunch at restaurant — included">Обед в ресторане — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Luxor%20VIP" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 15. LUXOR GROUP ═══ -->
-      <div class="exc-card" data-category="history" data-aos="fade-up" data-aos-delay="120">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-amber-warm">
-            <i class="fas fa-landmark"></i>
-          </div>
-          <span class="exc-tag" data-ru="🏛 История" data-en="🏛 History">🏛 История</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Luxor Group" data-en="Luxor Group">Luxor Group</h3>
-          <p data-ru="Групповой тур в Луксор на автобусе — Карнакский храм и Долина Царей." data-en="Group bus tour to Luxor — Karnak Temple and Valley of the Kings.">
-            Групповой тур в Луксор на автобусе — Карнакский храм и Долина Царей.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Луксор, Египет" data-en="Luxor, Egypt">Луксор, Египет</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все туристы" data-en="All tourists">Все туристы</span></div>
-            <div class="exc-info-row"><i class="fas fa-bus"></i><span data-ru="Автобус — включён" data-en="Bus — included">Автобус — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед в ресторане — включён" data-en="Lunch at restaurant — included">Обед в ресторане — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Luxor%20Group" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 15. LUXOR GROUP ═══ -->
+<div class="exc-card" data-category="history" data-aos="fade-up" data-aos-delay="120">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-amber-warm">
+<i class="fas fa-landmark"></i>
+</div>
+<span class="exc-tag" data-ru="🏛 История" data-en="🏛 History">🏛 История</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Luxor Group" data-en="Luxor Group">Luxor Group</h3>
+<p data-ru="Групповой тур в Луксор на автобусе — Карнакский храм и Долина Царей." data-en="Group bus tour to Luxor — Karnak Temple and Valley of the Kings.">
+Групповой тур в Луксор на автобусе — Карнакский храм и Долина Царей.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Луксор, Египет" data-en="Luxor, Egypt">Луксор, Египет</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все туристы" data-en="All tourists">Все туристы</span></div>
+<div class="exc-info-row"><i class="fas fa-bus"></i><span data-ru="Автобус — включён" data-en="Bus — included">Автобус — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед в ресторане — включён" data-en="Lunch at restaurant — included">Обед в ресторане — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Luxor%20Group" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 16. CAIRO ═══ -->
-      <div class="exc-card" data-category="history" data-aos="fade-up" data-aos-delay="0">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-sand">
-            <i class="fas fa-gopuram"></i>
-          </div>
-          <span class="exc-tag" data-ru="🔥 Мастхэв" data-en="🔥 Must-do">🔥 Мастхэв</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Cairo" data-en="Cairo">Cairo</h3>
-          <p data-ru="Пирамиды Гизы, Сфинкс и Каирский музей — главные чудеса Древнего Египта." data-en="Pyramids of Giza, Sphinx and Cairo Museum — the main wonders of Ancient Egypt.">
-            Пирамиды Гизы, Сфинкс и Каирский музей — главные чудеса Древнего Египта.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Каир, Египет" data-en="Cairo, Egypt">Каир, Египет</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все туристы" data-en="All tourists">Все туристы</span></div>
-            <div class="exc-info-row"><i class="fas fa-plane"></i><span data-ru="Перелёт самолётом — включён" data-en="Flight — included">Перелёт самолётом — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед в ресторане — включён" data-en="Lunch at restaurant — included">Обед в ресторане — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Cairo" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 16. CAIRO ═══ -->
+<div class="exc-card" data-category="history" data-aos="fade-up" data-aos-delay="0">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-sand">
+<i class="fas fa-gopuram"></i>
+</div>
+<span class="exc-tag" data-ru="🔥 Мастхэв" data-en="🔥 Must-do">🔥 Мастхэв</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Cairo" data-en="Cairo">Cairo</h3>
+<p data-ru="Пирамиды Гизы, Сфинкс и Каирский музей — главные чудеса Древнего Египта." data-en="Pyramids of Giza, Sphinx and Cairo Museum — the main wonders of Ancient Egypt.">
+Пирамиды Гизы, Сфинкс и Каирский музей — главные чудеса Древнего Египта.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Каир, Египет" data-en="Cairo, Egypt">Каир, Египет</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="Полный день" data-en="Full day">Полный день</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все туристы" data-en="All tourists">Все туристы</span></div>
+<div class="exc-info-row"><i class="fas fa-plane"></i><span data-ru="Перелёт самолётом — включён" data-en="Flight — included">Перелёт самолётом — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-utensils"></i><span data-ru="Обед в ресторане — включён" data-en="Lunch at restaurant — included">Обед в ресторане — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Cairo" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 17. HURGHADA MUSEUM ═══ -->
-      <div class="exc-card" data-category="history" data-aos="fade-up" data-aos-delay="60">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-earth">
-            <i class="fas fa-museum"></i>
-          </div>
-          <span class="exc-tag" data-ru="🏛 Музей" data-en="🏛 Museum">🏛 Музей</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Hurghada Museum" data-en="Hurghada Museum">Hurghada Museum</h3>
-          <p data-ru="Современный музей Хургады с мумиями, артефактами и историей Древнего Египта." data-en="Modern Hurghada Museum with mummies, artefacts and the history of Ancient Egypt.">
-            Современный музей Хургады с мумиями, артефактами и историей Древнего Египта.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, центр" data-en="Hurghada, city center">Хургада, центр</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="2–3 часа" data-en="2–3 hours">2–3 часа</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи, ценители истории" data-en="Families, history lovers">Семьи, ценители истории</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-ticket-alt"></i><span data-ru="Входной билет — включён" data-en="Entry ticket — included">Входной билет — включён</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Hurghada%20Museum" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 17. HURGHADA MUSEUM ═══ -->
+<div class="exc-card" data-category="history" data-aos="fade-up" data-aos-delay="60">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-earth">
+<i class="fas fa-museum"></i>
+</div>
+<span class="exc-tag" data-ru="🏛 Музей" data-en="🏛 Museum">🏛 Музей</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Hurghada Museum" data-en="Hurghada Museum">Hurghada Museum</h3>
+<p data-ru="Современный музей Хургады с мумиями, артефактами и историей Древнего Египта." data-en="Modern Hurghada Museum with mummies, artefacts and the history of Ancient Egypt.">
+Современный музей Хургады с мумиями, артефактами и историей Древнего Египта.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, центр" data-en="Hurghada, city center">Хургада, центр</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="2–3 часа" data-en="2–3 hours">2–3 часа</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Семьи, ценители истории" data-en="Families, history lovers">Семьи, ценители истории</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-ticket-alt"></i><span data-ru="Входной билет — включён" data-en="Entry ticket — included">Входной билет — включён</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Hurghada%20Museum" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 18. SHOPPING TOUR ═══ -->
-      <div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="120">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-violet">
-            <i class="fas fa-shopping-bag"></i>
-          </div>
-          <span class="exc-tag" data-ru="🛍 Шопинг" data-en="🛍 Shopping">🛍 Шопинг</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="Shopping Tour" data-en="Shopping Tour">Shopping Tour</h3>
-          <p data-ru="Лучшие рынки и магазины Хургады с русскоязычным гидом — без переплат и обмана." data-en="Best markets and shops in Hurghada with a Russian-speaking guide — no overcharging.">
-            Лучшие рынки и магазины Хургады с русскоязычным гидом — без переплат и обмана.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, рынки и молы" data-en="Hurghada, markets and malls">Хургада, рынки и молы</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="4–5 часов" data-en="4–5 hours">4–5 часов</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все желающие" data-en="Everyone">Все желающие</span></div>
-            <div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-comments-dollar"></i><span data-ru="Помощь в торге включена" data-en="Bargaining help included">Помощь в торге включена</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Shopping%20Tour" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 18. SHOPPING TOUR ═══ -->
+<div class="exc-card" data-category="fun" data-aos="fade-up" data-aos-delay="120">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-violet">
+<i class="fas fa-shopping-bag"></i>
+</div>
+<span class="exc-tag" data-ru="🛍 Шопинг" data-en="🛍 Shopping">🛍 Шопинг</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Shopping Tour" data-en="Shopping Tour">Shopping Tour</h3>
+<p data-ru="Лучшие рынки и магазины Хургады с русскоязычным гидом — без переплат и обмана." data-en="Best markets and shops in Hurghada with a Russian-speaking guide — no overcharging.">
+Лучшие рынки и магазины Хургады с русскоязычным гидом — без переплат и обмана.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, рынки и молы" data-en="Hurghada, markets and malls">Хургада, рынки и молы</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="4–5 часов" data-en="4–5 hours">4–5 часов</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Все желающие" data-en="Everyone">Все желающие</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер от отеля — включён" data-en="Hotel transfer — included">Трансфер от отеля — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-comments-dollar"></i><span data-ru="Помощь в торге включена" data-en="Bargaining help included">Помощь в торге включена</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20Shopping%20Tour" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-      <!-- ═══ 19. VIP TRANSFER ═══ -->
-      <div class="exc-card" data-category="vip" data-aos="fade-up" data-aos-delay="0">
-        <div class="exc-card-img">
-          <div class="exc-card-img-inner bg-slate">
-            <i class="fas fa-car-side"></i>
-          </div>
-          <span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
-        </div>
-        <div class="exc-card-body">
-          <h3 data-ru="VIP Transfer" data-en="VIP Transfer">VIP Transfer</h3>
-          <p data-ru="Комфортный трансфер на VIP-автомобиле: аэропорт, отель, любое направление." data-en="Comfortable VIP car transfer: airport, hotel, any destination.">
-            Комфортный трансфер на VIP-автомобиле: аэропорт, отель, любое направление.
-          </p>
-          <div class="exc-info-table">
-            <div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада и окрестности" data-en="Hurghada and surroundings">Хургада и окрестности</span></div>
-            <div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="По маршруту" data-en="By route">По маршруту</span></div>
-            <div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Индивидуально" data-en="Private">Индивидуально</span></div>
-            <div class="exc-info-row"><i class="fas fa-car"></i><span data-ru="VIP-автомобиль — включён" data-en="VIP car — included">VIP-автомобиль — включён</span></div>
-            <div class="exc-info-row"><i class="fas fa-snowflake"></i><span data-ru="Кондиционер, Wi-Fi" data-en="AC, Wi-Fi">Кондиционер, Wi-Fi</span></div>
-          </div>
-          <div class="exc-price-block">
-            <div class="exc-price-left">
-              <div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
-              <div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
-              <div class="exc-price-note" data-ru="Цена за поездку" data-en="Price per trip">Цена за поездку</div>
-            </div>
-            <div class="exc-price-icon"><i class="fas fa-tag"></i></div>
-          </div>
-          <a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20VIP%20Transfer" target="_blank" class="exc-card-btn-wa">
-            <i class="fab fa-whatsapp"></i>
-            <div class="exc-card-btn-wa-inner">
-              <span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
-              <span class="wa-sub">WhatsApp</span>
-            </div>
-          </a>
-        </div>
-      </div>
+<!-- ═══ 19. VIP TRANSFER ═══ -->
+<div class="exc-card" data-category="vip" data-aos="fade-up" data-aos-delay="0">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-slate">
+<i class="fas fa-car-side"></i>
+</div>
+<span class="exc-tag" data-ru="💎 VIP" data-en="💎 VIP">💎 VIP</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="VIP Transfer" data-en="VIP Transfer">VIP Transfer</h3>
+<p data-ru="Комфортный трансфер на VIP-автомобиле: аэропорт, отель, любое направление." data-en="Comfortable VIP car transfer: airport, hotel, any destination.">
+Комфортный трансфер на VIP-автомобиле: аэропорт, отель, любое направление.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада и окрестности" data-en="Hurghada and surroundings">Хургада и окрестности</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="По маршруту" data-en="By route">По маршруту</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Индивидуально" data-en="Private">Индивидуально</span></div>
+<div class="exc-info-row"><i class="fas fa-car"></i><span data-ru="VIP-автомобиль — включён" data-en="VIP car — included">VIP-автомобиль — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-snowflake"></i><span data-ru="Кондиционер, Wi-Fi" data-en="AC, Wi-Fi">Кондиционер, Wi-Fi</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за поездку" data-en="Price per trip">Цена за поездку</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20узнать%20цену%20на%20VIP%20Transfer" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Уточнить цену у Бешо" data-en="Ask Besho for Price">Уточнить цену у Бешо</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-    </div><!-- /.exc-grid -->
+<!-- ═══ 20. CAMEL RIDING HURGHADA ═══ (НОВАЯ) -->
+<div class="exc-card" data-category="safari" data-aos="fade-up" data-aos-delay="60">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-camel-sand">
+<i class="fas fa-mountain-sun"></i>
+</div>
+<span class="exc-tag" data-ru="🐪 Пустыня" data-en="🐪 Desert">🐪 Пустыня</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Катание на верблюдах в Хургаде" data-en="Camel Riding in Hurghada">Катание на верблюдах в Хургаде</h3>
+<p data-ru="Настоящее арабское приключение среди живописной пустыни с незабываемым катанием на верблюдах." data-en="Experience authentic Arabian desert life while riding camels through breathtaking landscapes.">
+Настоящее арабское приключение среди живописной пустыни с незабываемым катанием на верблюдах.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, Красное море" data-en="Hurghada, Red Sea">Хургада, Красное море</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="По выбранной программе" data-en="Depends on selected program">По выбранной программе</span></div>
+<div class="exc-info-row"><i class="fas fa-users"></i><span data-ru="Для всей семьи" data-en="Family friendly">Для всей семьи</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер из отеля и обратно — включён" data-en="Hotel transfer (both ways) — included">Трансфер из отеля и обратно — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-camera-retro"></i><span data-ru="Фотоостановки и панорамы пустыни" data-en="Photo stops &amp; panoramic desert views">Фотоостановки и панорамы пустыни</span></div>
+<div class="exc-info-row"><i class="fas fa-user-shield"></i><span data-ru="Безопасное сопровождение" data-en="Safe guided activity">Безопасное сопровождение</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20забронировать%20Катание%20на%20верблюдах%20(Camel%20Riding)%20и%20узнать%20цену" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Забронировать через WhatsApp" data-en="Book via WhatsApp">Забронировать через WhatsApp</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
 
-  </div>
+<!-- ═══ 21. LUXURY SPA & MASSAGE ═══ (НОВАЯ) -->
+<div class="exc-card" data-category="vip fun" data-aos="fade-up" data-aos-delay="120">
+<div class="exc-card-img">
+<div class="exc-card-img-inner bg-spa-gold">
+<i class="fas fa-spa"></i>
+</div>
+<span class="exc-tag" data-ru="💎 SPA" data-en="💎 SPA">💎 SPA</span>
+</div>
+<div class="exc-card-body">
+<h3 data-ru="Роскошная массажная программа" data-en="Luxury Massage &amp; Spa Program">Роскошная массажная программа</h3>
+<p data-ru="Два часа полного расслабления в одном из лучших SPA-центров Хургады: сауна, паровая баня, джакузи и массаж с аромамаслами." data-en="Enjoy two hours of complete relaxation at one of Hurghada's premium spa centers: sauna, steam bath, jacuzzi and an aroma oil massage.">
+Два часа полного расслабления в одном из лучших SPA-центров Хургады: сауна, паровая баня, джакузи и массаж с аромамаслами.
+</p>
+<div class="exc-info-table">
+<div class="exc-info-row"><i class="fas fa-map-marker-alt"></i><span data-ru="Хургада, премиум SPA-центр" data-en="Hurghada, premium spa center">Хургада, премиум SPA-центр</span></div>
+<div class="exc-info-row"><i class="fas fa-clock"></i><span data-ru="2 часа" data-en="2 hours">2 часа</span></div>
+<div class="exc-info-row"><i class="fas fa-hot-tub-person"></i><span data-ru="Сауна 20 мин · Хаммам 20 мин · Джакузи 20 мин" data-en="Sauna 20 min · Steam 20 min · Jacuzzi 20 min">Сауна 20 мин · Хаммам 20 мин · Джакузи 20 мин</span></div>
+<div class="exc-info-row"><i class="fas fa-hand-sparkles"></i><span data-ru="Массаж всего тела с аромамаслами — 60 мин" data-en="Full body aroma oil massage — 60 min">Массаж всего тела с аромамаслами — 60 мин</span></div>
+<div class="exc-info-row"><i class="fas fa-shuttle-van"></i><span data-ru="Трансфер из отеля и обратно — включён" data-en="Hotel transfer (both ways) — included">Трансфер из отеля и обратно — включён</span></div>
+<div class="exc-info-row"><i class="fas fa-heart"></i><span data-ru="Снятие стресса и восстановление энергии" data-en="Stress relief &amp; energy recovery">Снятие стресса и восстановление энергии</span></div>
+</div>
+<div class="exc-price-block">
+<div class="exc-price-left">
+<div class="exc-price-label" data-ru="Цена" data-en="Price">Цена</div>
+<div class="exc-price-value" data-ru="[УТОЧНИТЬ У БЕШО]" data-en="[ASK BESHO]">[УТОЧНИТЬ У БЕШО]</div>
+<div class="exc-price-note" data-ru="Цена за человека" data-en="Price per person">Цена за человека</div>
+</div>
+<div class="exc-price-icon"><i class="fas fa-tag"></i></div>
+</div>
+<a href="https://wa.me/201234567890?text=Здравствуйте!%20Хочу%20забронировать%20Роскошную%20массажную%20программу%20(Luxury%20Spa)%20и%20узнать%20цену" target="_blank" class="exc-card-btn-wa">
+<i class="fab fa-whatsapp"></i>
+<div class="exc-card-btn-wa-inner">
+<span data-ru="Забронировать через WhatsApp" data-en="Book via WhatsApp">Забронировать через WhatsApp</span>
+<span class="wa-sub">WhatsApp</span>
+</div>
+</a>
+</div>
+</div>
+
+</div><!-- /.exc-grid -->
+
+</div>
 </section>
 
 <!-- CTA BANNER (существующий класс .cta-banner) -->
 <section class="cta-banner">
-  <div class="cta-wave-top">
-    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0A1628"/></svg>
-  </div>
-  <div class="cta-content container" data-aos="fade-up">
-    <div class="cta-icon"><i class="fas fa-headset"></i></div>
-    <h2 data-ru="Нужна помощь с выбором?" data-en="Need help choosing?">Нужна помощь с выбором?</h2>
-    <p data-ru="Напишите Бешо в WhatsApp — он подберёт лучший тур под ваши интересы и расскажет актуальные цены!" data-en="Write to Besho on WhatsApp — he'll find the best tour for your interests and share current prices!">
-      Напишите Бешо в WhatsApp — он подберёт лучший тур под ваши интересы и расскажет актуальные цены!
-    </p>
-    <div class="cta-btns">
-      <a href="https://wa.me/201234567890" target="_blank" class="btn-wa-big">
-        <i class="fab fa-whatsapp"></i>
-        <span data-ru="Написать Бешо в WhatsApp" data-en="Write to Besho on WhatsApp">Написать Бешо в WhatsApp</span>
-      </a>
-      <a href="https://t.me/BESO_adel" target="_blank" class="btn-tg-big">
-        <i class="fab fa-telegram"></i>
-        <span data-ru="Telegram @BESO_adel" data-en="Telegram @BESO_adel">Telegram @BESO_adel</span>
-      </a>
-      <a href="tel:+201234567890" class="btn-call-big">
-        <i class="fas fa-phone-alt"></i>
-        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
-      </a>
-    </div>
-  </div>
-  <div class="cta-wave-bottom">
-    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#0A1628"/></svg>
-  </div>
+<div class="cta-wave-top">
+<svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0A1628"/></svg>
+</div>
+<div class="cta-content container" data-aos="fade-up">
+<div class="cta-icon"><i class="fas fa-headset"></i></div>
+<h2 data-ru="Нужна помощь с выбором?" data-en="Need help choosing?">Нужна помощь с выбором?</h2>
+<p data-ru="Напишите Бешо в WhatsApp — он подберёт лучший тур под ваши интересы и расскажет актуальные цены!" data-en="Write to Besho on WhatsApp — he'll find the best tour for your interests and share current prices!">
+Напишите Бешо в WhatsApp — он подберёт лучший тур под ваши интересы и расскажет актуальные цены!
+</p>
+<div class="cta-btns">
+<a href="https://wa.me/201234567890" target="_blank" class="btn-wa-big">
+<i class="fab fa-whatsapp"></i>
+<span data-ru="Написать Бешо в WhatsApp" data-en="Write to Besho on WhatsApp">Написать Бешо в WhatsApp</span>
+</a>
+<a href="https://t.me/BESO_adel" target="_blank" class="btn-tg-big">
+<i class="fab fa-telegram"></i>
+<span data-ru="Telegram @BESO_adel" data-en="Telegram @BESO_adel">Telegram @BESO_adel</span>
+</a>
+<a href="tel:+201234567890" class="btn-call-big">
+<i class="fas fa-phone-alt"></i>
+<span data-ru="Позвонить" data-en="Call">Позвонить</span>
+</a>
+</div>
+</div>
+<div class="cta-wave-bottom">
+<svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#0A1628"/></svg>
+</div>
 </section>
 
 <!-- FOOTER (точная копия из index.html) -->
 <footer class="footer">
-  <div class="footer-wave">
-    <svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#F0F9FF"/></svg>
-  </div>
-  <div class="footer-main container">
-    <div class="footer-brand">
-      <a href="index.html" class="footer-logo">
-        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-          <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5"/>
-          <path d="M6 28 Q14 20 22 25 Q30 30 38 22" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M6 33 Q14 25 22 30 Q30 35 38 27" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-          <circle cx="22" cy="15" r="3.5" fill="#C9A84C" opacity="0.9"/>
-        </svg>
-        <div>
-          <span class="footer-logo-name">Romashka<span>Tour</span></span>
-          <span class="footer-logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
-        </div>
-      </a>
-      <p class="footer-desc" data-ru="Ваш надёжный партнёр для незабываемых морских приключений на Красном море." data-en="Your reliable partner for unforgettable sea adventures on the Red Sea.">
-        Ваш надёжный партнёр для незабываемых морских приключений на Красном море.
-      </p>
-      <div class="footer-socials">
-        <a href="https://wa.me/201234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://t.me/BESO_adel" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-        <a href="tel:+201234567890" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
-      </div>
-    </div>
+<div class="footer-wave">
+<svg viewBox="0 0 1440 80" fill="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z" fill="#F0F9FF"/></svg>
+</div>
+<div class="footer-main container">
+<div class="footer-brand">
+<a href="index.html" class="footer-logo">
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+<circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5"/>
+<path d="M6 28 Q14 20 22 25 Q30 30 38 22" stroke="#0ABFBC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M6 33 Q14 25 22 30 Q30 35 38 27" stroke="#0ABFBC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+<circle cx="22" cy="15" r="3.5" fill="#C9A84C" opacity="0.9"/>
+</svg>
+<div>
+<span class="footer-logo-name">Romashka<span>Tour</span></span>
+<span class="footer-logo-sub" data-ru="Хургада • Египет" data-en="Hurghada • Egypt">Хургада • Египет</span>
+</div>
+</a>
+<p class="footer-desc" data-ru="Ваш надёжный партнёр для незабываемых морских приключений на Красном море." data-en="Your reliable partner for unforgettable sea adventures on the Red Sea.">
+Ваш надёжный партнёр для незабываемых морских приключений на Красном море.
+</p>
+<div class="footer-socials">
+<a href="https://wa.me/201234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://t.me/BESO_adel" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+<a href="tel:+201234567890" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+</div>
+</div>
 
-    <div class="footer-nav-block">
-      <h4 data-ru="Навигация" data-en="Navigation">Навигация</h4>
-      <ul>
-        <li><a href="index.html"      data-ru="Главная"          data-en="Home">Главная</a></li>
-        <li><a href="excursions.html" data-ru="Каталог экскурсий" data-en="Excursions">Каталог экскурсий</a></li>
-        <li><a href="about.html"      data-ru="О нас"            data-en="About">О нас</a></li>
-        <li><a href="gallery.html"    data-ru="Галерея"          data-en="Gallery">Галерея</a></li>
-        <li><a href="reviews.html"    data-ru="Отзывы"           data-en="Reviews">Отзывы</a></li>
-        <li><a href="contacts.html"   data-ru="Контакты"         data-en="Contacts">Контакты</a></li>
-      </ul>
-    </div>
+<div class="footer-nav-block">
+<h4 data-ru="Навигация" data-en="Navigation">Навигация</h4>
+<ul>
+<li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+<li><a href="excursions.html" data-ru="Каталог экскурсий" data-en="Excursions">Каталог экскурсий</a></li>
+<li><a href="about.html" data-ru="О нас" data-en="About">О нас</a></li>
+<li><a href="gallery.html" data-ru="Галерея" data-en="Gallery">Галерея</a></li>
+<li><a href="reviews.html" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+<li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+</ul>
+</div>
 
-    <div class="footer-contact-block">
-      <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
-      <ul class="footer-contacts">
-        <li>
-          <i class="fas fa-map-marker-alt"></i>
-          <span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
-        </li>
-        <li>
-          <i class="fas fa-phone-alt"></i>
-          <a href="tel:+201234567890">+20 123 456 7890</a>
-        </li>
-        <li>
-          <i class="fab fa-whatsapp"></i>
-          <a href="https://wa.me/201234567890" target="_blank">WhatsApp</a>
-        </li>
-        <li>
-          <i class="fab fa-telegram"></i>
-          <a href="https://t.me/BESO_adel" target="_blank">@BESO_adel</a>
-        </li>
-      </ul>
-    </div>
+<div class="footer-contact-block">
+<h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
+<ul class="footer-contacts">
+<li>
+<i class="fas fa-map-marker-alt"></i>
+<span data-ru="Хургада, Египет" data-en="Hurghada, Egypt">Хургада, Египет</span>
+</li>
+<li>
+<i class="fas fa-phone-alt"></i>
+<a href="tel:+201234567890">+20 123 456 7890</a>
+</li>
+<li>
+<i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/201234567890" target="_blank">WhatsApp</a>
+</li>
+<li>
+<i class="fab fa-telegram"></i>
+<a href="https://t.me/BESO_adel" target="_blank">@BESO_adel</a>
+</li>
+</ul>
+</div>
 
-    <div class="footer-cta-block">
-      <h4 data-ru="Забронировать тур" data-en="Book a Tour">Забронировать тур</h4>
-      <p data-ru="Пишите нам в любое время — мы всегда онлайн!" data-en="Write to us anytime — we're always online!">
-        Пишите нам в любое время — мы всегда онлайн!
-      </p>
-      <a href="https://wa.me/201234567890" target="_blank" class="btn-footer-wa">
-        <i class="fab fa-whatsapp"></i>
-        <span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
-      </a>
-      <a href="tel:+201234567890" class="btn-footer-call">
-        <i class="fas fa-phone-alt"></i>
-        <span data-ru="Позвонить" data-en="Call">Позвонить</span>
-      </a>
-    </div>
-  </div>
+<div class="footer-cta-block">
+<h4 data-ru="Забронировать тур" data-en="Book a Tour">Забронировать тур</h4>
+<p data-ru="Пишите нам в любое время — мы всегда онлайн!" data-en="Write to us anytime — we're always online!">
+Пишите нам в любое время — мы всегда онлайн!
+</p>
+<a href="https://wa.me/201234567890" target="_blank" class="btn-footer-wa">
+<i class="fab fa-whatsapp"></i>
+<span data-ru="Написать в WhatsApp" data-en="WhatsApp Us">Написать в WhatsApp</span>
+</a>
+<a href="tel:+201234567890" class="btn-footer-call">
+<i class="fas fa-phone-alt"></i>
+<span data-ru="Позвонить" data-en="Call">Позвонить</span>
+</a>
+</div>
+</div>
 
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <p>© 2026 RomashkaTour. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
-      <p data-ru="🏝️ Хургада, Египет — Красное море" data-en="🏝️ Hurghada, Egypt — Red Sea">🏝️ Хургада, Египет — Красное море</p>
-    </div>
-  </div>
+<div class="footer-bottom">
+<div class="container footer-bottom-inner">
+<p>© 2026 RomashkaTour. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
+<p data-ru="🏝️ Хургада, Египет — Красное море" data-en="🏝️ Hurghada, Egypt — Red Sea">🏝️ Хургада, Египет — Красное море</p>
+</div>
+</div>
 </footer>
 
 <script src="js/script.js"></script>
 <script>
 (function () {
-  'use strict';
+'use strict';
 
-  /* ── FILTER ─────────────────────────────────── */
-  var buttons = document.querySelectorAll('.cat-filter-btn');
-  var cards   = document.querySelectorAll('#excGrid .exc-card');
-  var numEl   = document.getElementById('catNum');
+/* ── FILTER ─────────────────────────────────── */
+var buttons = document.querySelectorAll('.cat-filter-btn');
+var cards = document.querySelectorAll('#excGrid .exc-card');
+var numEl = document.getElementById('catNum');
 
-  function applyFilter(filter) {
-    var count = 0;
-    cards.forEach(function (card) {
-      var cats = (card.getAttribute('data-category') || '').split(' ');
-      var show = filter === 'all' || cats.indexOf(filter) !== -1;
-      card.classList.toggle('is-hidden', !show);
-      if (show) count++;
-    });
-    if (numEl) numEl.textContent = count;
-  }
+function applyFilter(filter) {
+var count = 0;
+cards.forEach(function (card) {
+var cats = (card.getAttribute('data-category') || '').split(' ');
+var show = filter === 'all' || cats.indexOf(filter) !== -1;
+card.classList.toggle('is-hidden', !show);
+if (show) count++;
+});
+if (numEl) numEl.textContent = count;
+}
 
-  buttons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      buttons.forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      applyFilter(btn.getAttribute('data-filter'));
-    });
-  });
+buttons.forEach(function (btn) {
+btn.addEventListener('click', function () {
+buttons.forEach(function (b) { b.classList.remove('active'); });
+btn.classList.add('active');
+applyFilter(btn.getAttribute('data-filter'));
+});
+});
 
 })();
 </script>
 </body>
 </html>
-HTMLEOF
-echo "Lines: $(wc -l < /mnt/user-data/outputs/RomashkaTour/excursions.html)"
